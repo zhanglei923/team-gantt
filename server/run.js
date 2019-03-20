@@ -13,7 +13,7 @@ app.keys = ['some secret hurr'];
 
 const static = require('koa-static');
 // 配置静态web服务的中间件
-let wwwpath = pathutil.resolve(__dirname, './app')
+let wwwpath = pathutil.resolve(__dirname, '../app')
 console.log(wwwpath)
 app.use(static(wwwpath));//http://localhost:3005/index.html
  
