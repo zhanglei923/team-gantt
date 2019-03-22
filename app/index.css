@@ -2,7 +2,15 @@
     overflow: auto;
     width: 100%;
     border: 4px solid red;
+    font-size: 11px;
 }
 .gantt_canvas{
     display: block;
+    border: 1px solid #ddd;
+}
+.gantt_canvas tr{
+    border: 1px solid #ddd;
+}
+.gantt_canvas td{
+    border: 1px solid #ddd;
 }
