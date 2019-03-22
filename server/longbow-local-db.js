@@ -1,12 +1,26 @@
+/**
+ * https://github.com/zhanglei923/longbow-local-db
+ * License MIT
+ * zhanglei923@gmail.com
+ */
+
 const fs = require('fs');
 const pathutil = require('path');
 const moment = require('moment');
 const mkdir = require('make-dir')
 
 //config
-let MaxHistory = 100;
-let defaultProjectName = 'default'
-let dataPath = pathutil.resolve(__dirname, '../../team-data/')
+let configpath = pathutil.resolve(__dirname, './longbow-local-db.json')
+if(!fs.existsSync(configpath)){
+    throw "can not find config file: 'longbow-local-db.json'"
+}
+let config = fs.readFileSync(configpath, 'utf8')
+console.log(config)
+config = JSON.parse(config)
+let MaxHistory = config.maxHistory?config.maxHistory:100;
+let defaultProjectName = config.defaultProjectName?config.defaultProjectName:'default';
+let dataFolder = config.dataFolder?config.dataFolder:'./longbow-local-db-repo';
+let dataPath = pathutil.resolve(__dirname, dataFolder)
 
 
 mkdir.sync(dataPath)
@@ -78,7 +92,7 @@ let handler = {
         let filename = `todos-${count0x}.json`; 
         return filename;
     },
-    loadAllTodo:(repoName, prjName)=>{
+    loadAllData:(repoName, prjName)=>{
         let history = handler.getHistoryList(repoName, prjName);
         if(history.length===0) return [];
         let latest = history[0]
@@ -88,7 +102,7 @@ let handler = {
         let todos = fs.readFileSync(fpath, 'utf8');
         return JSON.parse(todos);
     },
-    saveAllTodo:(repoName, prjName, todos)=>{
+    saveAllData:(repoName, prjName, todos)=>{
         let count = handler.getCount(repoName, prjName);
         count++;
         let fpath = getSavePath(repoName, prjName) + '/' + handler.getFileName(count);

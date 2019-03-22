@@ -4,8 +4,8 @@ const pathutil = require('path');
 var Router = require('koa-router');
 var bodyParser = require('koa-bodyparser');
 
-let dataService = require('./dataService')
-//dataService.saveAllTodo('team-gantt-data', 'default', {a:1})
+let dataService = require('./longbow-local-db')
+dataService.saveAllData('team-gantt-data', 'default', {a:1})
 
 var app = new Koa();
 var router = new Router();

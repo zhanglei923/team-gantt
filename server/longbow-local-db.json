@@ -1,0 +1,5 @@
+{
+    "defaultProjectName":"default",
+    "maxHistory": 100,
+    "dataFolder": "../../team-data/"
+}
