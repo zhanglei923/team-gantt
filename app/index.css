@@ -8,7 +8,7 @@
     display: block;
     border: 1px solid #ddd;
 }
-.gantt_canvas tr{
+.gantt_canvas *{
     border: 1px solid #ddd;
 }
 .gantt_canvas td{
