@@ -62,3 +62,6 @@
     background-color: #ffd0cb !important;
 
 }
+.gantt_section .importantdevday{
+    background-color: red !important;
+}

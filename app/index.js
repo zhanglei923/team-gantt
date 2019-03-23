@@ -6,6 +6,11 @@ let holidays = [
     {startDate: '2019-10-01', duration: 7, workingWeekendDays:[]},
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
+let importantWorkingDay = {
+    '2019-04-11': {id:'v1904_sp2', date:'2019-04-11',desc:''},
+    '2019-05-11': {id:'v1904_sp3', date:'2019-05-11',desc:''},
+};
+//------
 let holidayDays = {};
 let workingWeekendDays = {};
 let displayDays = 360;
@@ -49,6 +54,8 @@ let initDate = ()=>{
         if(isHoliday) isWorkDay = false;
         if(workingWeekendDays[dateTxt]) isWorkDay = true;
 
+        let isImportantWorkingDay = importantWorkingDay[dateTxt];
+
         let info = {
             timestamp: mom.valueOf(),
             dateShortText,
@@ -60,7 +67,8 @@ let initDate = ()=>{
             isToday,
             isWeekend,
             dayofWeekend,
-            isWorkDay
+            isWorkDay,
+            isImportantWorkingDay
         }
         canvasDateList.push(dateId);
         canvasDateInfo[dateId] = info;
@@ -109,15 +117,18 @@ let renderSection = (sec, i)=>{
     let bodyhtml = `<tr><td>R%RowIdx%</td>`;
     for(let j=0;j<sec.length;j++){
         let dateid = sec[j];
-        let dateinfo = canvasDateInfo[dateid]
+        let dateinfo = canvasDateInfo[dateid];
+        let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
                             class="day 
                                 monthzebra${monthzebra} 
-                                ${dateinfo.isWeekend&&!dateinfo.isWorkDay?'weekend':''} 
-                                ${dateinfo.isToday?'today':''}
-                                ${dateinfo.isHoliday?'holiday':''}
+                                ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
+                                ${dateinfo.isToday?' today':''}
+                                ${dateinfo.isHoliday?' holiday':''}
+                                ${dateinfo.isImportantWorkingDay?' importantdevday':''}
                                 "
+                            ${dateinfo.isImportantWorkingDay?(' importantday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                             >
                                 ${dateinfo.isWeekend?'':''}
                             </td>`
