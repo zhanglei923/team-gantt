@@ -1,10 +1,10 @@
 let holidays = [
-    {startDate: '2019-04-05', duration: 3},
-    {startDate: '2019-05-01', duration: 4},
-    {startDate: '2019-06-07', duration: 3},
-    {startDate: '2019-09-13', duration: 3},
-    {startDate: '2019-10-01', duration: 7},
-    {startDate: '2019-12-31', duration: 3},
+    {startDate: '2019-04-05', duration: 3, workingWeekendDays:['2019-04-04']},
+    {startDate: '2019-05-01', duration: 4, workingWeekendDays:[]},
+    {startDate: '2019-06-07', duration: 3, workingWeekendDays:[]},
+    {startDate: '2019-09-13', duration: 3, workingWeekendDays:[]},
+    {startDate: '2019-10-01', duration: 7, workingWeekendDays:[]},
+    {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
 let holidayDays = {};
 let displayDays = 360;
@@ -36,6 +36,11 @@ let initDate = ()=>{
         let dayText = mom.format('DD');
         let month = mom.month()+1;
         let monthText = mom.format('M');
+        let isHoliday = !!holidayDays[dateTxt];
+        let isToday = mom.isSame(moment(), 'day');
+        let isWeekend = (mom.day()===6 || mom.day()===0 || mom.day()===7);
+        let dayofWeekend = mom.day() === 0 ? 7 : mom.day();
+
         let info = {
             timestamp: mom.valueOf(),
             dateShortText,
@@ -43,10 +48,10 @@ let initDate = ()=>{
             dayText,
             month,
             monthText,
-            isHoliday: !!holidayDays[dateTxt],
-            isToday:mom.isSame(moment(), 'day'),
-            isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7),
-            dayofWeekend: mom.day() === 0 ? 7 : mom.day()
+            isHoliday,
+            isToday,
+            isWeekend,
+            dayofWeekend
         }
         canvasDateList.push(dateId);
         canvasDateInfo[dateId] = info;
@@ -82,7 +87,11 @@ let renderSection = (sec, i)=>{
     for(let i=0;i<sec.length;i++){
         let id = sec[i];
         let info = canvasDateInfo[id];
-        headhtml += `<th>${info.monthText}<br>${info.dayText}<br>${weekdayCN[info.dayofWeekend]}</th>`
+        headhtml += `<th class="${info.isToday?'today':''}">
+                        ${info.monthText}<br>
+                        ${info.dayText}<br>
+                        ${weekdayCN[info.dayofWeekend]}
+                    </th>`
     }
     headhtml += '</tr>'
 

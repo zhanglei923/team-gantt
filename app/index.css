@@ -8,7 +8,6 @@
 .root{
     overflow: auto;
     width: 100%;
-    border: 1px dotted red;
     font-size: 11px;
 }
 .gantt_section{
@@ -40,10 +39,14 @@
     width:20px;
 }
 .gantt_section .day.monthzebra0{
-    background-color: #ebffee;
+    background-color: #fff;
 }
 .gantt_section .day.monthzebra1{
-    background-color: #edeffd;
+    background-color: #fff;
+}
+.gantt_section th.today{
+    color: white;
+    background-color: #a20000;
 }
 .gantt_section .today{
     border:1px solid red;
