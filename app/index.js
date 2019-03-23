@@ -1,17 +1,18 @@
+let sectionDays = 80;
 let initGantt = ()=>{
     let t0=new Date()*1;
     let canvasDateList = [];
     let canvasDateInfo = {}
     let firstmom = moment();
     firstmom.subtract(10, 'days');
-    for(let i=0;i<200;i++){
+    for(let i=0;i<sectionDays;i++){
         let mom = firstmom.add(1, 'days');
         let dateId = 'id_'+mom.format('YYYYMMDD')
         let dateText = mom.format('MMDD');
         let day = mom.date();
         let dayText = mom.format('DD');
         let month = mom.month()+1;
-        let monthText = mom.format('MMM');
+        let monthText = mom.format('M');
         let info = {
             dateText,
             dayText,
@@ -24,7 +25,7 @@ let initGantt = ()=>{
         canvasDateList.push(dateId);
     }
 
-    let headhtml = `<tr><th>/</th>`
+    let headhtml = `<tr><th>\\</th>`
     for(let i=0;i<canvasDateList.length;i++){
         let id = canvasDateList[i];
         let info = canvasDateInfo[id];
