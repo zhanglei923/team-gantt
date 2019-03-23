@@ -2,8 +2,8 @@ let initGantt = ()=>{
     let html = `<tr>`;
     let canvasDateList = [];
     let canvasDateInfo = {}
-    let firstmom = moment('2019-01-01T00:00:00');
-    firstmom.subtract(1, 'days');
+    let firstmom = moment();
+    firstmom.subtract(14, 'days');
 
     let headhtml = `<tr>`
     headhtml += `<th>-</th>`
