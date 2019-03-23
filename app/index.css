@@ -33,7 +33,7 @@
 .gantt_section td{
     border-left: 1px solid #804040;
     border-top: 1px solid #804040;
-    height:26px;
+    height: 18px;
 }
 .gantt_section th{
     width:20px;
