@@ -120,7 +120,7 @@ let renderSection = (sec, i)=>{
         let dateinfo = canvasDateInfo[dateid];
         let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
+        bodyhtml += `<td id="%RowIdx%_${dateid}" align="center"
                             class="day monthzebra${monthzebra} 
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' today':''} ${dateinfo.isHoliday?' holiday':''}

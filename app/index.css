@@ -11,6 +11,7 @@
     font-size: 11px;
 }
 .gantt_section{
+    margin-left: 12px;
     display: block;
     border: 1px solid #804040;
     border-bottom: 1px solid #804040;    
@@ -64,4 +65,8 @@
 }
 .gantt_section .importantdevday{
     background-color: red !important;
+}
+.console{
+    min-height:60px;
+    width:100%;
 }
