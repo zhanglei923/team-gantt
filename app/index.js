@@ -1,43 +1,70 @@
-let sectionDays = 80;
-let initGantt = ()=>{
-    let t0=new Date()*1;
-    let canvasDateList = [];
-    let canvasDateInfo = {}
-    let firstmom = moment();
-    firstmom.subtract(10, 'days');
-    for(let i=0;i<sectionDays;i++){
-        let mom = firstmom.add(1, 'days');
-        let dateId = 'id_'+mom.format('YYYYMMDD')
+let displayDays = 360;
+let sectionDays = 90;
+let canvasDateList = [];
+let canvasDateInfo = {};
+let initDate = ()=>{
+    let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(10, 'days');
+    for(let i=0;i<displayDays;i++){
+        let mom = startmom.add(1, 'days');
+        let dateId = 'd_'+mom.format('YYYYMMDD')
         let dateText = mom.format('MMDD');
         let day = mom.date();
         let dayText = mom.format('DD');
         let month = mom.month()+1;
         let monthText = mom.format('M');
         let info = {
+            timestamp: mom.valueOf(),
             dateText,
+            day,
             dayText,
             month,
             monthText,
             isToday:mom.isSame(moment(), 'day'),
             isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7)
         }
-        canvasDateInfo[dateId] = info;
         canvasDateList.push(dateId);
+        canvasDateInfo[dateId] = info;
     }
-
-    let headhtml = `<tr><th>\\</th>`
+}
+let sections = [];
+let initSections = ()=>{
+    let section = [];
+    let count=0;
     for(let i=0;i<canvasDateList.length;i++){
         let id = canvasDateList[i];
+        let info = canvasDateInfo[id];
+        section.push(id)
+        count++;
+        if(count >= sectionDays){
+            sections.push(section);
+            section=[];
+            count=0;
+            continue;
+        }
+    }
+    let html = ''
+    sections.forEach((sec, i)=>{
+        html += `<table id="gantt_section${i}" class="gantt_section">
+                    <thead id="gantt_section_thead${i}"></thead>
+                    <tbody id="gantt_section_tbody${i}"></tbody>
+                 </table>`
+    })
+    document.getElementById('root').innerHTML = html;
+}
+let renderSection = (sec, i)=>{    
+    let headhtml = `<tr><th>\\</th>`
+    for(let i=0;i<sec.length;i++){
+        let id = sec[i];
         let info = canvasDateInfo[id];
         headhtml += `<th>${info.monthText}<br>${info.dayText}</th>`
     }
     headhtml += '</tr>'
 
-    $('#gantt_canvas_thead').html(headhtml)
+    $(`#gantt_section_thead${i}`).html(headhtml)
     
     let bodyhtml = `<tr><td>R%RowIdx%</td>`;
-    for(let j=0;j<canvasDateList.length;j++){
-        let dateid = canvasDateList[j];
+    for(let j=0;j<sec.length;j++){
+        let dateid = sec[j];
         let dateinfo = canvasDateInfo[dateid]
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="r%RowIdx%_${dateid}"
@@ -53,9 +80,18 @@ let initGantt = ()=>{
         
         bigbodyhtml += s
     }
-    $('#gantt_canvas_tbody').html(bigbodyhtml)
+    $(`#gantt_section_tbody${i}`).html(bigbodyhtml)
+}
 
-
+let initGantt = ()=>{
+    let t0=new Date()*1;
+    initDate();
+    initSections();
+    console.log(canvasDateList);
+    console.log(sections);
+    sections.forEach((sec, i)=>{        
+        renderSection(sec, i);
+    })
     let t1=new Date()*1;
     console.log(t1-t0)
 }
