@@ -1,3 +1,7 @@
+*{
+    margin:0;
+    padding: 0;
+}
 .root{
     overflow: auto;
     width: 100%;
@@ -6,11 +10,18 @@
 }
 .gantt_canvas{
     display: block;
-    border: 1px solid #ddd;
+    border: 0
 }
-.gantt_canvas *{
-    border: 1px solid #ddd;
+.gantt_canvas tr{
+    border: 0
 }
 .gantt_canvas td{
-    border: 1px solid #ddd;
+    border: 0
+}
+.gantt_canvas .today{
+    color: red;
+    background-color: yellow !important;
+}
+.gantt_canvas .weekend{
+    background-color: #aefbff;
 }
