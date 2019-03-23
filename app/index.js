@@ -7,6 +7,7 @@ let holidays = [
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
 let holidayDays = {};
+let workingWeekendDays = {};
 let displayDays = 360;
 let sectionDays = 60;
 let canvasDateList = [];
@@ -21,8 +22,11 @@ let extractHolidays=()=>{
             mom.add(i, 'days');
             holidayDays[mom.format('YYYY-MM-DD')]=true;
         }
+        hol.workingWeekendDays.forEach((daytxt)=>{
+            workingWeekendDays[daytxt]=true;
+        })
     })
-    console.log(holidayDays)
+    console.log(holidayDays, workingWeekendDays)
 }
 let initDate = ()=>{
     extractHolidays();
@@ -30,7 +34,7 @@ let initDate = ()=>{
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
-        let dateId = 'd_'+mom.format('YYYY-MM-DD')
+        let dateId = 'd_'+dateTxt
         let dateShortText = mom.format('MMDD');
         let day = mom.date();
         let dayText = mom.format('DD');
@@ -40,6 +44,10 @@ let initDate = ()=>{
         let isToday = mom.isSame(moment(), 'day');
         let isWeekend = (mom.day()===6 || mom.day()===0 || mom.day()===7);
         let dayofWeekend = mom.day() === 0 ? 7 : mom.day();
+        let isWorkDay = true;
+        if(isWeekend) isWorkDay = false;
+        if(isHoliday) isWorkDay = false;
+        if(workingWeekendDays[dateTxt]) isWorkDay = true;
 
         let info = {
             timestamp: mom.valueOf(),
@@ -51,7 +59,8 @@ let initDate = ()=>{
             isHoliday,
             isToday,
             isWeekend,
-            dayofWeekend
+            dayofWeekend,
+            isWorkDay
         }
         canvasDateList.push(dateId);
         canvasDateInfo[dateId] = info;
@@ -105,12 +114,12 @@ let renderSection = (sec, i)=>{
         bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
                             class="day 
                                 monthzebra${monthzebra} 
-                                ${dateinfo.isWeekend?'weekend':''} 
+                                ${dateinfo.isWeekend&&!dateinfo.isWorkDay?'weekend':''} 
                                 ${dateinfo.isToday?'today':''}
                                 ${dateinfo.isHoliday?'holiday':''}
                                 "
                             >
-                                ${dateinfo.isWeekend?'-':''}
+                                ${dateinfo.isWeekend?'':''}
                             </td>`
     }
     bodyhtml += '</tr>';
