@@ -1,5 +1,5 @@
 let displayDays = 360;
-let sectionDays = 90;
+let sectionDays = 60;
 let canvasDateList = [];
 let canvasDateInfo = {};
 let initDate = ()=>{

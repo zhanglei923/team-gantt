@@ -3,7 +3,7 @@
     padding: 0;
 }
 .info{
-    
+
 }
 .root{
     overflow: auto;
@@ -13,14 +13,29 @@
 }
 .gantt_section{
     display: block;
-    border: 0
+    border: 1px solid #804040;
+    border-bottom: 1px solid #804040;    
+    border-collapse:collapse;
+    width:1600px;
+}
+.gantt_section thead{
+    border: 0;
+    width:100%;
+}
+.gantt_section tbody{
+    border: 0;
+    width:100%;
 }
 .gantt_section tr{
-    border: 0
+    border: 0;
+    width:100%;
 }
 .gantt_section td{
-    border: 0;
-    color:#bbb;
+    border-left: 1px solid #804040;
+    border-top: 1px solid #804040;
+}
+.gantt_section th{
+    width:20px;
 }
 .gantt_section .day.monthzebra0{
     background-color: #ebffee;
