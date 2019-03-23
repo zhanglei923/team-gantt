@@ -4,14 +4,19 @@ let initGantt = ()=>{
     let canvasDateInfo = {}
     let firstmom = moment();
     firstmom.subtract(10, 'days');
-    for(let i=0;i<165;i++){
+    for(let i=0;i<200;i++){
         let mom = firstmom.add(1, 'days');
         let dateId = 'id_'+mom.format('YYYYMMDD')
         let dateText = mom.format('MMDD');
+        let day = mom.date();
+        let dayText = mom.format('DD');
         let month = mom.month()+1;
+        let monthText = mom.format('MMM');
         let info = {
             dateText,
+            dayText,
             month,
+            monthText,
             isToday:mom.isSame(moment(), 'day'),
             isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7)
         }
@@ -23,9 +28,10 @@ let initGantt = ()=>{
     for(let i=0;i<canvasDateList.length;i++){
         let id = canvasDateList[i];
         let info = canvasDateInfo[id];
-        headhtml += `<th>${info.dateText}</th>`
+        headhtml += `<th>${info.monthText}${info.dayText}</th>`
     }
     headhtml += '</tr>'
+
     $('#gantt_canvas_thead').html(headhtml)
     
     let bodyhtml = `<tr><td>R%RowIdx%</td>`;
@@ -33,7 +39,7 @@ let initGantt = ()=>{
         dateid = canvasDateList[j];
         dateinfo = canvasDateInfo[dateid]
         bodyhtml += `<td id="r%RowIdx%_${canvasDateList[j].dateId}"
-                    class="${dateinfo.isToday?'today':''} ${dateinfo.isWeekend?'weekend':''}"
+                    class="day ${dateinfo.isWeekend?'weekend':''} ${dateinfo.isToday?'today':''}"
                     >
                     ${'.'}
                     </td>`

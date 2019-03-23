@@ -5,7 +5,7 @@
 .root{
     overflow: auto;
     width: 100%;
-    border: 4px solid red;
+    border: 1px dotted red;
     font-size: 11px;
 }
 .gantt_canvas{
@@ -17,6 +17,9 @@
 }
 .gantt_canvas td{
     border: 0
+}
+.gantt_canvas .day{
+    background-color: #eee;
 }
 .gantt_canvas .today{
     color: red;
