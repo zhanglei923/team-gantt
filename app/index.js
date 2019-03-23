@@ -28,7 +28,7 @@ let initGantt = ()=>{
     for(let i=0;i<canvasDateList.length;i++){
         let id = canvasDateList[i];
         let info = canvasDateInfo[id];
-        headhtml += `<th>${info.monthText}${info.dayText}</th>`
+        headhtml += `<th>${info.monthText}<br>${info.dayText}</th>`
     }
     headhtml += '</tr>'
 
@@ -36,13 +36,12 @@ let initGantt = ()=>{
     
     let bodyhtml = `<tr><td>R%RowIdx%</td>`;
     for(let j=0;j<canvasDateList.length;j++){
-        dateid = canvasDateList[j];
-        dateinfo = canvasDateInfo[dateid]
-        bodyhtml += `<td id="r%RowIdx%_${canvasDateList[j].dateId}"
-                    class="day ${dateinfo.isWeekend?'weekend':''} ${dateinfo.isToday?'today':''}"
-                    >
-                    ${'.'}
-                    </td>`
+        let dateid = canvasDateList[j];
+        let dateinfo = canvasDateInfo[dateid]
+        let monthzebra = dateinfo.month%2;
+        bodyhtml += `<td id="r%RowIdx%_${dateid}"
+                    class="day monthzebra${monthzebra} ${dateinfo.isToday?'today':''}"
+                    >${dateinfo.isWeekend?'W':''}</td>`
     }
     bodyhtml += '</tr>'
     

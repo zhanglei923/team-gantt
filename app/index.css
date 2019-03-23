@@ -16,13 +16,16 @@
     border: 0
 }
 .gantt_canvas td{
-    border: 0
+    border: 0;
+    color:#bbb;
 }
-.gantt_canvas .day{
+.gantt_canvas .day.monthzebra0{
     background-color: #eee;
 }
+.gantt_canvas .day.monthzebra1{
+    background-color: #e1e4f9;
+}
 .gantt_canvas .today{
-    color: red;
     background-color: yellow !important;
 }
 .gantt_canvas .weekend{
