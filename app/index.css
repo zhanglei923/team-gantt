@@ -46,9 +46,18 @@
     background-color: #edeffd;
 }
 .gantt_section .today{
-    background-color: yellow !important;
+    border:1px solid red;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
 }
 .gantt_section .weekend{
     background-color: #aefbff !important;
     color:#aaa;
+}
+.gantt_section .holiday{
+    background-color: #ffd0cb !important;
+    color:#aaa;
+
 }

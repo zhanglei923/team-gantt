@@ -1,25 +1,49 @@
+let holidays = [
+    {startDate: '2019-04-05', duration: 3},
+    {startDate: '2019-05-01', duration: 4},
+    {startDate: '2019-06-07', duration: 3},
+    {startDate: '2019-09-13', duration: 3},
+    {startDate: '2019-10-01', duration: 7},
+    {startDate: '2019-12-31', duration: 3},
+];
+let holidayDays = {};
 let displayDays = 360;
 let sectionDays = 60;
 let canvasDateList = [];
 let canvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']
+let extractHolidays=()=>{ 
+    holidayDays = {};
+    holidays.forEach((hol)=>{
+        let startDate = hol.startDate;
+        for(let i=0;i<hol.duration;i++){
+            let mom = moment(startDate+'T00:00:00')
+            mom.add(i, 'days');
+            holidayDays[mom.format('YYYY-MM-DD')]=true;
+        }
+    })
+    console.log(holidayDays)
+}
 let initDate = ()=>{
+    extractHolidays();
     let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(10, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
-        let dateId = 'd_'+mom.format('YYYYMMDD')
-        let dateText = mom.format('MMDD');
+        let dateTxt = mom.format('YYYY-MM-DD')
+        let dateId = 'd_'+mom.format('YYYY-MM-DD')
+        let dateShortText = mom.format('MMDD');
         let day = mom.date();
         let dayText = mom.format('DD');
         let month = mom.month()+1;
         let monthText = mom.format('M');
         let info = {
             timestamp: mom.valueOf(),
-            dateText,
+            dateShortText,
             day,
             dayText,
             month,
             monthText,
+            isHoliday: !!holidayDays[dateTxt],
             isToday:mom.isSame(moment(), 'day'),
             isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7),
             dayofWeekend: mom.day() === 0 ? 7 : mom.day()
@@ -70,7 +94,12 @@ let renderSection = (sec, i)=>{
         let dateinfo = canvasDateInfo[dateid]
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
-                            class="day monthzebra${monthzebra} ${dateinfo.isWeekend&&!dateinfo.isToday?'weekend':''} ${dateinfo.isToday?'today':''}"
+                            class="day 
+                                monthzebra${monthzebra} 
+                                ${dateinfo.isWeekend?'weekend':''} 
+                                ${dateinfo.isToday?'today':''}
+                                ${dateinfo.isHoliday?'holiday':''}
+                                "
                             >
                                 ${dateinfo.isWeekend?'-':''}
                             </td>`
