@@ -21,6 +21,7 @@
 .gantt_section thead{
     border: 0;
     width:100%;
+    font-size: 9px;
 }
 .gantt_section tbody{
     border: 0;
@@ -33,6 +34,7 @@
 .gantt_section td{
     border-left: 1px solid #804040;
     border-top: 1px solid #804040;
+    height:26px;
 }
 .gantt_section th{
     width:20px;
@@ -47,5 +49,6 @@
     background-color: yellow !important;
 }
 .gantt_section .weekend{
-    background-color: #aefbff;
+    background-color: #aefbff !important;
+    color:#aaa;
 }

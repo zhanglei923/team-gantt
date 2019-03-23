@@ -2,6 +2,7 @@ let displayDays = 360;
 let sectionDays = 60;
 let canvasDateList = [];
 let canvasDateInfo = {};
+let weekdayCN = ['', '一','二','三','四','五','六','日']
 let initDate = ()=>{
     let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(10, 'days');
     for(let i=0;i<displayDays;i++){
@@ -20,7 +21,8 @@ let initDate = ()=>{
             month,
             monthText,
             isToday:mom.isSame(moment(), 'day'),
-            isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7)
+            isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7),
+            dayofWeekend: mom.day() === 0 ? 7 : mom.day()
         }
         canvasDateList.push(dateId);
         canvasDateInfo[dateId] = info;
@@ -56,7 +58,7 @@ let renderSection = (sec, i)=>{
     for(let i=0;i<sec.length;i++){
         let id = sec[i];
         let info = canvasDateInfo[id];
-        headhtml += `<th>${info.monthText}<br>${info.dayText}</th>`
+        headhtml += `<th>${info.monthText}<br>${info.dayText}<br>${weekdayCN[info.dayofWeekend]}</th>`
     }
     headhtml += '</tr>'
 
@@ -67,10 +69,10 @@ let renderSection = (sec, i)=>{
         let dateid = sec[j];
         let dateinfo = canvasDateInfo[dateid]
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}"
-                            class="day monthzebra${monthzebra} ${dateinfo.isToday?'today':''}"
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
+                            class="day monthzebra${monthzebra} ${dateinfo.isWeekend&&!dateinfo.isToday?'weekend':''} ${dateinfo.isToday?'today':''}"
                             >
-                                ${dateinfo.isWeekend?'W':''}
+                                ${dateinfo.isWeekend?'-':''}
                             </td>`
     }
     bodyhtml += '</tr>';
