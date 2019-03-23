@@ -68,11 +68,13 @@ let renderSection = (sec, i)=>{
         let dateinfo = canvasDateInfo[dateid]
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="r%RowIdx%_${dateid}"
-                    class="day monthzebra${monthzebra} ${dateinfo.isToday?'today':''}"
-                    >${dateinfo.isWeekend?'W':''}</td>`
+                            class="day monthzebra${monthzebra} ${dateinfo.isToday?'today':''}"
+                            >
+                                ${dateinfo.isWeekend?'W':''}
+                            </td>`
     }
-    bodyhtml += '</tr>'
-    
+    bodyhtml += '</tr>';
+
     let bigbodyhtml = ''
     for(let i=0;i<10;i++){
         let s = bodyhtml;
@@ -82,16 +84,21 @@ let renderSection = (sec, i)=>{
     }
     $(`#gantt_section_tbody${i}`).html(bigbodyhtml)
 }
-
+let initEvent = ()=>{
+    $('#root').on('click', '[id].day', (e)=>{
+        handleTdClick(e.currentTarget);
+    })
+}
 let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
     initSections();
-    console.log(canvasDateList);
-    console.log(sections);
+    // console.log(canvasDateList);
+    // console.log(sections);
     sections.forEach((sec, i)=>{        
         renderSection(sec, i);
     })
+    initEvent();
     let t1=new Date()*1;
     console.log(t1-t0)
 }

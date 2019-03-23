@@ -2,6 +2,9 @@
     margin:0;
     padding: 0;
 }
+.info{
+    
+}
 .root{
     overflow: auto;
     width: 100%;
@@ -20,10 +23,10 @@
     color:#bbb;
 }
 .gantt_section .day.monthzebra0{
-    background-color: #eee;
+    background-color: #ebffee;
 }
 .gantt_section .day.monthzebra1{
-    background-color: #e1e4f9;
+    background-color: #edeffd;
 }
 .gantt_section .today{
     background-color: yellow !important;
