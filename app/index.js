@@ -114,20 +114,17 @@ let renderSection = (sec, i)=>{
 
     $(`#gantt_section_thead${i}`).html(headhtml)
     
-    let bodyhtml = `<tr><td>R%RowIdx%</td>`;
+    let bodyhtml = `<tr id="%RowIdx%"><td>%RowIdx%</td>`;
     for(let j=0;j<sec.length;j++){
         let dateid = sec[j];
         let dateinfo = canvasDateInfo[dateid];
         let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
-                            class="day 
-                                monthzebra${monthzebra} 
+                            class="day monthzebra${monthzebra} 
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
-                                ${dateinfo.isToday?' today':''}
-                                ${dateinfo.isHoliday?' holiday':''}
-                                ${dateinfo.isImportantWorkingDay?' importantdevday':''}
-                                "
+                                ${dateinfo.isToday?' today':''} ${dateinfo.isHoliday?' holiday':''}
+                                ${dateinfo.isImportantWorkingDay?' importantdevday':''}"
                             ${dateinfo.isImportantWorkingDay?(' importantday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                             >
                                 ${dateinfo.isWeekend?'':''}
@@ -138,7 +135,7 @@ let renderSection = (sec, i)=>{
     let bigbodyhtml = ''
     for(let i=0;i<10;i++){
         let s = bodyhtml;
-        s = s.replace(/%RowIdx%/g, i)
+        s = s.replace(/%RowIdx%/g, 'r'+i)
         
         bigbodyhtml += s
     }
