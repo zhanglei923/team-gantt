@@ -1,43 +1,56 @@
 let initGantt = ()=>{
-    let html = `<tr>`;
+    let t0=new Date()*1;
     let canvasDateList = [];
     let canvasDateInfo = {}
     let firstmom = moment();
-    firstmom.subtract(14, 'days');
-
-    let headhtml = `<tr>`
-    headhtml += `<th>-</th>`
-    for(let j=0;j<365;j++){
-        headhtml += `<th>${j+1}</th>`
+    firstmom.subtract(10, 'days');
+    for(let i=0;i<165;i++){
         let mom = firstmom.add(1, 'days');
         let dateId = 'id_'+mom.format('YYYYMMDD')
+        let dateText = mom.format('MMDD');
+        let month = mom.month()+1;
         let info = {
-            month: mom.month(),
+            dateText,
+            month,
             isToday:mom.isSame(moment(), 'day'),
             isWeekend: (mom.day()===6 || mom.day()===0 || mom.day()===7)
         }
-        let dateText = mom.format('MM.DD');
-        if(info.month<10) dateText=dateText.replace(/^0/,'')
-        
         canvasDateInfo[dateId] = info;
-        canvasDateList.push({dateId, dateText});
+        canvasDateList.push(dateId);
     }
-    //console.log(canvasDateList)
-    for(let i=0;i<10;i++){
-        let dateinfo, dateid;
-        html += `<td>${i+1}</td>`
-        for(let j=0;j<canvasDateList.length;j++){
-            dateid = canvasDateList[j].dateId;
-            dateinfo = canvasDateInfo[dateid]
-            html += `<td id="${canvasDateList[j].dateId}"
-                        class="${dateinfo.isToday?'today':''} ${dateinfo.isWeekend?'weekend':''}"
-                        >${canvasDateList[j].dateText}</td>`
-        }
-        html += `</tr><tr>`
+
+    let headhtml = `<tr><th>/</th>`
+    for(let i=0;i<canvasDateList.length;i++){
+        let id = canvasDateList[i];
+        let info = canvasDateInfo[id];
+        headhtml += `<th>${info.dateText}</th>`
     }
-    html += `</tr>`
-    headhtml += `</tr>`
+    headhtml += '</tr>'
     $('#gantt_canvas_thead').html(headhtml)
-    $('#gantt_canvas_tbody').html(html)
+    
+    let bodyhtml = `<tr><td>R%RowIdx%</td>`;
+    for(let j=0;j<canvasDateList.length;j++){
+        dateid = canvasDateList[j];
+        dateinfo = canvasDateInfo[dateid]
+        bodyhtml += `<td id="r%RowIdx%_${canvasDateList[j].dateId}"
+                    class="${dateinfo.isToday?'today':''} ${dateinfo.isWeekend?'weekend':''}"
+                    >
+                    ${'.'}
+                    </td>`
+    }
+    bodyhtml += '</tr>'
+    
+    let bigbodyhtml = ''
+    for(let i=0;i<10;i++){
+        let s = bodyhtml;
+        s = s.replace(/%RowIdx%/g, i)
+        
+        bigbodyhtml += s
+    }
+    $('#gantt_canvas_tbody').html(bigbodyhtml)
+
+
+    let t1=new Date()*1;
+    console.log(t1-t0)
 }
 $(initGantt)
