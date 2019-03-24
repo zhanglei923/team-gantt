@@ -1,8 +1,12 @@
 .task{
     position: absolute;
     height:18px;
-    min-width:100px;
-    background-color:#292da9;
+    min-width:20px;
+    background-color:rgba(255,0,0,0.3);
+    color: black;
     border:1px solid red;
     border-radius:8px;
+    /* filter:alpha(Opacity=60);
+    -moz-opacity:0.6;
+    opacity: 0.6; */
 }

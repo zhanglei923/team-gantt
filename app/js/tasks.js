@@ -6,7 +6,7 @@ let createTask=(rowId, startDate, task)=>{
     let pos = $(dateCell).offset();
     //console.log('pos',pos, dateCell)
     let taskid = 'task'+(Math.random()+'').replace(/^0\./,'')
-    let taskHtml = `<div id="${taskid}" class="task" style="left:${pos.left}px;top:${pos.top}px;"></div>`
+    let taskHtml = `<div id="${taskid}" class="task" style="left:${pos.left}px;top:${pos.top}px;">${task.subject}</div>`
 
     $('#tasks').append(taskHtml)
 }
@@ -15,7 +15,9 @@ let test = ()=>{
     for(let i=0;i<200;i++) {
         let date = moment().add(i, 'days').format('YYYY-MM-DD')
         let j=i%9;
-        createTask('r'+j, date, {})
+        createTask('r'+j, date, {
+            subject: Math.random()+''+Math.random()
+        })
     }
     console.log(new Date() - t0)
 }
