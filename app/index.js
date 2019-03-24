@@ -15,8 +15,8 @@ let holidayDays = {};
 let workingWeekendDays = {};
 let displayDays = 360;
 let sectionDays = 60;
-let canvasDateList = [];
-let canvasDateInfo = {};
+let g_CanvasDateList = [];
+let g_CanvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']
 let extractHolidays=()=>{ 
     holidayDays = {};
@@ -70,17 +70,17 @@ let initDate = ()=>{
             isWorkDay,
             isImportantWorkingDay
         }
-        canvasDateList.push(dateId);
-        canvasDateInfo[dateId] = info;
+        g_CanvasDateList.push(dateId);
+        g_CanvasDateInfo[dateId] = info;
     }
 }
 let sections = [];
 let initSections = ()=>{
     let section = [];
     let count=0;
-    for(let i=0;i<canvasDateList.length;i++){
-        let id = canvasDateList[i];
-        let info = canvasDateInfo[id];
+    for(let i=0;i<g_CanvasDateList.length;i++){
+        let id = g_CanvasDateList[i];
+        let info = g_CanvasDateInfo[id];
         section.push(id)
         count++;
         if(count >= sectionDays){
@@ -103,7 +103,7 @@ let renderSection = (sec, i)=>{
     let headhtml = `<tr><th>\\</th>`
     for(let i=0;i<sec.length;i++){
         let id = sec[i];
-        let info = canvasDateInfo[id];
+        let info = g_CanvasDateInfo[id];
         headhtml += `<th class="${info.isToday?'today':''}">
                         ${info.monthText}<br>
                         ${info.dayText}<br>
@@ -117,7 +117,7 @@ let renderSection = (sec, i)=>{
     let bodyhtml = `<tr id="%RowIdx%"><td>%RowIdx%</td>`;
     for(let j=0;j<sec.length;j++){
         let dateid = sec[j];
-        let dateinfo = canvasDateInfo[dateid];
+        let dateinfo = g_CanvasDateInfo[dateid];
         let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="%RowIdx%_${dateid}" align="center"
@@ -150,7 +150,7 @@ let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
     initSections();
-    // console.log(canvasDateList);
+    // console.log(g_CanvasDateList);
     // console.log(sections);
     sections.forEach((sec, i)=>{        
         renderSection(sec, i);
