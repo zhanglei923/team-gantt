@@ -1,3 +1,18 @@
+let taskData = [
+    {
+        row: 'r0',
+        startDate: '2019-03-26',
+        days: 3,
+        subject: 'aaaaaaa aaaaaaaaa aaaaaaa',
+    },
+    {
+        row: 'r1',
+        startDate: '2019-03-26',
+        days: 3,
+        subject: 'aaaaaaa aaaaaaaaa aaaaaaa',
+    }
+]
+
 let createTask=(rowId, startDate, task)=>{
     let dateId = `${rowId}_d_${startDate}`//r1_d_2019-03-25
     let dateCell = document.getElementById(dateId)

@@ -21,7 +21,7 @@
 .gantt_section thead{
     border: 0;
     width:100%;
-    font-size: 9px;
+    font-size: 11px;
 }
 .gantt_section tbody{
     border: 0;
@@ -45,26 +45,33 @@
 .gantt_section .day.monthzebra1{
     background-color: #fff;
 }
-.gantt_section th.today{
-    color: white;
-    background-color: #a20000;
-}
-.gantt_section .today{
-    border:1px solid red;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-top-width: 4px;
-    border-bottom-width: 4px;
-}
 .gantt_section .weekend{
     background-color: #cae9ff !important;
 }
 .gantt_section .holiday{
     background-color: #ffd0cb !important;
-
 }
-.gantt_section .importantdevday{
-    background-color: red !important;
+.gantt_section th.today{
+    color: black;
+    background-color: #1ff793;
+}
+.gantt_section .today{
+    border:1px solid #005f33;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+.gantt_section th.important-workingday{
+    color: white;
+    background-color: #a20000;
+}
+.gantt_section .important-workingday{
+    border:1px solid red;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
 }
 .console{
     min-height:60px;

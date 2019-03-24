@@ -103,11 +103,12 @@ let renderSection = (sec, i)=>{
     let headhtml = `<tr><th>\\</th>`
     for(let i=0;i<sec.length;i++){
         let id = sec[i];
-        let info = g_CanvasDateInfo[id];
-        headhtml += `<th class="${info.isToday?'today':''}">
-                        ${info.monthText}<br>
-                        ${info.dayText}<br>
-                        ${weekdayCN[info.dayofWeekend]}
+        let dateinfo = g_CanvasDateInfo[id];
+        headhtml += `<th class="${dateinfo.isToday?' today':''}
+                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}">
+                        ${dateinfo.monthText}<br>
+                        ${dateinfo.dayText}<br>
+                        ${weekdayCN[dateinfo.dayofWeekend]}
                     </th>`
     }
     headhtml += '</tr>'
@@ -124,8 +125,8 @@ let renderSection = (sec, i)=>{
                             class="day monthzebra${monthzebra} 
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' today':''} ${dateinfo.isHoliday?' holiday':''}
-                                ${dateinfo.isImportantWorkingDay?' importantdevday':''}"
-                            ${dateinfo.isImportantWorkingDay?(' importantday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
+                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
+                                ${dateinfo.isImportantWorkingDay?(' is-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                             >
                                 ${dateinfo.isWeekend?'':''}
                             </td>`
