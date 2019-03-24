@@ -1,15 +1,21 @@
-let taskData = [
+let g_TaskData = [
     {
         row: 'r0',
         startDate: '2019-03-26',
         days: 3,
-        subject: 'aaaaaaa aaaaaaaaa aaaaaaa',
+        subject: 'AAAAAAA AAAAAAA AAAAAAA',
     },
     {
         row: 'r1',
-        startDate: '2019-03-26',
-        days: 3,
-        subject: 'aaaaaaa aaaaaaaaa aaaaaaa',
+        startDate: '2019-04-16',
+        days: 30,
+        subject: 'BBBBBBB BBBBBBBB BBBBBB',
+    },
+    {
+        row: 'r2',
+        startDate: '2019-02-16',
+        days: 90,
+        subject: 'CCCCCCCC CCCCCCCC CCCCCCCC',
     }
 ]
 
