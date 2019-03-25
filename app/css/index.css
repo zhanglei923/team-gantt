@@ -56,11 +56,16 @@
     background-color: #18bb70 !important;
 }
 .gantt_section .today{
+    border-left-color: #005f33;
+    border-left-width: 2px !important;
     /* border:1px dotted #005f33 !important;
     border-right-width: 2px !important;
     border-left-width: 2px !important;
     border-top-width: 2px !important;
     border-bottom-width: 2px !important; */
+}
+.gantt_section .isBeforeToday{
+    background-color: #eee !important;
 }
 .gantt_section th.important-workingday{
     color: white;

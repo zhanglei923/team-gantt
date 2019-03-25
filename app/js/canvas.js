@@ -48,8 +48,9 @@ let extractHolidays=()=>{
 }
 let initDate = ()=>{
     extractHolidays();
-    let thisweekday = moment().day();
-    let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+7, 'days');
+    let todayMom = moment();
+    let thisweekday = todayMom.day();
+    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+7, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
@@ -59,8 +60,13 @@ let initDate = ()=>{
         let dayText = mom.format('DD');
         let month = mom.month()+1;
         let monthText = mom.format('M');
+
+        let daysFromToday =  todayMom.diff(mom, 'days');
+        let isBeforeToday = daysFromToday>0?true: false;
+        let isAfterToday = daysFromToday<0?true: false;
+        let isToday = mom.isSame(todayMom, 'day');
+
         let isHoliday = !!holidayDays[dateTxt];
-        let isToday = mom.isSame(moment(), 'day');
         let isWeekend = (mom.day()===6 || mom.day()===0 || mom.day()===7);
         let dayofWeekend = mom.day() === 0 ? 7 : mom.day();
         let isWorkDay = true;
@@ -72,6 +78,7 @@ let initDate = ()=>{
 
         let info = {
             timestamp: mom.valueOf(),
+            dateTxt,
             dateShortText,
             day,
             dayText,
@@ -82,7 +89,10 @@ let initDate = ()=>{
             isWeekend,
             dayofWeekend,
             isWorkDay,
-            isImportantWorkingDay
+            isImportantWorkingDay,
+            daysFromToday,
+            isBeforeToday,
+            isAfterToday,
         }
         g_CanvasDateList.push(dateId);
         g_CanvasDateInfo[dateId] = info;
@@ -119,6 +129,7 @@ let renderSection = (sec, i)=>{
         let id = sec[i];
         let dateinfo = g_CanvasDateInfo[id];
         headhtml += `<th class="${dateinfo.isToday?' today':''}
+                                ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}">
                         ${dateinfo.monthText}<br>
                         ${dateinfo.dayText}<br>
@@ -137,6 +148,7 @@ let renderSection = (sec, i)=>{
         let monthzebra = dateinfo.month%2;
         bodyhtml += `<td id="%RowIdx%_${dateid}" align="center"
                             class="day monthzebra${monthzebra} 
+                                ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' today':''} ${dateinfo.isHoliday?' holiday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
