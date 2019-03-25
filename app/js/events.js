@@ -1,5 +1,9 @@
 let handleTdClick=(td)=>{
-    console.log(td.getAttribute('id'))//)
+    //td=$(td);
+    let tdid = td.getAttribute('id')
+    let rowid = td.getAttribute('rowidx');
+    let date = td.getAttribute('date')
+    console.log(tdid, rowid, date)//)
 }
 
 let initEvent = ()=>{

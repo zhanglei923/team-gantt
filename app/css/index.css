@@ -32,8 +32,8 @@
     width:100%;
 }
 .gantt_section td{
-    border-left: 1px solid #ddd;
-    border-top: 1px solid #ddd;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     height: 18px;
 }
 .gantt_section th{
@@ -46,10 +46,10 @@
     background-color: #fff;
 }
 .gantt_section .weekend{
-    background-color: #ffd1d1 !important;
+    background-color: #ddd !important;
 }
 .gantt_section .holiday{
-    background-color: #ffd1d1 !important;
+    background-color: #ddd !important;
 }
 .gantt_section th.is-today{
     color: black;
@@ -60,7 +60,7 @@
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
-    background-color: #eee !important;
+    background-color: #ddd !important;
 }
 .gantt_section .isBeforeToday.important-workingday{
     border-color: #aaa !important;
@@ -84,4 +84,5 @@
 .console{
     min-height:60px;
     width:100%;
+    background-color: powderblue;
 }

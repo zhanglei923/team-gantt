@@ -147,7 +147,7 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[dateid];
         //let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%"
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%" date="${dateid.replace(/^d_/,'')}"
                             class="day monthzebra${monthzebra} row%RowIdx%
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
@@ -179,7 +179,7 @@ let showCurrentTimeline=()=>{
     let clock1 = moment(moment().add(1,'days').format('YYYY-MM-DD')+'T00:00:00');
     let clocknow = moment();
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
-    
+    console.log('percentage', percentage)
     $('#tasks').append(`<div id="currentTimeline" class="currentTimeline" style="
         height:${tbody0.height()}px;
         left:${pos.left+percentage*width}px;
