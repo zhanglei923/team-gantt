@@ -9,9 +9,10 @@ let holidays = [
 let g_ImportantWorkingDay = {
     '2019-03-22': {id:'v1904_sp3_end',desc:'1904 Sp3 End', level:'important'},
     '2019-04-04': {id:'v1904_sp4_end',desc:'1904 Sp4 End', level:'important'},
-    '2019-04-10': {id:'v1904_intg',desc:'xxxx', level:'notice'},
+    '2019-04-10': {id:'v1904_intg',desc:'This is a notice.', level:'notice'},
     '2019-04-19': {id:'v1904_intg',desc:'1904 Intg', level:'important'},
     '2019-04-26': {id:'v1904_gray_prod',desc:'1904 Gray Prod', level:'important'},
+    '2019-04-29': {id:'v1904_intg',desc:'This is also a notice.', level:'notice'},
     '2019-05-10': {id:'v1907_sp0',desc:'1907 Sp0', level:'important'},
     '2019-05-24': {id:'v1907_sp1', desc:'1907 Sp1', level:'important'},
 };
@@ -211,7 +212,7 @@ let showTipsOfImportantDay=()=>{
         let left = pos.left;
         let offtop = 18;
         if(tip.now) offtop = 0;
-        if(tip.level==='notice') offtop = 36;
+        if(tip.level==='notice') offtop = 2;
         let top = pos.top - offtop;
         let isafter = moment(date).isAfter(moment())
         html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
