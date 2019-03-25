@@ -199,6 +199,7 @@ let showCurrentTimeline=()=>{
     "></div>`)
 }
 let showTipsOfImportantDay=()=>{
+    let tdw = $('td.day:first').outerWidth()
     let html = ``
     let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'NOW'}}];
     for(let date in g_ImportantWorkingDay) arr.push({date, tip:g_ImportantWorkingDay[date]})
@@ -211,7 +212,7 @@ let showTipsOfImportantDay=()=>{
         let pos = th.offset();
         let left = pos.left;
         let offtop = 18;
-        if(tip.now) offtop = 6;
+        if(tip.now) offtop = -47;
         if(tip.level==='notice') offtop = 4;
         let top = pos.top - offtop;
         let isafter = moment(date).isAfter(moment())
@@ -219,13 +220,12 @@ let showTipsOfImportantDay=()=>{
         //console.log(pos, desc)
     })
     $('#tasks').append(html)
-    let tdw = $('td.day:first').outerWidth()
     $('#tasks>div.tip_of_day').each((i,o)=>{
         o=$(o);
-        if(!o.hasClass('now')){
+        //if(!o.hasClass('now')){
             let left = o.css('left');
             o.css('left', (parseInt(left)-o.width()+tdw))            
-        }
+        //}
     })
 }
 let initGantt = ()=>{
