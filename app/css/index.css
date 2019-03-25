@@ -11,6 +11,11 @@
     width:100%;
     background-color: powderblue;
 }
+.currentTimeline{
+    position: absolute;
+    width:2px;
+    background-color: red;
+}
 .root{
     margin-top: 60px;
     overflow: auto;
@@ -86,8 +91,7 @@
     border-top-width: 2px !important;
     border-bottom-width: 2px !important;
 }
-.currentTimeline{
-    position: absolute;
-    width:2px;
-    background-color: red;
+.tip_ofsection{
+    height:20px;
+    width:100%;
 }

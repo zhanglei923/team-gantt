@@ -19,9 +19,9 @@ let showDateInfo=(tdid, rowid, tddate)=>{
         }
     }
     let reportHtml = `
-        Between days=${betweendays.length},
-        Between Working days=${betweenworkingdays.length}
+        Days=${betweendays.length},
+        Working days=${betweenworkingdays.length}
     `
-    console.log(betweendays, betweenrestdays, betweenworkingdays)
+    //console.log(betweendays, betweenrestdays, betweenworkingdays)
     document.getElementById('betweendays_report').innerHTML = reportHtml;
 }

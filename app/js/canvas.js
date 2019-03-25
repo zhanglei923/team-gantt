@@ -7,14 +7,6 @@ let holidays = [
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
 
-let tipWorkingDays = {
-    '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904sp3End'},
-    '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904sp4End'},
-    '2019-04-19': {id:'v1904_intg', date:'2019-04-19',desc:'1904Intg'},
-    '2019-04-26': {id:'v1904_gray_prod', date:'2019-04-26',desc:'1904GrayProd'},
-    '2019-05-10': {id:'v1907_sp0', date:'2019-05-10',desc:'1907sp0'},
-    '2019-05-24': {id:'v1907_sp1', date:'2019-05-24',desc:'1907sp1'},
-};
 let importantWorkingDay = {
     '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904sp3End'},
     '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904sp4End'},
@@ -116,7 +108,8 @@ let initSections = ()=>{
     }
     let html = ''
     sectionDaysList.forEach((sec, i)=>{
-        html += `<table id="gantt_section${i}" class="gantt_section">
+        html += `<div id="tip_ofsection${i}" class="tip_ofsection"></div>
+                 <table id="gantt_section${i}" class="gantt_section">
                     <thead id="gantt_section_thead${i}"></thead>
                     <tbody id="gantt_section_tbody${i}"></tbody>
                  </table>`
@@ -186,6 +179,9 @@ let showCurrentTimeline=()=>{
         top:${pos.top}px;
     "></div>`)
 }
+let showTipsOfImportantDay=()=>{
+
+}
 let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
@@ -198,6 +194,7 @@ let initGantt = ()=>{
     })
     window.setTimeout(()=>{
         showCurrentTimeline();
+        showTipsOfImportantDay();
     }, 0)
     initEvent();
     let t1=new Date()*1;
