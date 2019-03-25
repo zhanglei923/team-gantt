@@ -41,7 +41,8 @@ body{
     z-index: 1000;
 }
 .tasks .tip_of_day.now{
-    background-color: greenyellow;
+    color: greenyellow;
+    background-color: black;
     border: 1px solid green;
 }
 .tasks .tip_of_day.ispassed{
