@@ -5,7 +5,7 @@ let handleTdClick=(td)=>{
     let tddate = td.getAttribute('date');
 
     $('tr>td').removeClass('selected_day')
-    $('#'+tdid).addClass('selected_day')
+    $(`tr>td[id$="${tddate}"]`).addClass('selected_day')
     console.log(tdid, rowid, tddate, td.className)//)
     showDateInfo(tdid, rowid, tddate)
 }
