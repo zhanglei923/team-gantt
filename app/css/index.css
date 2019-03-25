@@ -3,6 +3,9 @@
     padding: 0;
     font-size: 12px;
 }
+body{
+    background-color: powderblue;
+}
 .console{
     position: fixed;
     z-index: 999;
@@ -19,7 +22,7 @@
 }
 .tip_ofsection{
     background-color: powderblue;
-    height:16px;
+    height:18px;
     width:100%;
 }
 .tasks .tip_of_day{
@@ -36,7 +39,8 @@
     font-size: 11px;
 }
 .gantt_section{
-    margin-left: 12px;
+    background-color: white;
+    margin-left: 6px;
     display: block;
     border: 1px solid #ccc;
     border-bottom: 1px solid #ccc;    
@@ -94,13 +98,14 @@
     border-color: #aaa !important;
 }
 .gantt_section th.important-workingday{
-    color: white;
-    background-color: #a20000;
+    /* color: white; */
+    background-color: #ffb2b2;
 }
 .gantt_section .important-workingday{
-    border:1px dotted red !important;
+    /* border:1px solid red !important; */
+    border-right: 1px solid #b92828 !important;
     border-right-width: 2px !important;
-    border-left-width: 2px !important;
-    border-top-width: 2px !important;
-    border-bottom-width: 2px !important;
+    /* border-left-width: 2px !important; */
+    /* border-top-width: 2px !important;
+    border-bottom-width: 2px !important; */
 }
