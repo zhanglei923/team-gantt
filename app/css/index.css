@@ -13,8 +13,8 @@
 .gantt_section{
     margin-left: 12px;
     display: block;
-    border: 1px solid #804040;
-    border-bottom: 1px solid #804040;    
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;    
     border-collapse:collapse;
     width:1600px;
 }
