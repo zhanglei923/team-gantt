@@ -14,7 +14,7 @@ let importantWorkingDay = {
 let holidayDays = {};
 let workingWeekendDays = {};
 let displayDays = 360;
-let sectionDays = 60;
+let sectionDays = 7*9;
 let g_CanvasDateList = [];
 let g_CanvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']
@@ -35,7 +35,8 @@ let extractHolidays=()=>{
 }
 let initDate = ()=>{
     extractHolidays();
-    let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(10, 'days');
+    let thisweekday = moment().day();
+    let startmom = moment(moment().format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+7, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
