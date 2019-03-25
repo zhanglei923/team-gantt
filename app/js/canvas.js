@@ -18,7 +18,7 @@ let g_ImportantWorkingDay = {
 //------
 let holidayDays = {};
 let workingWeekendDays = {};
-let initRowSize = 10;
+let initRowSize = 6;
 let displayDays = 360;
 let sectionDays = 7*9;
 let g_CanvasDateList = [];
