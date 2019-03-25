@@ -39,6 +39,9 @@
 .gantt_section th{
     width:20px;
 }
+.gantt_section .day.selected_day{
+    background-color: yellow !important;
+}
 .gantt_section .day.monthzebra0{
     background-color: #fff;
 }
@@ -55,7 +58,7 @@
     color: black;
     background-color: #18bb70 !important;
 }
-.gantt_section .is-today{
+.gantt_section td.is-today{
 
 }
 .gantt_section .isBeforeToday{
