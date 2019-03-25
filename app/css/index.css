@@ -56,13 +56,7 @@
     background-color: #18bb70 !important;
 }
 .gantt_section .is-today{
-    border-left-color: #005f33;
-    border-left-width: 2px !important;
-    /* border:1px dotted #005f33 !important;
-    border-right-width: 2px !important;
-    border-left-width: 2px !important;
-    border-top-width: 2px !important;
-    border-bottom-width: 2px !important; */
+
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
@@ -81,6 +75,11 @@
     border-left-width: 2px !important;
     border-top-width: 2px !important;
     border-bottom-width: 2px !important;
+}
+.currentTimeline{
+    position: absolute;
+    width:2px;
+    background-color: red;
 }
 .console{
     min-height:60px;

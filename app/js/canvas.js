@@ -98,24 +98,24 @@ let initDate = ()=>{
         g_CanvasDateInfo[dateId] = info;
     }
 }
-let sections = [];
+let sectionDaysList = [];
 let initSections = ()=>{
-    let section = [];
+    let days = [];
     let count=0;
     for(let i=0;i<g_CanvasDateList.length;i++){
         let id = g_CanvasDateList[i];
         let info = g_CanvasDateInfo[id];
-        section.push(id)
+        days.push(id)
         count++;
         if(count >= sectionDays){
-            sections.push(section);
-            section=[];
+            sectionDaysList.push(days);
+            days=[];
             count=0;
             continue;
         }
     }
     let html = ''
-    sections.forEach((sec, i)=>{
+    sectionDaysList.forEach((sec, i)=>{
         html += `<table id="gantt_section${i}" class="gantt_section">
                     <thead id="gantt_section_thead${i}"></thead>
                     <tbody id="gantt_section_tbody${i}"></tbody>
@@ -123,10 +123,11 @@ let initSections = ()=>{
     })
     document.getElementById('root').innerHTML = html;
 }
-let renderSection = (sec, i)=>{    
+let renderSection = (days, secidx)=>{    
+    //console.log('days', days)
     let headhtml = `<tr><th>\\</th>`
-    for(let i=0;i<sec.length;i++){
-        let id = sec[i];
+    for(let i=0;i<days.length;i++){
+        let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
         headhtml += `<th class="${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
@@ -138,15 +139,15 @@ let renderSection = (sec, i)=>{
     }
     headhtml += '</tr>'
 
-    $(`#gantt_section_thead${i}`).html(headhtml)
+    $(`#gantt_section_thead${secidx}`).html(headhtml)
     
-    let bodyhtml = `<tr id="r%RowIdx%"><td>r%RowIdx%</td>`;
-    for(let i=0;i<sec.length;i++){
-        let dateid = sec[i];
+    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%"><td>r%RowIdx%</td>`;
+    for(let i=0;i<days.length;i++){
+        let dateid = days[i];
         let dateinfo = g_CanvasDateInfo[dateid];
-        let dateTxt = dateinfo.dateTxt;
+        //let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%"
                             class="day monthzebra${monthzebra} row%RowIdx%
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
@@ -166,12 +167,24 @@ let renderSection = (sec, i)=>{
         
         bigbodyhtml += s
     }
-    $(`#gantt_section_tbody${i}`).html(bigbodyhtml)
+    $(`#gantt_section_tbody${secidx}`).html(bigbodyhtml)
 }
-let initEvent = ()=>{
-    $('#root').on('click', '[id].day', (e)=>{
-        handleTdClick(e.currentTarget);
-    })
+let showCurrentTimeline=()=>{
+    let tbody0 = $('#gantt_section_tbody0')
+    let tr0 = $('#sec0_r0')
+    let firstTd = tr0.find('>td.is-today');
+    let pos = firstTd.offset();
+    let width = firstTd.width();
+    let clock0 = moment(moment().format('YYYY-MM-DD')+'T00:00:00');
+    let clock1 = moment(moment().add(1,'days').format('YYYY-MM-DD')+'T00:00:00');
+    let clocknow = moment();
+    let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
+    
+    $('#tasks').append(`<div id="currentTimeline" class="currentTimeline" style="
+        height:${tbody0.height()}px;
+        left:${pos.left+percentage*width}px;
+        top:${pos.top}px;
+    "></div>`)
 }
 let initGantt = ()=>{
     let t0=new Date()*1;
@@ -179,9 +192,12 @@ let initGantt = ()=>{
     initSections();
     // console.log(g_CanvasDateList);
     // console.log(sections);
-    sections.forEach((sec, i)=>{        
-        renderSection(sec, i);
+    sectionDaysList.forEach((days, i)=>{        
+        renderSection(days, i);
     })
+    window.setTimeout(()=>{
+        showCurrentTimeline();
+    }, 0)
     initEvent();
     let t1=new Date()*1;
     console.log(t1-t0)
