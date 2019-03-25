@@ -7,12 +7,13 @@ let holidays = [
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
 let g_ImportantWorkingDay = {
-    '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904Sp3End'},
-    '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904Sp4End'},
-    '2019-04-19': {id:'v1904_intg', date:'2019-04-19',desc:'1904Intg'},
-    '2019-04-26': {id:'v1904_gray_prod', date:'2019-04-26',desc:'1904GrayProd'},
-    '2019-05-10': {id:'v1907_sp0', date:'2019-05-10',desc:'1907Sp0'},
-    '2019-05-24': {id:'v1907_sp1', date:'2019-05-24',desc:'1907Sp1'},
+    '2019-03-22': {id:'v1904_sp3_end',desc:'1904 Sp3 End', level:'important'},
+    '2019-04-04': {id:'v1904_sp4_end',desc:'1904 Sp4 End', level:'important'},
+    '2019-04-10': {id:'v1904_intg',desc:'xxxx', level:'notice'},
+    '2019-04-19': {id:'v1904_intg',desc:'1904 Intg', level:'important'},
+    '2019-04-26': {id:'v1904_gray_prod',desc:'1904 Gray Prod', level:'important'},
+    '2019-05-10': {id:'v1907_sp0',desc:'1907 Sp0', level:'important'},
+    '2019-05-24': {id:'v1907_sp1', desc:'1907 Sp1', level:'important'},
 };
 //------
 let holidayDays = {};
@@ -189,12 +190,13 @@ let showTipsOfImportantDay=()=>{
         let date = data.date;
         let tip = data.tip;
         let desc = tip.desc;
+        let level = tip.level;
         let th = $(`th[date="${date}"]`);
         let pos = th.offset();
         let left = pos.left;
         let top = pos.top - 18;
         let isafter = moment(date).isAfter(moment())
-        html += `<div class="tip_of_day ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
+        html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
         //console.log(pos, desc)
     })
     $('#tasks').append(html)
