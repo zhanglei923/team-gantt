@@ -213,11 +213,12 @@ let showTipsOfImportantDay=()=>{
         //console.log(pos, desc)
     })
     $('#tasks').append(html)
+    let tdw = $('td.day:first').outerWidth()
     $('#tasks>div.tip_of_day').each((i,o)=>{
         //console.log(a,b)
         o=$(o);
         let left = o.css('left');
-        o.css('left', (parseInt(left)-o.width()/2))
+        o.css('left', (parseInt(left)-o.width()+tdw))
     })
 }
 let initGantt = ()=>{
