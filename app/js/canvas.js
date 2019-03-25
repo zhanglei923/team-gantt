@@ -44,7 +44,7 @@ let extractHolidays=()=>{
             workingWeekendDays[daytxt]=true;
         })
     })
-    console.log(holidayDays, workingWeekendDays)
+    //console.log(holidayDays, workingWeekendDays)
 }
 let initDate = ()=>{
     extractHolidays();
@@ -190,8 +190,8 @@ let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
     initSections();
-    console.log(g_CanvasDateList);
-    console.log(g_CanvasDateInfo);
+    // console.log(g_CanvasDateList);
+    // console.log(g_CanvasDateInfo);
     // console.log(sections);
     sectionDaysList.forEach((days, i)=>{        
         renderSection(days, i);
