@@ -67,7 +67,13 @@ let initDate = ()=>{
         if(isHoliday) isWorkDay = false;
         if(workingWeekendDays[dateTxt]) isWorkDay = true;
 
-        let isImportantWorkingDay = g_ImportantWorkingDay[dateTxt];
+        let isImportantWorkingDay;
+        let isNoticeWorkingDay;
+        if(g_ImportantWorkingDay[dateTxt]){
+            if(g_ImportantWorkingDay[dateTxt].level==='important')isImportantWorkingDay = g_ImportantWorkingDay[dateTxt];
+            if(g_ImportantWorkingDay[dateTxt].level==='notice')isNoticeWorkingDay = g_ImportantWorkingDay[dateTxt];
+        }
+        //console.warn(isNoticeWorkingDay)
 
         let info = {
             timestamp: mom.valueOf(),
@@ -83,6 +89,7 @@ let initDate = ()=>{
             dayofWeekend,
             isWorkDay,
             isImportantWorkingDay,
+            isNoticeWorkingDay,
             daysFromToday,
             isBeforeToday,
             isAfterToday,
@@ -125,7 +132,9 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[id];
         headhtml += `<th class="${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
-                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
+                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}
+                                ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
+                                "
                          date="${id}"                                
                         >
                         <div>${dateinfo.monthText}</div>
@@ -148,8 +157,12 @@ let renderSection = (days, secidx)=>{
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' is-today':''} ${dateinfo.isHoliday?' holiday':''}
-                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
+
+                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}
                                 ${dateinfo.isImportantWorkingDay?(' is-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
+                                ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
+                                ${dateinfo.isNoticeWorkingDay?(' is-notice-workingday="'+dateinfo.isNoticeWorkingDay.id+'"'):''}
+                                "
                             >
                                 ${dateinfo.isWeekend?'':''}
                             </td>`

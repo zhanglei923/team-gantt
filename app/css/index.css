@@ -84,7 +84,7 @@ body{
     width:20px;
 }
 .gantt_section .day.selected_day{
-    background-color: yellow !important;
+    background-color: #f7f700 !important;
 }
 .gantt_section .day.monthzebra0{
     background-color: #fff;
@@ -120,6 +120,21 @@ body{
 .gantt_section .important-workingday{
     /* border:1px solid red !important; */
     border-right: 1px solid #b92828 !important;
+    border-right-width: 2px !important;
+    /* border-left-width: 2px !important; */
+    /* border-top-width: 2px !important;
+    border-bottom-width: 2px !important; */
+}
+.gantt_section .isBeforeToday.notice-workingday{
+    border-color: #aaa !important;
+}
+.gantt_section th.notice-workingday{
+    /* color: white; */
+    background-color: #f7f700;
+}
+.gantt_section .notice-workingday{
+    /* border:1px solid red !important; */
+    border-right: 1px solid #f7f700 !important;
     border-right-width: 2px !important;
     /* border-left-width: 2px !important; */
     /* border-top-width: 2px !important;
