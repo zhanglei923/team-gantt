@@ -128,7 +128,7 @@ let renderSection = (sec, i)=>{
     for(let i=0;i<sec.length;i++){
         let id = sec[i];
         let dateinfo = g_CanvasDateInfo[id];
-        headhtml += `<th class="${dateinfo.isToday?' today':''}
+        headhtml += `<th class="${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}">
                         <div>${dateinfo.monthText}</div>
@@ -140,17 +140,17 @@ let renderSection = (sec, i)=>{
 
     $(`#gantt_section_thead${i}`).html(headhtml)
     
-    let bodyhtml = `<tr id="%RowIdx%"><td>%RowIdx%</td>`;
-    for(let j=0;j<sec.length;j++){
-        let dateid = sec[j];
+    let bodyhtml = `<tr id="r%RowIdx%"><td>r%RowIdx%</td>`;
+    for(let i=0;i<sec.length;i++){
+        let dateid = sec[i];
         let dateinfo = g_CanvasDateInfo[dateid];
         let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="%RowIdx%_${dateid}" align="center"
-                            class="day monthzebra${monthzebra} 
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center"
+                            class="day monthzebra${monthzebra} row%RowIdx%
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
-                                ${dateinfo.isToday?' today':''} ${dateinfo.isHoliday?' holiday':''}
+                                ${dateinfo.isToday?' is-today':''} ${dateinfo.isHoliday?' holiday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
                                 ${dateinfo.isImportantWorkingDay?(' is-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                             >
@@ -162,7 +162,7 @@ let renderSection = (sec, i)=>{
     let bigbodyhtml = ''
     for(let i=0;i<10;i++){
         let s = bodyhtml;
-        s = s.replace(/%RowIdx%/g, 'r'+i)
+        s = s.replace(/%RowIdx%/g, i)
         
         bigbodyhtml += s
     }
