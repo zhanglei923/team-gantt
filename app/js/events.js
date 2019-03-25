@@ -11,7 +11,7 @@ let handleTdClick=(td)=>{
 }
 
 let initEvent = ()=>{
-    $('#root').on('click', 'td[id].day', (e)=>{
+    $('#root').on('mousedown', 'td[id].day', (e)=>{
         handleTdClick(e.currentTarget);
     })
 }

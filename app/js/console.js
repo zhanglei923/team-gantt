@@ -1,6 +1,6 @@
 let showDateInfo=(tdid, rowid, tddate)=>{
-
-    let todaydate = moment().format('YYYY-MM-DD');
+    let nowmom = moment();
+    let todaydate = nowmom.format('YYYY-MM-DD');
     let start = false;
     let betweendays = []
     let betweenrestdays = []
