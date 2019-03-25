@@ -56,22 +56,22 @@
     background-color: #18bb70 !important;
 }
 .gantt_section .today{
-    border:1px solid #005f33 !important;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    border:1px dotted #005f33 !important;
+    border-right-width: 2px !important;
+    border-left-width: 2px !important;
+    border-top-width: 2px !important;
+    border-bottom-width: 2px !important;
 }
 .gantt_section th.important-workingday{
     color: white;
     background-color: #a20000;
 }
 .gantt_section .important-workingday{
-    border:1px solid red;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    border:1px dotted red !important;
+    border-right-width: 2px !important;
+    border-left-width: 2px !important;
+    border-top-width: 2px !important;
+    border-bottom-width: 2px !important;
 }
 .console{
     min-height:60px;
