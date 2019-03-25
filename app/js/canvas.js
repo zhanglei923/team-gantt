@@ -7,13 +7,13 @@ let holidays = [
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
 
-let importantWorkingDay = {
-    '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904sp3End'},
-    '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904sp4End'},
+let g_ImportantWorkingDay = {
+    '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904Sp3End'},
+    '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904Sp4End'},
     '2019-04-19': {id:'v1904_intg', date:'2019-04-19',desc:'1904Intg'},
     '2019-04-26': {id:'v1904_gray_prod', date:'2019-04-26',desc:'1904GrayProd'},
-    '2019-05-10': {id:'v1907_sp0', date:'2019-05-10',desc:'1907sp0'},
-    '2019-05-24': {id:'v1907_sp1', date:'2019-05-24',desc:'1907sp1'},
+    '2019-05-10': {id:'v1907_sp0', date:'2019-05-10',desc:'1907Sp0'},
+    '2019-05-24': {id:'v1907_sp1', date:'2019-05-24',desc:'1907Sp1'},
 };
 //------
 let holidayDays = {};
@@ -66,7 +66,7 @@ let initDate = ()=>{
         if(isHoliday) isWorkDay = false;
         if(workingWeekendDays[dateTxt]) isWorkDay = true;
 
-        let isImportantWorkingDay = importantWorkingDay[dateTxt];
+        let isImportantWorkingDay = g_ImportantWorkingDay[dateTxt];
 
         let info = {
             timestamp: mom.valueOf(),
@@ -124,7 +124,9 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[id];
         headhtml += `<th class="${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
-                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}">
+                                ${dateinfo.isImportantWorkingDay?' important-workingday':''}"
+                         date="${id}"                                
+                        >
                         <div>${dateinfo.monthText}</div>
                         <div>${dateinfo.dayText}</div>
                         <div class="${dateinfo.isWeekend?'weekend':''}">${weekdayCN[dateinfo.dayofWeekend]}</div>
@@ -180,7 +182,18 @@ let showCurrentTimeline=()=>{
     "></div>`)
 }
 let showTipsOfImportantDay=()=>{
-
+    let html = ``
+    for(let date in g_ImportantWorkingDay){
+        let tip = g_ImportantWorkingDay[date];
+        let desc = tip.desc;
+        let th = $(`th[date="${date}"]`);
+        let pos = th.offset();
+        let left = pos.left;
+        let top = pos.top - 18;
+        html += `<div class="tip_of_day" style="left:${left}px;top:${top}px;">${desc}</div>`
+        console.log(pos, desc)
+    }
+    $('#tasks').append(html)
 }
 let initGantt = ()=>{
     let t0=new Date()*1;

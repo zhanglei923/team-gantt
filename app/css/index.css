@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding: 0;
+    font-size: 12px;
 }
 .console{
     position: fixed;
@@ -15,6 +16,18 @@
     position: absolute;
     width:2px;
     background-color: red;
+}
+.tip_ofsection{
+    background-color: powderblue;
+    height:16px;
+    width:100%;
+}
+.tasks .tip_of_day{
+    position: absolute;
+    min-width: 30px;
+    background-color: pink;
+    border: 1px solid red;
+    height: 15px;
 }
 .root{
     margin-top: 60px;
@@ -90,8 +103,4 @@
     border-left-width: 2px !important;
     border-top-width: 2px !important;
     border-bottom-width: 2px !important;
-}
-.tip_ofsection{
-    height:20px;
-    width:100%;
 }
