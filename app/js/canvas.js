@@ -131,9 +131,9 @@ let renderSection = (sec, i)=>{
         headhtml += `<th class="${dateinfo.isToday?' today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}">
-                        ${dateinfo.monthText}<br>
-                        ${dateinfo.dayText}<br>
-                        ${weekdayCN[dateinfo.dayofWeekend]}
+                        <div>${dateinfo.monthText}</div>
+                        <div>${dateinfo.dayText}</div>
+                        <div class="${dateinfo.isWeekend?'weekend':''}">${weekdayCN[dateinfo.dayofWeekend]}</div>
                     </th>`
     }
     headhtml += '</tr>'

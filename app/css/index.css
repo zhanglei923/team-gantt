@@ -46,10 +46,10 @@
     background-color: #fff;
 }
 .gantt_section .weekend{
-    background-color: #cae9ff !important;
+    background-color: #ffd1d1 !important;
 }
 .gantt_section .holiday{
-    background-color: #ffd0cb !important;
+    background-color: #ffd1d1 !important;
 }
 .gantt_section th.today{
     color: black;
@@ -65,6 +65,7 @@
     border-bottom-width: 2px !important; */
 }
 .gantt_section .isBeforeToday{
+    color: #aaa;
     background-color: #eee !important;
 }
 .gantt_section th.important-workingday{
