@@ -17,8 +17,8 @@ body{
 }
 .currentTimeline{
     position: absolute;
-    width:2px;
-    background-color: red;
+    width:4px;
+    background-color: #50d40c;
 }
 .tip_ofsection{
     background-color: powderblue;
@@ -31,6 +31,10 @@ body{
     background-color: pink;
     border: 1px solid red;
     height: 15px;
+}
+.tasks .tip_of_day.now{
+    background-color: greenyellow;
+    border: 1px solid green;
 }
 .tasks .tip_of_day.ispassed{
     background-color: #ddd;
@@ -89,7 +93,8 @@ body{
 }
 .gantt_section th.is-today{
     color: black;
-    background-color: #18bb70 !important;
+    background-color: greenyellow !important;
+    border:1px solid green;
 }
 .gantt_section td.is-today{
 

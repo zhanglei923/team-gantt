@@ -183,17 +183,20 @@ let showCurrentTimeline=()=>{
 }
 let showTipsOfImportantDay=()=>{
     let html = ``
-    for(let date in g_ImportantWorkingDay){
-        let tip = g_ImportantWorkingDay[date];
+    let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'NOW'}}];
+    for(let date in g_ImportantWorkingDay) arr.push({date, tip:g_ImportantWorkingDay[date]})
+    arr.forEach((data)=>{
+        let date = data.date;
+        let tip = data.tip;
         let desc = tip.desc;
         let th = $(`th[date="${date}"]`);
         let pos = th.offset();
         let left = pos.left-10;
         let top = pos.top - 18;
         let isafter = moment(date).isAfter(moment())
-        html += `<div class="tip_of_day ${isafter?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
+        html += `<div class="tip_of_day ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
         console.log(pos, desc)
-    }
+    })
     $('#tasks').append(html)
 }
 let initGantt = ()=>{
