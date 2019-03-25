@@ -53,10 +53,10 @@
 }
 .gantt_section th.today{
     color: black;
-    background-color: #1ff793;
+    background-color: #18bb70 !important;
 }
 .gantt_section .today{
-    border:1px solid #005f33;
+    border:1px solid #005f33 !important;
     border-right-width: 2px;
     border-left-width: 2px;
     border-top-width: 2px;
