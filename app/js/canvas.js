@@ -54,7 +54,7 @@ let initDate = ()=>{
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
-        let dateId = 'd_'+dateTxt
+        let dateId = ''+dateTxt
         let dateShortText = mom.format('MMDD');
         let day = mom.date();
         let dayText = mom.format('DD');
@@ -147,7 +147,7 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[dateid];
         //let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%" date="${dateid.replace(/^d_/,'')}"
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%" date="${dateid}"
                             class="day monthzebra${monthzebra} row%RowIdx%
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
@@ -190,7 +190,8 @@ let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
     initSections();
-    // console.log(g_CanvasDateList);
+    console.log(g_CanvasDateList);
+    console.log(g_CanvasDateInfo);
     // console.log(sections);
     sectionDaysList.forEach((days, i)=>{        
         renderSection(days, i);
