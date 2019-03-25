@@ -25,19 +25,18 @@ body{
     height:18px;
     width:100%;
 }
-.tasks .tip_of_day.important{
+.tasks .tip_of_day{
     position: absolute;
     min-width: 30px;
-    background-color: pink;
-    border: 1px solid red;
     height: 15px;
 }
+.tasks .tip_of_day.important{
+    background-color: pink;
+    border: 1px solid red;
+}
 .tasks .tip_of_day.notice{
-    position: absolute;
-    min-width: 30px;
     background-color: yellow;
     border: 1px solid #aaa;
-    height: 15px;
 }
 .tasks .tip_of_day.now{
     background-color: greenyellow;
