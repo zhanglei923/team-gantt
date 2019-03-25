@@ -18,6 +18,7 @@ let g_ImportantWorkingDay = {
 //------
 let holidayDays = {};
 let workingWeekendDays = {};
+let initRowSize = 10;
 let displayDays = 360;
 let sectionDays = 7*9;
 let g_CanvasDateList = [];
@@ -170,7 +171,7 @@ let renderSection = (days, secidx)=>{
     bodyhtml += '</tr>';
 
     let bigbodyhtml = ''
-    for(let i=0;i<10;i++){
+    for(let i=0;i<initRowSize;i++){
         let s = bodyhtml;
         s = s.replace(/%RowIdx%/g, i)
         
