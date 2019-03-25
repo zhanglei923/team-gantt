@@ -32,6 +32,10 @@ body{
     border: 1px solid red;
     height: 15px;
 }
+.tasks .tip_of_day.ispassed{
+    background-color: #ddd;
+    border: 1px solid #999;
+}
 .root{
     margin-top: 60px;
     overflow: auto;

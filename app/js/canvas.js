@@ -6,7 +6,6 @@ let holidays = [
     {startDate: '2019-10-01', duration: 7, workingWeekendDays:[]},
     {startDate: '2019-12-31', duration: 3, workingWeekendDays:[]},
 ];
-
 let g_ImportantWorkingDay = {
     '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904Sp3End'},
     '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904Sp4End'},
@@ -23,6 +22,8 @@ let sectionDays = 7*9;
 let g_CanvasDateList = [];
 let g_CanvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']
+let todayMom = moment();
+let todayText = todayMom.format('YYYY-MM-DD');
 let extractHolidays=()=>{ 
     holidayDays = {};
     holidays.forEach((hol)=>{
@@ -40,7 +41,6 @@ let extractHolidays=()=>{
 }
 let initDate = ()=>{
     extractHolidays();
-    let todayMom = moment();
     let thisweekday = todayMom.day();
     let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+7, 'days');
     for(let i=0;i<displayDays;i++){
@@ -188,9 +188,10 @@ let showTipsOfImportantDay=()=>{
         let desc = tip.desc;
         let th = $(`th[date="${date}"]`);
         let pos = th.offset();
-        let left = pos.left;
+        let left = pos.left-10;
         let top = pos.top - 18;
-        html += `<div class="tip_of_day" style="left:${left}px;top:${top}px;">${desc}</div>`
+        let isafter = moment(date).isAfter(moment())
+        html += `<div class="tip_of_day ${isafter?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
         console.log(pos, desc)
     }
     $('#tasks').append(html)
