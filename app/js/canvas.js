@@ -209,7 +209,10 @@ let showTipsOfImportantDay=()=>{
         let th = $(`th[date="${date}"]`);
         let pos = th.offset();
         let left = pos.left;
-        let top = pos.top - 18;
+        let offtop = 18;
+        if(tip.now) offtop = 0;
+        if(tip.level==='notice') offtop = 36;
+        let top = pos.top - offtop;
         let isafter = moment(date).isAfter(moment())
         html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
         //console.log(pos, desc)

@@ -33,10 +33,12 @@ body{
 .tasks .tip_of_day.important{
     background-color: pink;
     border: 1px solid red;
+    z-index: 1001;
 }
 .tasks .tip_of_day.notice{
     background-color: yellow;
     border: 1px solid #aaa;
+    z-index: 1000;
 }
 .tasks .tip_of_day.now{
     background-color: greenyellow;
