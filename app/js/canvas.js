@@ -135,12 +135,13 @@ let renderSection = (days, secidx)=>{
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}
                                 ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
+                                ${dateinfo.isWeekend?'weekend':''}
                                 "
                          date="${id}"                                
                         >
                         <div>${dateinfo.monthText}</div>
                         <div>${dateinfo.dayText}</div>
-                        <div class="${dateinfo.isWeekend?'weekend':''}">${weekdayCN[dateinfo.dayofWeekend]}</div>
+                        <div>${weekdayCN[dateinfo.dayofWeekend]}</div>
                     </th>`
     }
     headhtml += '</tr>'
