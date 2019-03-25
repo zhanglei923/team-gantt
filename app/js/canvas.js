@@ -191,13 +191,19 @@ let showTipsOfImportantDay=()=>{
         let desc = tip.desc;
         let th = $(`th[date="${date}"]`);
         let pos = th.offset();
-        let left = pos.left-10;
+        let left = pos.left;
         let top = pos.top - 18;
         let isafter = moment(date).isAfter(moment())
         html += `<div class="tip_of_day ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
         //console.log(pos, desc)
     })
     $('#tasks').append(html)
+    $('#tasks>div.tip_of_day').each((i,o)=>{
+        //console.log(a,b)
+        o=$(o);
+        let left = o.css('left');
+        o.css('left', (parseInt(left)-o.width()/2))
+    })
 }
 let initGantt = ()=>{
     let t0=new Date()*1;
