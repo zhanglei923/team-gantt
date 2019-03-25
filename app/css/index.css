@@ -68,6 +68,9 @@
     color: #aaa;
     background-color: #eee !important;
 }
+.gantt_section .isBeforeToday.important-workingday{
+    border-color: #aaa !important;
+}
 .gantt_section th.important-workingday{
     color: white;
     background-color: #a20000;
