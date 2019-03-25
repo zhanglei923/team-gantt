@@ -10,12 +10,9 @@ let importantWorkingDay = {
     '2019-03-22': {id:'v1904_sp3_end', date:'2019-03-22',desc:'1904sp3End'},
     '2019-04-04': {id:'v1904_sp4_end', date:'2019-04-04',desc:'1904sp4End'},
     '2019-04-19': {id:'v1904_intg', date:'2019-04-19',desc:'1904Intg'},
-    '2019-04-27': {id:'v1904_gray_prod', date:'2019-04-27',desc:'1904GrayProd'},
-    '2019-05-04': {id:'v1904_sandbox', date:'2019-05-04',desc:'1904Sandbox'},
-    '2019-05-11': {id:'v1904_prod', date:'2019-05-11',desc:'1904Prod'},
-    '2019-05-19': {id:'v1904_ga', date:'2019-05-19',desc:'1904BigClientPod'},
-    '2019-05-22': {id:'v1904_ga', date:'2019-05-22',desc:'1904UAT'},
-    '2019-05-25': {id:'v1904_ga', date:'2019-05-25',desc:'1904Tecent'},
+    '2019-04-26': {id:'v1904_gray_prod', date:'2019-04-26',desc:'1904GrayProd'},
+    '2019-05-10': {id:'v1907_sp0', date:'2019-05-10',desc:'1907sp0'},
+    '2019-05-24': {id:'v1907_sp1', date:'2019-05-24',desc:'1907sp1'},
 };
 //------
 let holidayDays = {};
