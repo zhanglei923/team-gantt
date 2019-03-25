@@ -45,6 +45,7 @@ body{
 .tasks .tip_of_day.ispassed{
     background-color: #ddd;
     border: 1px solid #999;
+    color: #999;
 }
 .root{
     margin-top: 60px;
