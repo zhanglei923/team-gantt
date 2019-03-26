@@ -42,7 +42,7 @@ body{
     z-index: 1000;
 }
 .tasks .tip_of_day.now{
-    
+    display: none;
     color: greenyellow;
     background-color: black;
     border: 1px solid green;
