@@ -80,6 +80,14 @@ body{
     border: 0;
     width:100%;
 }
+.gantt_section tr.hovering{
+    /* background-color: #ffff0026 !important; */
+    border:1px dotted red;
+}
+.gantt_section td.hovering{
+    /* background-color: #ffff0026 !important; */
+    border:1px dotted red;
+}
 .gantt_section td{
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
@@ -88,7 +96,10 @@ body{
 .gantt_section th{
     width:20px;
 }
-.gantt_section .day.selected_day{
+.gantt_section .day.selected_daycol.selected_day{
+    background-color: #f9db06d9 !important;
+}
+.gantt_section .day.selected_daycol{
     background-color: #f7f7006b !important;
 }
 .gantt_section .day.monthzebra0{
