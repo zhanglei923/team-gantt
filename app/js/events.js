@@ -36,6 +36,7 @@ let handleCreateTaskPrompt=(text, td)=>{
     if(!text) return;
     var title = text;
     createTask({
+        id: 'task_'+Math.random(),
         rowIdx: rowIdx,
         startDate: null,
         endDate: date,
@@ -60,5 +61,8 @@ let initEvent = ()=>{
     })
     $('#root').on('mousemove', 'td[id].day', (e)=>{
         handleTdMouseOver(e.currentTarget);
+    })
+    $('#saveBtn').click(()=>{
+        saveServerTasks();
     })
 }

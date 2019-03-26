@@ -16,6 +16,13 @@ body{
     width:100%;
     background-color: powderblue;
 }
+.console .btn.save_btn{
+    width:100px;
+    height:30px;
+    background-color: green;
+    color: white;
+    float: right;
+}
 .currentTimeline{
     position: absolute;
     width:4px;

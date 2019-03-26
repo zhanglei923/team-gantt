@@ -261,4 +261,5 @@ $(()=>{
         }
     };    
     loadTaskData(test_TaskData)
+    loadServerTasks();
 })
