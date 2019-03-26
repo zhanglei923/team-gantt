@@ -110,7 +110,7 @@ let initSections = ()=>{
 }
 let renderSection = (days, secidx)=>{    
     //console.log('days', days)
-    let headhtml = `<tr><th>\\</th>`
+    let headhtml = `<tr class="isBeforeToday"><th>\\</th>`
     for(let i=0;i<days.length;i++){
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
@@ -131,7 +131,7 @@ let renderSection = (days, secidx)=>{
 
     $(`#gantt_section_thead${secidx}`).html(headhtml)
     
-    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%"><td>r%RowIdx%</td>`;
+    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%"><td class="rowcol isBeforeToday">r%RowIdx%</td>`;
     for(let i=0;i<days.length;i++){
         let dateid = days[i];
         let dateinfo = g_CanvasDateInfo[dateid];

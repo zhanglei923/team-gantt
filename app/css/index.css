@@ -89,7 +89,7 @@ body{
     width:20px;
 }
 .gantt_section .day.selected_day{
-    background-color: #f7f700 !important;
+    background-color: #f7f7006b !important;
 }
 .gantt_section .day.monthzebra0{
     background-color: #fff;
