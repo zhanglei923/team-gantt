@@ -1,3 +1,6 @@
+let getDayInfo = (date)=>{
+    return g_CanvasDateInfo[date];
+}
 let getDay = (rowidx, date)=>{
     return $(`tr[rowIdx="${rowidx}"]>td[date="${date}"]`);
 }

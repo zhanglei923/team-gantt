@@ -46,6 +46,7 @@ let initDate = ()=>{
         let isHoliday = !!holidayDays[dateTxt];
         let isWeekend = (mom.day()===6 || mom.day()===0 || mom.day()===7);
         let dayofWeekend = mom.day() === 0 ? 7 : mom.day();
+        let textofWeekend = weekdayCN[dayofWeekend];
         let isWorkDay = true;
         if(isWeekend) isWorkDay = false;
         if(isHoliday) isWorkDay = false;
@@ -71,6 +72,7 @@ let initDate = ()=>{
             isToday,
             isWeekend,
             dayofWeekend,
+            textofWeekend,
             isWorkDay,
             isImportantWorkingDay,
             isNoticeWorkingDay,
@@ -124,7 +126,7 @@ let renderSection = (days, secidx)=>{
                         >
                         <div>${dateinfo.monthText}</div>
                         <div>${dateinfo.dayText}</div>
-                        <div>${weekdayCN[dateinfo.dayofWeekend]}</div>
+                        <div>${dateinfo.textofWeekend}</div>
                     </th>`
     }
     headhtml += '</tr>'

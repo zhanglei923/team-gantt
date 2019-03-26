@@ -19,7 +19,7 @@ let showDateInfo=(tddate)=>{
         }
     }
     let reportHtml = `
-        [${todaydate} -&gt; ${tddate}],
+        ${todaydate}(${getDayInfo(todaydate).textofWeekend}) -&gt; ${tddate}(${getDayInfo(tddate).textofWeekend}),
         Days=${betweendays.length},
         Working days=${betweenworkingdays.length}
     `
