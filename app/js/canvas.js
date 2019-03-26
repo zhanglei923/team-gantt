@@ -177,12 +177,14 @@ let showCurrentTimeline=()=>{
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
     console.log('percentage', percentage)
     let timelineWidth = 4;
+    $('#tasks>div.currentTimeline').remove();
     $('#tasks').append(`<div id="currentTimeline" class="currentTimeline" style="
         height:${tbody0.height()}px;
         left:${pos.left + percentage*width - timelineWidth/2}px;
         top:${pos.top}px;
     "></div>`)
 }
+window.setInterval(showCurrentTimeline, 10*60*1000)
 let showTipsOfImportantDay=()=>{
     let tdw = $('td.day:first').outerWidth()
     let html = ``
