@@ -1,38 +1,20 @@
-let g_TaskData = [
-    {
-        row: 'r0',
-        startDate: '2019-03-26',
-        days: 3,
-        subject: 'AAAAAAA AAAAAAA AAAAAAA',
-    },
-    {
-        row: 'r1',
-        startDate: '2019-04-16',
-        days: 30,
-        subject: 'BBBBBBB BBBBBBBB BBBBBB',
-    },
-    {
-        row: 'r2',
-        startDate: '2019-02-16',
-        days: 90,
-        subject: 'CCCCCCCC CCCCCCCC CCCCCCCC',
-    }
-]
 
-let createOneTask=(rowIdx, startDate, task)=>{
+let createOneTask=(rowIdx, endDate, task)=>{
     let rowId = 'r'+rowIdx;
-    let dateId = `${rowId}_${startDate}`//r1_d_2019-03-25
+    let dateId = `${rowId}_${endDate}`//r1_d_2019-03-25
     let dateCell = document.getElementById(dateId)
     let days = task.days;
 
     let pos = $(dateCell).offset();
-    //console.log('pos',pos, dateCell,dateId)
+    console.log('pos',pos, !!dateCell,dateId)
     let taskid = 'task'+(Math.random()+'').replace(/^0\./,'')
-    let taskHtml = `<div id="${taskid}" class="task" style="left:${pos.left}px;top:${pos.top}px;">${task.subject}</div>`
+    let taskHtml = `<div id="${taskid}" class="task" style="right:${0}px;top:${0}px;">${task.subject}</div>`
 
-    $('#tasks').append(taskHtml)
-    let taskobj = $(`#tasks>div[id="${taskid}"]`)
-    taskobj.css({left: pos.left - taskobj.outerWidth()})
+    //$('#tasks').append(taskHtml)
+    //console.log(rowId, endDate)
+    getDay(rowIdx, endDate).html(taskHtml)
+    // let taskobj = $(`#tasks>div[id="${taskid}"]`)
+    // taskobj.css({left: pos.left - taskobj.outerWidth()})
 }
 let test = ()=>{
     let t0=new Date()
@@ -44,4 +26,11 @@ let test = ()=>{
         })
     }
     //console.log(new Date() - t0)
+}
+let loadTaskData = (data)=>{
+    data.forEach((tsk)=>{
+        createOneTask(tsk.rowIdx, tsk.endDate, {
+            subject: tsk.subject
+        })
+    })
 }
