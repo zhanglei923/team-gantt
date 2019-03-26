@@ -1,14 +1,17 @@
 
-let createOneTask=(rowIdx, endDate, task)=>{
+let createOneTask=(data)=>{
+    let rowIdx = data.rowIdx;
+    let endDate = data.endDate;
+    let subject = data.subject;
     let rowId = 'r'+rowIdx;
     let dateId = `${rowId}_${endDate}`//r1_d_2019-03-25
     let dateCell = document.getElementById(dateId)
-    let days = task.days;
+    let days = data.days;
 
     let pos = $(dateCell).offset();
     console.log('pos',pos, !!dateCell,dateId)
     let taskid = 'task'+(Math.random()+'').replace(/^0\./,'')
-    let taskHtml = `<div id="${taskid}" class="task" style="right:${0}px;top:${0}px;">${task.subject}</div>`
+    let taskHtml = `<div id="${taskid}" class="task" style="right:${0}px;top:${0}px;">${subject}</div>`
 
     //$('#tasks').append(taskHtml)
     //console.log(rowId, endDate)
@@ -29,8 +32,6 @@ let test = ()=>{
 }
 let loadTaskData = (data)=>{
     data.forEach((tsk)=>{
-        createOneTask(tsk.rowIdx, tsk.endDate, {
-            subject: tsk.subject
-        })
+        createOneTask(tsk)
     })
 }
