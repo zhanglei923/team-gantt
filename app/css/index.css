@@ -98,7 +98,10 @@ body{
     width:20px;
 }
 .gantt_section .day.selected_daycol.selected_day{
-    border:3px solid #000099 !important;
+    border-top:2px solid #000099 !important;
+    border-right:3px solid #000099 !important;
+    border-bottom:2px solid #000099 !important;
+    border-left:3px solid #000099 !important;
 }
 .gantt_section .day.selected_daycol{
     border-left:3px dotted #999999 !important;
