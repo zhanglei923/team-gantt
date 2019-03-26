@@ -112,6 +112,10 @@ body{
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
+    background-color: #eee !important;
+}
+.gantt_section .isBeforeToday.weekend{
+    color: #aaa;
     background-color: #ddd !important;
 }
 .gantt_section .isBeforeToday.important-workingday{
