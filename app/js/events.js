@@ -9,7 +9,7 @@ let handleTdClick=(td)=>{
     let daytd = getDay(rowidx, date);
     daytd.addClass('selected_day')
     console.log(tdid, rowidx, date, td.className)//)
-    showDateInfo(date)
+    showDateInfo(null, date)
 }
 let hoveringrowidx, hoveringdate;
 let handleTdMouseOver=(td)=>{

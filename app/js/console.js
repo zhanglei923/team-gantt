@@ -1,6 +1,7 @@
-let showDateInfo=(tddate)=>{
-    let nowmom = moment();
-    let todaydate = nowmom.format('YYYY-MM-DD');
+let showDateInfo=(startdate, tddate)=>{
+    let startmom;
+    startmom = startdate ? moment(startdate) : moment();
+    let todaydate = startmom.format('YYYY-MM-DD');
     let start = false;
     let betweendays = []
     let betweenrestdays = []
