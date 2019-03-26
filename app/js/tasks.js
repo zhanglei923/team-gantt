@@ -19,7 +19,8 @@ let g_TaskData = [
     }
 ]
 
-let createOneTask=(rowId, startDate, task)=>{
+let createOneTask=(rowIdx, startDate, task)=>{
+    let rowId = 'r'+rowIdx;
     let dateId = `${rowId}_${startDate}`//r1_d_2019-03-25
     let dateCell = document.getElementById(dateId)
     let days = task.days;
@@ -38,7 +39,7 @@ let test = ()=>{
     for(let i=0;i<200;i++) {
         let date = moment().add(i, 'days').format('YYYY-MM-DD')
         let j=i%6;
-        createOneTask('r'+j, date, {
+        createOneTask(j, date, {
             subject: 'aaa'
         })
     }
