@@ -18,7 +18,8 @@ body{
 .currentTimeline{
     position: absolute;
     width:4px;
-    background-color: #50d40c;
+    /* background-color: #50d40c; */
+    background-color:rgba(80,212,12,0.4);
 }
 .tip_ofsection{
     background-color: powderblue;

@@ -174,9 +174,10 @@ let showCurrentTimeline=()=>{
     let clocknow = moment();
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
     console.log('percentage', percentage)
+    let timelineWidth = 4;
     $('#tasks').append(`<div id="currentTimeline" class="currentTimeline" style="
         height:${tbody0.height()}px;
-        left:${pos.left+percentage*width}px;
+        left:${pos.left + percentage*width - timelineWidth/2}px;
         top:${pos.top}px;
     "></div>`)
 }
