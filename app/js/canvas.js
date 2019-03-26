@@ -1,6 +1,6 @@
 //------
 let holidayDays = {};
-let workingWeekendDays = {};
+let alteredWorkingDays = {};
 let initRowSize = 6;
 let displayDays = 360;
 let sectionDays = 7*9;
@@ -18,11 +18,11 @@ let extractHolidays=()=>{
             mom.add(i, 'days');
             holidayDays[mom.format('YYYY-MM-DD')]=true;
         }
-        hol.workingWeekendDays.forEach((daytxt)=>{
-            workingWeekendDays[daytxt]=true;
+        hol.alteredWorkingDays.forEach((daytxt)=>{
+            alteredWorkingDays[daytxt]=true;
         })
     })
-    //console.log(holidayDays, workingWeekendDays)
+    //console.log(holidayDays, alteredWorkingDays)
 }
 let initDate = ()=>{
     extractHolidays();
@@ -50,7 +50,7 @@ let initDate = ()=>{
         let isWorkDay = true;
         if(isWeekend) isWorkDay = false;
         if(isHoliday) isWorkDay = false;
-        if(workingWeekendDays[dateTxt]) isWorkDay = true;
+        if(alteredWorkingDays[dateTxt]) isWorkDay = true;
 
         let isImportantWorkingDay;
         let isNoticeWorkingDay;
