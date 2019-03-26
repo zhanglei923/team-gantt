@@ -19,6 +19,7 @@ let showDateInfo=(tddate)=>{
         }
     }
     let reportHtml = `
+        [${todaydate} -&gt; ${tddate}],
         Days=${betweendays.length},
         Working days=${betweenworkingdays.length}
     `

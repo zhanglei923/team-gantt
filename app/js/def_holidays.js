@@ -8,16 +8,16 @@ let holidays = [
 ];
 let g_ImportantWorkingDay = {
     '2019-04-11': {desc:'1904腾讯云压测', level:'notice'},
-    '2019-04-23': {desc:'1904 Staging.', level:'notice'},
-    '2019-04-30': {desc:'1904 api-test', level:'notice'},
-    '2019-05-22': {desc:'1904 腾讯云UAT', level:'notice'},
+    '2019-04-23': {desc:'1904Staging.', level:'notice'},
+    '2019-04-30': {desc:'1904Api-test', level:'notice'},
+    '2019-05-22': {desc:'1904腾讯云UAT', level:'notice'},
     '2019-05-25': {desc:'1904腾讯云', level:'notice'},
 
-    '2019-03-22': {desc:'1904 Sp3 End', level:'important'},
-    '2019-04-04': {desc:'1904 Sp4 End', level:'important'},
-    '2019-04-19': {desc:'1904 Intg', level:'important'},
-    '2019-04-27': {desc:'1904 Gray', level:'important'},
-    '2019-05-04': {desc:'1904 沙盒', level:'important'},
-    '2019-05-11': {desc:'1904 Prod', level:'important'},
-    '2019-05-24': {desc:'1907 Sp1', level:'important'},
+    '2019-03-22': {desc:'1904Sp3', level:'important'},
+    '2019-04-04': {desc:'1904Sp4', level:'important'},
+    '2019-04-19': {desc:'1904Intg', level:'important'},
+    '2019-04-27': {desc:'1904Gray', level:'important'},
+    '2019-05-04': {desc:'1904沙盒', level:'important'},
+    '2019-05-11': {desc:'1904Prod', level:'important'},
+    '2019-05-24': {desc:'1907Sp1', level:'important'},
 };
