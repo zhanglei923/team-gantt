@@ -211,6 +211,9 @@ let showTipsOfImportantDay=()=>{
         //}
     })
 }
+let getDayColumn = (date)=>{
+    return $(`tr>td.day[date="${date}"]`);
+}
 let initGantt = ()=>{
     let t0=new Date()*1;
     initDate();
