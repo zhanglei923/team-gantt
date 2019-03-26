@@ -1,6 +1,11 @@
 
-let displayTask=(data)=>{
+let deleteTask=(taskId)=>{
+    delete g_Tasks[taskId];
+    $('#'+taskId).off().remove()
+};
+let createTask=(data)=>{
     let taskId = data.id;
+    g_Tasks[taskId] = JSON.parse(JSON.stringify(data));
     let rowIdx = data.rowIdx;
     let endDate = data.endDate;
     let subject = data.subject;
@@ -19,21 +24,10 @@ let displayTask=(data)=>{
     // let taskobj = $(`#tasks>div[id="${taskid}"]`)
     // taskobj.css({left: pos.left - taskobj.outerWidth()})
 }
-let test = ()=>{
-    let t0=new Date()
-    for(let i=0;i<200;i++) {
-        let date = moment().add(i, 'days').format('YYYY-MM-DD')
-        let j=i%6;
-        displayTask(j, date, {
-            subject: 'aaa'
-        })
-    }
-    //console.log(new Date() - t0)
-}
 let loadTaskData = (data)=>{
     for(let id in data){
         let d = data[id];
         d.id = id;
-        displayTask(d)
+        createTask(d)
     }
 }

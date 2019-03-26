@@ -28,6 +28,21 @@ let handleTdMouseOver=(td)=>{
     // rowdays.addClass('hovering')
     // coldays.addClass('hovering')
 }
+let handleCreateTaskPrompt=(text, td)=>{
+    let date = td.getAttribute('date')
+    let tr = td.parentNode;
+    let rowIdx = tr.getAttribute('rowidx')
+    text = _.trim(text);
+    if(!text) return;
+    var title = text;
+    createTask({
+        rowIdx: rowIdx,
+        startDate: null,
+        endDate: date,
+        days: 3,
+        subject: title
+    })
+}
 
 let initEvent = ()=>{
     $('#root').on('mousedown', 'td[id].day', (e)=>{
@@ -37,6 +52,11 @@ let initEvent = ()=>{
         }
         e.preventDefault();
         return false;            
+    })
+    $('#root').on('dblclick', 'td[id].day', (e)=>{
+        let text=prompt('Please input, like "Your Subject..."')
+        let td=e.currentTarget;
+        handleCreateTaskPrompt(text, td)
     })
     $('#root').on('mousemove', 'td[id].day', (e)=>{
         handleTdMouseOver(e.currentTarget);
