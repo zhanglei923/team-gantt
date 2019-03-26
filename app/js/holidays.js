@@ -18,6 +18,6 @@ let g_ImportantWorkingDay = {
     '2019-04-19': {desc:'1904 Intg', level:'important'},
     '2019-04-27': {desc:'1904 Gray', level:'important'},
     '2019-05-04': {desc:'1904 沙盒', level:'important'},
-    '2019-05-11': {desc:'1907 Prod', level:'important'},
+    '2019-05-11': {desc:'1904 Prod', level:'important'},
     '2019-05-24': {desc:'1907 Sp1', level:'important'},
 };
