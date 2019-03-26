@@ -2,12 +2,12 @@ let handleTdClick=(td)=>{
     //td=$(td);
     let tdid = td.getAttribute('id')
     let rowid = td.getAttribute('rowidx');
-    let tddate = td.getAttribute('date');
+    let date = td.getAttribute('date');
 
     $('tr>td').removeClass('selected_day')
-    $(`tr>td[id$="${tddate}"]`).addClass('selected_day')
-    console.log(tdid, rowid, tddate, td.className)//)
-    showDateInfo(tdid, rowid, tddate)
+    $(`tr>td[id$="${date}"]`).addClass('selected_day')
+    console.log(tdid, rowid, date, td.className)//)
+    showDateInfo(date)
 }
 
 let initEvent = ()=>{

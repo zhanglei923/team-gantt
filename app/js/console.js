@@ -1,4 +1,4 @@
-let showDateInfo=(tdid, rowid, tddate)=>{
+let showDateInfo=(tddate)=>{
     let nowmom = moment();
     let todaydate = nowmom.format('YYYY-MM-DD');
     let start = false;

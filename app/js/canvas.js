@@ -131,7 +131,7 @@ let renderSection = (days, secidx)=>{
 
     $(`#gantt_section_thead${secidx}`).html(headhtml)
     
-    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%"><td class="rowcol isBeforeToday">r%RowIdx%</td>`;
+    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%" rowIdx="%RowIdx%"><td class="rowcol isBeforeToday">r%RowIdx%</td>`;
     for(let i=0;i<days.length;i++){
         let dateid = days[i];
         let dateinfo = g_CanvasDateInfo[dateid];
@@ -210,9 +210,6 @@ let showTipsOfImportantDay=()=>{
             o.css('left', (parseInt(left)-o.width()+tdw))            
         //}
     })
-}
-let getDayColumn = (date)=>{
-    return $(`tr>td.day[date="${date}"]`);
 }
 let initGantt = ()=>{
     let t0=new Date()*1;
