@@ -4,6 +4,7 @@ let alteredWorkingDays = {};
 let initRowSize = 6;
 let displayDays = 360;
 let sectionDays = 7*9;
+let g_Tasks = {};
 let g_CanvasDateList = [];
 let g_CanvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']
@@ -235,30 +236,29 @@ let initGantt = ()=>{
 }
 $(()=>{
     initGantt()
-
-    let g_TaskData = [
-        {
+    //test
+    let test_TaskData = {
+        'task_1': {
             rowIdx: 0,
             startDate: null,
             endDate: '2019-03-26',
             days: 3,
             subject: 'AAAAAAA AAAAAAA AAAAAAA',
         },
-        {
+        'task_2': {
             rowIdx: 1,
             startDate: null,
             endDate: '2019-04-16',
             days: 30,
             subject: 'BBBBBBB BBBBBBBB BBBBBB',
         },
-        {
+        'task_3': {
             rowIdx: 2,
             startDate: null,
             endDate: '2019-05-16',
             days: 90,
             subject: 'CCCCCCCC CCCCCCCC CCCCCCCC',
         }
-    ]
-    
-    loadTaskData(g_TaskData)
+    };    
+    loadTaskData(test_TaskData)
 })

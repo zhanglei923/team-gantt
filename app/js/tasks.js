@@ -1,5 +1,6 @@
 
-let createOneTask=(data)=>{
+let displayTask=(data)=>{
+    let taskId = data.id;
     let rowIdx = data.rowIdx;
     let endDate = data.endDate;
     let subject = data.subject;
@@ -10,8 +11,7 @@ let createOneTask=(data)=>{
 
     let pos = $(dateCell).offset();
     console.log('pos',pos, !!dateCell,dateId)
-    let taskid = 'task'+(Math.random()+'').replace(/^0\./,'')
-    let taskHtml = `<div id="${taskid}" class="task" style="right:${0}px;top:${0}px;">${subject}</div>`
+    let taskHtml = `<div id="${taskId}" class="task" style="right:${0}px;top:${0}px;">${subject}</div>`
 
     //$('#tasks').append(taskHtml)
     //console.log(rowId, endDate)
@@ -24,14 +24,16 @@ let test = ()=>{
     for(let i=0;i<200;i++) {
         let date = moment().add(i, 'days').format('YYYY-MM-DD')
         let j=i%6;
-        createOneTask(j, date, {
+        displayTask(j, date, {
             subject: 'aaa'
         })
     }
     //console.log(new Date() - t0)
 }
 let loadTaskData = (data)=>{
-    data.forEach((tsk)=>{
-        createOneTask(tsk)
-    })
+    for(let id in data){
+        let d = data[id];
+        d.id = id;
+        displayTask(d)
+    }
 }
