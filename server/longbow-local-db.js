@@ -95,9 +95,7 @@ let handler = {
     },
     loadAllData:(repoName, prjName)=>{
         let history = handler.getHistoryList(repoName, prjName);
-        let result = {
-            items:[]
-        }
+        let result = {}
         if(history.length===0) return result;
         let latest = history[0]
         //let count = handler.getCount();
