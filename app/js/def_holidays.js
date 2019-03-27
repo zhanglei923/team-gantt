@@ -1,4 +1,4 @@
-let holidays = [
+let g_holidays = [
     {startDate: '2019-04-05', duration: 3, alteredWorkingDays:[]},
     {startDate: '2019-05-01', duration: 4, alteredWorkingDays:['2019-04-28', '2019-05-05']},
     {startDate: '2019-06-07', duration: 3, alteredWorkingDays:[]},

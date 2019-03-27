@@ -12,7 +12,7 @@ let todayMom = moment();
 let todayText = todayMom.format('YYYY-MM-DD');
 let extractHolidays=()=>{ 
     holidayDays = {};
-    holidays.forEach((hol)=>{
+    g_holidays.forEach((hol)=>{
         let startDate = hol.startDate;
         for(let i=0;i<hol.duration;i++){
             let mom = moment(startDate+'T00:00:00')
