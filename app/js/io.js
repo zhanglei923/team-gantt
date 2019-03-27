@@ -1,30 +1,23 @@
 let reponsitoryName = 'team-gantt-data';
 let projectName = 'creek-workflow';
 
-let g_holidays;
-let g_ImportantWorkingDay;
+g_holidays = test_holidays;
+g_ImportantWorkingDay = test_ImportantWorkingDay;
 
 let loadServerTasks = (callback)=>{
     $.ajax({
         method: "GET",
         url: "/action/load-data",
         data: { reponsitoryName, projectName }
-      }).done(function( msg ) {
-          alert( msg );
-        });
-    let data = window.localStorage.getItem('team-gantt-data');
-    let tasks = {};
-    if(data){
-        data = JSON.parse(data);
-        tasks = data.tasks;
-        g_holidays = data.holidays;
-        g_ImportantWorkingDay = data.importantDays;
-    }else{
-        tasks = test_TaskData;
-        g_holidays = test_holidays;
-        g_ImportantWorkingDay = test_ImportantWorkingDay;
-    }
-    callback(tasks)
+    }).done(function( data ) {
+        let tasks = {};
+        if(!_.isEmpty(data)){
+            tasks = data.tasks;
+        }else{
+            tasks = test_TaskData;
+        }
+        callback(tasks)
+    });
 }
 let saveServerTasks = ()=>{
     let savedata = {
