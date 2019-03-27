@@ -8,6 +8,7 @@ const fs = require('fs');
 const pathutil = require('path');
 const moment = require('moment');
 const mkdir = require('make-dir')
+const _ = require('lodash')
 
 //config
 let configpath = pathutil.resolve(__dirname, './longbow-local-db.json')
@@ -94,13 +95,22 @@ let handler = {
     },
     loadAllData:(repoName, prjName)=>{
         let history = handler.getHistoryList(repoName, prjName);
-        if(history.length===0) return [];
+        let result = {
+            items:[]
+        }
+        if(history.length===0) return result;
         let latest = history[0]
         //let count = handler.getCount();
         let fpath = getSavePath(repoName, prjName) + '/latest.json';//latest.file;
-        if(!fs.existsSync(fpath)) return [];
+        if(!fs.existsSync(fpath)) return result;
         let todos = fs.readFileSync(fpath, 'utf8');
-        return JSON.parse(todos);
+        todos = JSON.parse(todos)
+        if(_.isArray(todos)){
+            result.items = todos;//for old data
+        }else{
+            result = todos;
+        }
+        return result;
     },
     saveAllData:(repoName, prjName, todos)=>{
         let count = handler.getCount(repoName, prjName);

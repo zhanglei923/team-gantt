@@ -5,13 +5,6 @@ let g_holidays;
 let g_ImportantWorkingDay;
 
 let loadServerTasks = (callback)=>{
-    $.ajax({
-        method: "GET",
-        url: "/action/load-data",
-        data: { reponsitoryName, projectName }
-      }).done(function( msg ) {
-          alert( msg );
-        });
     let data = window.localStorage.getItem('team-gantt-data');
     let tasks = {};
     if(data){

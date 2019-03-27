@@ -25,7 +25,7 @@ router
     let projectName = query.projectName;
 
     let todos = dataService.loadAllData(reponsitoryName, projectName);
-    //console.log(todos)
+    console.log(todos)
     ctx.body = JSON.stringify(todos)
   })
   .post('/action/save-data', (ctx, next) => {
