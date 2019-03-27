@@ -234,32 +234,3 @@ let initGantt = ()=>{
     let t1=new Date()*1;
     console.log(t1-t0)
 }
-$(()=>{
-    initGantt()
-    //test
-    let test_TaskData = {
-        'task_1': {
-            rowIdx: 0,
-            startDate: null,
-            endDate: '2019-03-26',
-            days: 3,
-            subject: 'AAAAAAA AAAAAAA AAAAAAA',
-        },
-        'task_2': {
-            rowIdx: 1,
-            startDate: null,
-            endDate: '2019-04-16',
-            days: 30,
-            subject: 'BBBBBBB BBBBBBBB BBBBBB',
-        },
-        'task_3': {
-            rowIdx: 2,
-            startDate: null,
-            endDate: '2019-05-16',
-            days: 90,
-            subject: 'CCCCCCCC CCCCCCCC CCCCCCCC',
-        }
-    };    
-    loadTaskData(test_TaskData)
-    loadServerTasks();
-})

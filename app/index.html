@@ -27,4 +27,13 @@
     <script src="./js/console.js"></script>
     <script src="./js/canvas-operation.js"></script>
     <script src="./js/canvas.js"></script>
+    <script>    
+        $(()=>{
+            loadServerTasks((data)=>{
+                initGantt()
+                //loadTaskData(test_TaskData)
+                loadTaskData(data);
+            })
+        })
+    </script>
 </html>
