@@ -25,22 +25,8 @@ let test_TaskData = {
     'task_1': {
         rowIdx: 0,
         startDate: null,
-        endDate: '2019-03-26',
+        endDate: moment().format('YYYY-MM-DD'),
         days: 3,
         subject: 'AAAAAAA AAAAAAA AAAAAAA',
-    },
-    'task_2': {
-        rowIdx: 1,
-        startDate: null,
-        endDate: '2019-04-16',
-        days: 30,
-        subject: 'BBBBBBB BBBBBBBB BBBBBB',
-    },
-    'task_3': {
-        rowIdx: 2,
-        startDate: null,
-        endDate: '2019-05-16',
-        days: 90,
-        subject: 'CCCCCCCC CCCCCCCC CCCCCCCC',
     }
 };    
