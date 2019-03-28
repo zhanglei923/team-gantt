@@ -2,7 +2,7 @@
     position: absolute;
     height:16px;
     min-width:20px;
-    background-color:#ffff0044;
+    background-color:#1b00ff2b;
     color: black;
     border:1px solid red;
     /* border-right-color: #0000ff99;
@@ -13,4 +13,8 @@
     /* filter:alpha(Opacity=60);
     -moz-opacity:0.6;
     opacity: 0.6; */
+}
+.task {
+    word-wrap: normal ;
+    word-break: keep-all ;
 }

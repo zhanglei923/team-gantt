@@ -17,10 +17,7 @@ let createTask=(data)=>{
     let pos = $(dateCell).offset();
     console.log('pos',pos, !!dateCell,dateId)
     let taskHtml = `<div id="${taskId}" class="task" style="right:${0}px;top:${0}px;">
-                        <!-- <span style="display:inline;float:left;">
-                            <a href="javascript:void(0)" act="delete">X</a>
-                        </span> -->
-                        <span style="display:inline;float:left;">${subject}</span>
+                        <pre>${subject}</pre>
                     </div>`
 
     //$('#tasks').append(taskHtml)
