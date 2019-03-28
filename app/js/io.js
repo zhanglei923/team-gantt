@@ -20,10 +20,14 @@ let loadServerTasks = (callback)=>{
     });
 }
 let saveServerTasks = ()=>{
-    let savedata = {
-        holidays: g_holidays,
-        importantDays: g_ImportantWorkingDay,
+    let data = {
         tasks: g_Tasks
     }
-    window.localStorage.setItem('team-gantt-data', JSON.stringify(savedata))    
+    $.ajax({
+        method: "POST",
+        url: "/action/save-data",
+        data: { reponsitoryName, projectName, data }
+    }).done(function( data ) {
+        alert(data)
+    });
 }

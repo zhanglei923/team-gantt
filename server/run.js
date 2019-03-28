@@ -24,17 +24,23 @@ router
     let reponsitoryName = query.reponsitoryName;
     let projectName = query.projectName;
 
-    let todos = dataService.loadAllData(reponsitoryName, projectName);
-    console.log(todos)
-    ctx.body = JSON.stringify(todos)
+    let data = dataService.loadAllData(reponsitoryName, projectName);
+    console.log(data)
+    ctx.body = JSON.stringify(data)
   })
   .post('/action/save-data', (ctx, next) => {
       let query = ctx.query;
       let reponsitoryName = query.reponsitoryName;
       let projectName = query.projectName;
+      let data = query.data;
+
+      console.log('----------')
+      console.log(query)
+      console.log(reponsitoryName,projectName,data)
+      console.log('----------')
   
-      ctx.body='projects';
-      dataService.saveAllData('team-gantt-data', 'default', {a:1})
+      dataService.saveAllData(reponsitoryName, projectName, data)
+      ctx.body = 'success'
     })
 
 app
