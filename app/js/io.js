@@ -8,6 +8,7 @@ let loadServerTasks = (callback)=>{
     $.ajax({
         method: "GET",
         url: "/action/load-data",
+        dataType:'json',
         data: { reponsitoryName, projectName }
     }).done(function( data ) {
         let tasks = {};
