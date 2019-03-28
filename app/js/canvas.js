@@ -1,7 +1,7 @@
 //------
 let holidayDays = {};
 let alteredWorkingDays = {};
-let initRowSize = 6;
+let initRowSize = 8;
 let displayDays = 360;
 let sectionDays = 7*9;
 let g_Tasks = {};
