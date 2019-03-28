@@ -40,12 +40,13 @@ body{
     height: 15px;
 }
 .tasks .tip_of_day.important{
-    background-color: pink;
+    color:white;
+    background-color: #ff6883;
     border: 1px solid red;
     z-index: 1001;
 }
 .tasks .tip_of_day.notice{
-    background-color:rgba(255,255,0,0.45) !important;
+    background-color:rgba(255,255,0,0.8) !important;
     border: 1px solid orange;
     z-index: 1000;
 }
@@ -149,8 +150,8 @@ body{
     border-color: #aaa !important;
 }
 .gantt_section th.important-workingday{
-    /* color: white; */
-    background-color: #ffb2b2;
+    color: white;
+    background-color: #ff7373 !important;
 }
 .gantt_section .important-workingday{
     /* border:1px solid red !important; */
