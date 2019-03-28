@@ -204,7 +204,7 @@ let showTipsOfImportantDay=()=>{
         if(tip.level==='notice') offtop = 4;
         let top = pos.top - offtop;
         let isafter = moment(date).isAfter(moment())
-        html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${desc}</div>`
+        html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
         //console.log(pos, desc)
     })
     $('#tasks').append(html)

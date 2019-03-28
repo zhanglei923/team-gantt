@@ -1,4 +1,12 @@
-
+let escapeHtml=(txt)=>{
+    return (txt + '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/'/g, '&#039;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/\n/g, '<br />');
+}
 let deleteTask=(taskId)=>{
     delete g_Tasks[taskId];
     $('#'+taskId).off().remove()
@@ -17,7 +25,7 @@ let createTask=(data)=>{
     let pos = $(dateCell).offset();
     console.log('pos',pos, !!dateCell,dateId)
     let taskHtml = `<div id="${taskId}" class="task" style="right:${0}px;top:${0}px;">
-                        <pre><a href="javascript:void(0)" class="delete">X</a>|${subject}&gt;</pre>
+                        <pre><a href="javascript:void(0)" class="delete">X</a>|${escapeHtml(subject)}</pre>
                     </div>`
 
     //$('#tasks').append(taskHtml)

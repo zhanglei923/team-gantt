@@ -25,8 +25,8 @@ let test_TaskData = {
     'task_1': {
         rowIdx: 0,
         startDate: null,
-        endDate: moment().format('YYYY-MM-DD'),
+        endDate: moment().subtract(2,'days').format('YYYY-MM-DD'),
         days: 3,
-        subject: 'AAAAAAA AAAAAAA AAAAAAA',
+        subject: 'This is a demo',
     }
 };    

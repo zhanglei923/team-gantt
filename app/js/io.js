@@ -1,5 +1,5 @@
 let reponsitoryName = 'team-gantt-data';
-let projectName = 'creek-workflow';
+let projectName = window.location.search?window.location.search.replace(/^\?project\=/,''):'default'//'creek-workflow';
 
 g_holidays = test_holidays;
 g_ImportantWorkingDay = test_ImportantWorkingDay;
