@@ -28,7 +28,16 @@ body{
     width:4px;
     /* background-color: #50d40c; */
     background-color:rgba(80,212,12,0.4);
+    -webkit-animation: twinkling 1s infinite ease-in-out;
 }
+@-webkit-keyframes twinkling{  
+    0%{ opacity: 0.1; }  
+    100%{ opacity: 1; }  
+}  
+@keyframes twinkling{  
+    0%{ opacity: 0.1; }  
+    100%{ opacity: 1; }  
+}  
 .tip_ofsection{
     background-color: powderblue;
     height:38px;
