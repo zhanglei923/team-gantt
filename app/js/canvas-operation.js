@@ -1,3 +1,6 @@
+let getDayId = (rowidx, date)=>{
+    return `r${rowidx}_${date}`
+}
 let getDayInfo = (date)=>{
     return g_CanvasDateInfo[date];
 }

@@ -61,7 +61,9 @@ let updateTask=()=>{
         rowIdx, endDate, subject
     })
     console.log(data)
-    $('#'+data.id).html(getTaskHtml(data))
+    $('#'+taskid).off().remove()
+    let tdid = getDayId(rowIdx, endDate)
+    $('#'+tdid).html(getTaskHtml(data))
 
     g_Tasks[taskid] = data;
 }
