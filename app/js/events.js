@@ -81,10 +81,18 @@ let initEvent = ()=>{
         let td=e.currentTarget;
         handleCreateTaskPrompt(text, td)
     })
+    $('#root').on('dblclick', '.task', (e)=>{
+        let taskid = e.currentTarget.getAttribute('id')
+        showTaskEditor(taskid)
+        e.preventDefault()
+        e.stopPropagation();        
+    })
+    $('#updateTaskBtn').click(updateTask)
     $('#root').on('mousemove', 'td[id].day', (e)=>{
         handleTdMouseOver(e, e.currentTarget);
     })
     $('#saveBtn').click(()=>{
         saveServerTasks();
     })
+    
 }
