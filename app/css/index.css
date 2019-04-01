@@ -129,6 +129,12 @@ body{
 .gantt_section .choosed_day{
     background-color: #ff6883 !important;
 }
+.gantt_section .choosed_day1{
+    background-color: #ff6883 !important;
+}
+.gantt_section .choosed_day2{
+    background-color: #ff6883 !important;
+}
 .gantt_section .day.monthzebra0{
     background-color: #fff;
 }
