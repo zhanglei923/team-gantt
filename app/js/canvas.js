@@ -197,15 +197,16 @@ let showTipsOfImportantDay=()=>{
         let desc = tip.desc;
         let level = tip.level;
         let th = $(`th[date="${date}"]`);
-        let pos = th.offset();
-        let left = pos.left;
-        let offtop = 18;
-        if(tip.now) offtop = -47;
-        if(tip.level==='notice') offtop = 4;
-        let top = pos.top - offtop;
-        let isafter = moment(date).isAfter(moment())
-        html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
-        //console.log(pos, desc)
+        if(th.length>0){
+            let pos = th.offset();
+            let left = pos.left;
+            let offtop = 18;
+            if(tip.now) offtop = -47;
+            if(tip.level==='notice') offtop = 4;
+            let top = pos.top - offtop;
+            let isafter = moment(date).isAfter(moment())
+            html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
+        }
     })
     $('#tasks').append(html)
     $('#tasks>div.tip_of_day').each((i,o)=>{
