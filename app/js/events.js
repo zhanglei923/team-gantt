@@ -7,7 +7,7 @@ let handleTdClick=(td)=>{
     let alltd = $('tr>td')
     alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
     $(`tr>td[id$="${date}"]`).addClass('selected_daycol')
-    let daytd = getDay(rowidx, date);
+    let daytd = getDayElem(rowidx, date);
     daytd.addClass('selected_day')
     console.log(tdid, rowidx, date, td.className)//)
     showDateInfo(null, date)
@@ -18,26 +18,38 @@ let handleTdSelected=(td)=>{
     let date = td.getAttribute('date');
 
     let alltd = $('tr>td')
-    alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
-    $(td).addClass('choosed_day')
-    console.log(tdid, rowidx, date)
+
+    td=$(td);
+    if(td.hasClass('choosed_day')){
+        alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
+        unChooseDay(rowidx, date)
+    }else{
+        alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
+        $(td).addClass('choosed_day')
+        chooseDay(rowidx, date)
+    }
+
 }
-let hoveringrowidx, hoveringdate;
-let handleTdMouseOver=(td)=>{
+let g_hoveringrowidx, g_hoveringdate;
+let handleTdMouseOver=(e, td)=>{
     //td=$(td);
-    let tdid = td.getAttribute('id')
-    let rowidx = td.getAttribute('rowidx');
-    let date = td.getAttribute('date');
-    if(date === hoveringdate && rowidx === hoveringrowidx) return;
-    hoveringrowidx = rowidx;
-    hoveringdate = date;
-    $('tr').removeClass('hovering')
-    $('td[date].hovering').removeClass('hovering')
-    //console.log(rowidx,date)
-    let coldays = getColumn(date).days;
-    let rowdays = getRow(rowidx);
-    // rowdays.addClass('hovering')
-    // coldays.addClass('hovering')
+    let ctrlHolding = e.metaKey || e.ctrlKey;
+    if(ctrlHolding){
+        let tdid = td.getAttribute('id')
+        let rowidx = td.getAttribute('rowidx');
+        let date = td.getAttribute('date');
+        if(date === g_hoveringdate && rowidx === g_hoveringrowidx) return;
+        g_hoveringrowidx = rowidx;
+        g_hoveringdate = date;
+        $('tr').removeClass('hovering')
+        $('td[date].hovering').removeClass('hovering')
+        //console.log(rowidx,date)
+        let coldays = getColumnElem(date).days;
+        let rowdays = getRow(rowidx);
+        // rowdays.addClass('hovering')
+        // coldays.addClass('hovering')
+        console.log(ctrlHolding, g_hoveringrowidx, g_hoveringdate)
+    }
 }
 let handleCreateTaskPrompt=(text, td)=>{
     let date = td.getAttribute('date')
@@ -72,7 +84,7 @@ let initEvent = ()=>{
         handleCreateTaskPrompt(text, td)
     })
     $('#root').on('mousemove', 'td[id].day', (e)=>{
-        handleTdMouseOver(e.currentTarget);
+        handleTdMouseOver(e, e.currentTarget);
     })
     $('#saveBtn').click(()=>{
         saveServerTasks();

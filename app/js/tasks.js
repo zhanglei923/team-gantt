@@ -30,7 +30,7 @@ let createTask=(data)=>{
 
     //$('#tasks').append(taskHtml)
     //console.log(rowId, endDate)
-    getDay(rowIdx, endDate).html(taskHtml)
+    getDayElem(rowIdx, endDate).html(taskHtml)
     // let taskobj = $(`#tasks>div[id="${taskid}"]`)
     // taskobj.css({left: pos.left - taskobj.outerWidth()})
 }
