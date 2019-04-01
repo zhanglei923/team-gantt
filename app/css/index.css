@@ -126,6 +126,9 @@ body{
     border-left:2px dotted #999999 !important;
     border-right:2px dotted #999999 !important;
 }
+.gantt_section .choosed_day{
+    background-color: #ff6883 !important;
+}
 .gantt_section .day.monthzebra0{
     background-color: #fff;
 }

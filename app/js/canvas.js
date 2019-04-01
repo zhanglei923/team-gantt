@@ -150,10 +150,10 @@ let renderSection = (days, secidx)=>{
 
                                 ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}
-                                ${dateinfo.isImportantWorkingDay?(' id-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                                 ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
-                                ${dateinfo.isNoticeWorkingDay?(' id-notice-workingday="'+dateinfo.isNoticeWorkingDay.id+'"'):''}
                                 "
+                                ${dateinfo.isImportantWorkingDay?(' id-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
+                                ${dateinfo.isNoticeWorkingDay?(' id-notice-workingday="'+dateinfo.isNoticeWorkingDay.id+'"'):''}
                             >
                                 ${dateinfo.isWeekend?'':''}
                             </td>`
