@@ -41,34 +41,6 @@ let chooseDay=(rowidx, date, td)=>{
         }
     }
 }
-let chooseDay2=(rowidx, date, td)=>{
-    let datemom = moment(date);
-    if(g_choosingDates.length===0) g_choosingRowIdx = rowidx;
-    let ok = true;
-    if(g_choosingDates.length>0){
-        for(let i=0;i<g_choosingDates.length;i++){
-            let d=g_choosingDates[i];
-            if(datemom.isBefore(moment(d))) g_choosingDates[i]=null;
-        }
-    }
-    g_choosingDates.push(date)
-    g_choosingDates = _.compact(g_choosingDates)
-    g_choosingDates = _.uniq(g_choosingDates)
-    console.log(g_choosingDates)
-    //console.warn(g_choosingDates)
-    if(g_choosingDates.length>1){
-        let d1 = g_choosingDates[g_choosingDates.length-2]
-        let d2 = g_choosingDates[g_choosingDates.length-1];
-        //console.log(d1, d2)
-        showDaysInbetween(g_choosingRowIdx, d1, d2)
-    }
-    g_choosingDates.forEach((d)=>{
-        $(`tr[rowidx="${g_choosingRowIdx}"]>td[date="${d}"]`).addClass('choosed_day')
-    })
-}
-let unChooseDay=(rowidx, date)=>{
-
-}
 let showDaysInbetween=(rowidx, startDate, endDate)=>{
     $('tr>td>.diffdays').remove()
     let startMom = moment(startDate);
