@@ -56,6 +56,8 @@ let initDate = ()=>{
         let isImportantWorkingDay;
         let isNoticeWorkingDay;
         if(g_ImportantWorkingDay[dateTxt]){
+            g_ImportantWorkingDay[dateTxt].id='iwd'+Math.random()
+            if(!g_ImportantWorkingDay[dateTxt].is) g_ImportantWorkingDay[dateTxt].is = 'start'
             if(g_ImportantWorkingDay[dateTxt].level==='important')isImportantWorkingDay = g_ImportantWorkingDay[dateTxt];
             if(g_ImportantWorkingDay[dateTxt].level==='notice')isNoticeWorkingDay = g_ImportantWorkingDay[dateTxt];
         }
@@ -146,10 +148,11 @@ let renderSection = (days, secidx)=>{
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' is-today':''} ${dateinfo.isHoliday?' holiday':''}
 
+                                ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}
-                                ${dateinfo.isImportantWorkingDay?(' is-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
+                                ${dateinfo.isImportantWorkingDay?(' id-important-workingday="'+dateinfo.isImportantWorkingDay.id+'"'):''}
                                 ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
-                                ${dateinfo.isNoticeWorkingDay?(' is-notice-workingday="'+dateinfo.isNoticeWorkingDay.id+'"'):''}
+                                ${dateinfo.isNoticeWorkingDay?(' id-notice-workingday="'+dateinfo.isNoticeWorkingDay.id+'"'):''}
                                 "
                             >
                                 ${dateinfo.isWeekend?'':''}
@@ -196,6 +199,7 @@ let showTipsOfImportantDay=()=>{
         let tip = data.tip;
         let desc = tip.desc;
         let level = tip.level;
+        let is = tip.is ? tip.is : 'start'
         let th = $(`th[date="${date}"]`);
         if(th.length>0){
             let pos = th.offset();
@@ -205,16 +209,17 @@ let showTipsOfImportantDay=()=>{
             if(tip.level==='notice') offtop = 4;
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())
-            html += `<div class="tip_of_day ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
+            html += `<div is="${is}" class="tip_of_day dir_${is} ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" 
+                            style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
         }
     })
     $('#tasks').append(html)
     $('#tasks>div.tip_of_day').each((i,o)=>{
         o=$(o);
-        //if(!o.hasClass('now')){
+        if(o.hasClass('dir_end')){
             let left = o.css('left');
             o.css('left', (parseInt(left)-o.width()+tdw))            
-        //}
+        }
     })
 }
 let initGantt = ()=>{

@@ -60,10 +60,9 @@ body{
     z-index: 1000;
 }
 .tasks .tip_of_day.now{
-    display: none;
-    color: greenyellow;
-    background-color: black;
-    border: 1px solid green;
+    color: black;
+    background-color: rgba(0,255,0,0);
+    border: 1px dotted green;
 }
 .tasks .tip_of_day.ispassed{
     background-color: #ddd;
@@ -159,12 +158,20 @@ body{
     border-color: #aaa !important;
 }
 .gantt_section th.important-workingday{
-    color: white;
-    background-color: #ff7373 !important;
+    color: #523030;
+    background-color: #ff737380 !important;
 }
-.gantt_section .important-workingday{
+.gantt_section .important-workingday.dir_start{
     /* border:1px solid red !important; */
-    border-right: 1px solid #b92828 !important;
+    border-left: 1px solid #b9282873 !important;
+    border-left-width: 2px !important;
+    /* border-left-width: 2px !important; */
+    /* border-top-width: 2px !important;
+    border-bottom-width: 2px !important; */
+}
+.gantt_section .important-workingday.dir_end{
+    /* border:1px solid red !important; */
+    border-right: 1px solid #b9282873 !important;
     border-right-width: 2px !important;
     /* border-left-width: 2px !important; */
     /* border-top-width: 2px !important;
