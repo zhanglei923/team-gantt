@@ -50,9 +50,9 @@ let showTaskEditor=(taskid)=>{
 }
 let updateTask=()=>{
     let taskid = $('#taskEditor').attr('taskid')
-    let rowIdx = $('#editTaskRowIdxIpt').val()
-    let endDate = $('#editTaskDateIpt').val()
-    let subject = $('#editTaskSubjectIpt').val()
+    let rowIdx = _.trim($('#editTaskRowIdxIpt').val())
+    let endDate = _.trim($('#editTaskDateIpt').val())
+    let subject = _.trim($('#editTaskSubjectIpt').val())
 
     console.log(taskid, rowIdx, endDate, subject)
     let data = g_Tasks[taskid];

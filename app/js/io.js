@@ -29,6 +29,6 @@ let saveServerTasks = ()=>{
         url: "/action/save-data",
         data: { reponsitoryName, projectName, data }
     }).done(function( data ) {
-        alert(data)
+        console.log(data)
     });
 }
