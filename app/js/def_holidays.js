@@ -36,6 +36,8 @@ let test_ImportantWorkingDay = {
     '2019-06-21': {desc:'1907Sp3$', level:'important', is:'end'},
     '2019-06-24': {desc:'1907Sp4', level:'important'},
     '2019-07-05': {desc:'1907Sp4$', level:'important', is:'end'},
+    '2019-07-08': {desc:'1907Intg', level:'important'},
+    '2019-07-19': {desc:'1907Intg$', level:'important', is:'end'},
 };
 Object.assign(test_ImportantWorkingDay, g_sprintSchedules)
 let test_TaskData = {
