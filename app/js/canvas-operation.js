@@ -25,11 +25,15 @@ let chooseDay=(rowidx, date, td)=>{
     if(g_choosingDates.length===0) g_choosingRowIdx = rowidx;
     let ok = true;
     if(g_choosingDates.length>0){
-        g_choosingDates.forEach((d)=>{
-            if(!datemom.isAfter(moment(d))) ok=false;
-        })
+        for(let i=0;i<g_choosingDates.length;i++){
+            let d=g_choosingDates[i];
+            if(datemom.isBefore(moment(d))) g_choosingDates[i]=null;
+        }
     }
-    if(ok)g_choosingDates.push(date)
+    g_choosingDates.push(date)
+    g_choosingDates = _.compact(g_choosingDates)
+    g_choosingDates = _.uniq(g_choosingDates)
+    console.log(g_choosingDates)
     //console.warn(g_choosingDates)
     if(g_choosingDates.length>1){
         let d1 = g_choosingDates[g_choosingDates.length-2]
