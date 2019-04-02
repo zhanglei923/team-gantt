@@ -208,7 +208,10 @@ let showTipsOfImportantDay=()=>{
             let pos = th.offset();
             let left = pos.left;
             let offtop = 18;
-            if(tip.now) offtop = 36;
+            if(tip.now) {
+                offtop = 36;
+                left -= 10;
+            }
             if(tip.level==='notice') offtop = 4;
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())
