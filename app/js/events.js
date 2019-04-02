@@ -98,12 +98,18 @@ let initEvent = ()=>{
     $('#saveBtn').click(()=>{
         saveServerTasks();
     })
-    $('#taskEditor input').keydown((e)=>{
+    $(window).keydown((e)=>{
         if(e.metaKey || e.ctrlKey){
             if(e.key.toLowerCase()==='s') {
+                updateTask()
                 saveServerTasks()
                 e.preventDefault()
             }
+        }
+    })
+    $('#taskEditor input').keydown((e)=>{
+        if(e.key.toLowerCase()==='delete'){
+            askDeleteTask($('#taskEditor').attr('taskid'))
         }
     })
     

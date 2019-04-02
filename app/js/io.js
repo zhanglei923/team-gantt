@@ -31,7 +31,9 @@ let saveServerTasks = ()=>{
         data: { reponsitoryName, projectName, data }
     }).done(function( data ) {
         console.log(data)
-        $('td').removeClass('saving')
+        window.setTimeout(()=>{
+            $('td').removeClass('saving')
+        }, 200)        
     });
 }
 let loadProjectList=()=>{

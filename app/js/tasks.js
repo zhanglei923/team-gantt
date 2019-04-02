@@ -16,6 +16,7 @@ let askDeleteTask=(taskid)=>{
 let deleteTask=(taskId)=>{
     delete g_Tasks[taskId];
     $('#'+taskId).off().remove()
+    hideEditors()
 };
 let getTaskHtml=(data)=>{
     let taskHtml = `<div id="${data.id}" class="task" style="right:${0}px;top:${0}px;">
@@ -59,7 +60,7 @@ let updateTask=()=>{
     let rowIdx = _.trim($('#editTaskRowIdxIpt').val())
     let endDate = _.trim($('#editTaskDateIpt').val())
     let subject = _.trim($('#editTaskSubjectIpt').val())
-
+    if(!taskid)return;
     console.log(taskid, rowIdx, endDate, subject)
     let data = g_Tasks[taskid];
     if(!data)return;
@@ -79,4 +80,8 @@ let loadTaskData = (data)=>{
         d.id = id;
         createTask(d)
     }
+}
+let hideEditors=()=>{
+    $('#taskEditor').removeAttr('taskid')
+    $('#taskEditor').hide()
 }
