@@ -27,8 +27,12 @@ body{
     position: absolute;
     width:4px;
     /* background-color: #50d40c; */
-    background-color:#ff0000dd;
+    /* background-color:#ff0000dd; */
     -webkit-animation: twinkling 1s infinite ease-in-out;
+    background:-webkit-linear-gradient(top),red,#ffcaca);/*for safari5.1-6.0*/
+    background:-o-linear-gradient(bottom,red,#ffcaca);/*Opera 11.1-12.0*/
+    background:-moz-linear-gradient(bottom,red,#ffcaca);/*firefox 3.6-15*/
+    background:linear-gradient(to bottom,red,#ffcaca);/*标准语法*/
 }
 @-webkit-keyframes twinkling{  
     0%{ opacity: 0.1; }  
