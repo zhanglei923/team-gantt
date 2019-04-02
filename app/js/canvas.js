@@ -200,6 +200,7 @@ let showTipsOfImportantDay=()=>{
     arr.forEach((data)=>{
         let date = data.date;
         let tip = data.tip;
+        if(tip.level==='notice') {tip.is='end'}//default
         let desc = tip.desc;
         let level = tip.level;
         let is = tip.is ? tip.is : 'start'
@@ -212,7 +213,10 @@ let showTipsOfImportantDay=()=>{
                 offtop = 36;
                 left -= 10;
             }
-            if(tip.level==='notice') offtop = 4;
+            if(tip.level==='notice') {                
+                offtop = 4;
+                //left -= 22;
+            }
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())
             html += `<div is="${is}" class="tip_of_day dir_${is} ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" 
