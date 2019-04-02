@@ -1,8 +1,8 @@
 //------
 let holidayDays = {};
 let alteredWorkingDays = {};
-let initRowSize = 8;
-let displayDays = 360;
+let initRowSize = 12;
+let displayDays = 126;
 let sectionDays = 7*9;
 let g_Tasks = {};
 let g_CanvasDateList = [];
@@ -101,6 +101,8 @@ let initSections = ()=>{
             days=[];
             count=0;
             continue;
+        }else if(i===g_CanvasDateList.length-1){
+            sectionDaysList.push(days);
         }
     }
     let html = ''
