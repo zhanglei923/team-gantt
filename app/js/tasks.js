@@ -7,6 +7,12 @@ let escapeHtml=(txt)=>{
                     .replace(/"/g, '&quot;')
                     .replace(/\n/g, '<br />');
 }
+let askDeleteTask=(taskid)=>{
+    let task = g_Tasks[taskid];
+    if(confirm(`Sure to delete "${task.subject}"?`)){
+        deleteTask(taskid)
+    }
+}
 let deleteTask=(taskId)=>{
     delete g_Tasks[taskId];
     $('#'+taskId).off().remove()

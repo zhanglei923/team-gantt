@@ -77,6 +77,9 @@ let initEvent = ()=>{
         e.preventDefault();
         return false;            
     })
+    $('#root').on('click', '.task .delete', (e)=>{
+        askDeleteTask($(e.currentTarget).closest('.task').attr('id'))
+    })
     $('#root').on('dblclick', 'td[id].day', (e)=>{
         let text=prompt('Please input, like "Your Subject..."')
         let td=e.currentTarget;
