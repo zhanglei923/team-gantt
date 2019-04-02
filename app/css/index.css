@@ -116,6 +116,13 @@ body{
 .gantt_section .day{
     position: relative;
 }
+.gantt_section .rowcol{
+    padding:2px;
+}
+.gantt_section .rowcol.selected_day{
+    background-color: #2623c7 !important;
+    color:white;
+}
 .gantt_section .day.selected_day{
     border-top: 1px solid #9a9ad0 !important;
     border-right:1px solid #9a9ad0 !important;
