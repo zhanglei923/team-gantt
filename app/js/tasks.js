@@ -13,8 +13,8 @@ let deleteTask=(taskId)=>{
 };
 let getTaskHtml=(data)=>{
     let taskHtml = `<div id="${data.id}" class="task" style="right:${0}px;top:${0}px;">
-                        <pre><a href="javascript:void(0)" class="delete">X</a>|${escapeHtml(data.subject)}</pre>
-                    </div>`
+        <pre><a href="javascript:void(0)" class="delete">X</a><span>|${escapeHtml(data.subject)}</span><span style="width: 18px;display: inline-block;"><span class="pointer"></span></span></pre>
+    </div>`
     return taskHtml;
 }
 let createTask=(data)=>{
@@ -29,7 +29,7 @@ let createTask=(data)=>{
     let days = data.days;
 
     let pos = $(dateCell).offset();
-    console.log('pos',pos, !!dateCell,dateId)
+    //console.log('pos',pos, !!dateCell,dateId)
     let taskHtml = getTaskHtml(data);
 
     //$('#tasks').append(taskHtml)

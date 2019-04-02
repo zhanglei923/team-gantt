@@ -10,7 +10,7 @@ let handleTdClick=(td)=>{
     let daytd = getDayElem(rowidx, date);
     daytd.addClass('selected_day')
     getRowTdElems(rowidx).addClass('selected_day')
-    console.log(tdid, rowidx, date, td.className)//)
+    //console.log(tdid, rowidx, date, td.className)//)
     showDateInfo(null, date)
 }
 let handleTdChoosed=(td)=>{

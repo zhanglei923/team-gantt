@@ -18,3 +18,11 @@
     word-wrap: normal ;
     word-break: keep-all ;
 }
+.task .pointer{
+    background-color: #5581d2;
+    width: 10px;
+    height:10px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 3px 0 0 0;
+}
