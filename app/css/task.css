@@ -3,7 +3,7 @@
     height:16px;
     min-width:20px;
     background-color:#3a328224;
-    color: black;
+    color: #524d37;
     border:1px solid #3f49bf;
     /* border-right-color: #0000ff99;
     border-right-width: 2px; */
@@ -19,7 +19,7 @@
     word-break: keep-all ;
 }
 .task .pointer{
-    background-color: #5581d2;
+    background-color: #09166f;
     width: 10px;
     height:10px;
     display: inline-block;
