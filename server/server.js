@@ -52,6 +52,14 @@ app.post('/action/save-data',function(req, res){
 
     res.send('succ')
 })
+app.get('/action/projects',function(req, res){
+    let query = req.query;
+
+    let reponsitoryName = query.reponsitoryName;
+    let projects = dataService.loadProjects(reponsitoryName)
+
+    res.send(projects)
+})
 
 // var server = httpServer.listen(PORT, function() {
 //     var host = server.address().address;

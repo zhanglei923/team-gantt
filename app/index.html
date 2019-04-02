@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="console" class="console">
+        <div id="projectslist"></div>
         <div id="betweendays_report"></div>
         <div id="taskEditor" style="display:none;">
             <input id="editTaskRowIdxIpt" >
@@ -36,6 +37,7 @@
     <script>    
         $(()=>{
             loadServerTasks((data)=>{
+                loadProjectList()
                 initGantt()
                 //loadTaskData(test_TaskData)
                 loadTaskData(data);

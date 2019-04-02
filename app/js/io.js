@@ -32,3 +32,18 @@ let saveServerTasks = ()=>{
         console.log(data)
     });
 }
+let loadProjectList=()=>{
+    $.ajax({
+        method: "GET",
+        url: "/action/projects",
+        dataType:'json',
+        data: { reponsitoryName }
+    }).done(function( data ) {
+        console.log(data)
+        let html=''
+        data.forEach((projectName)=>{
+            html += `<a href="./?projectName=${projectName}" target="_blank">${projectName}</a>&nbsp;`
+        })
+        $('#projectslist').html(html)
+    });
+}
