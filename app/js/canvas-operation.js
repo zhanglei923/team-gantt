@@ -13,6 +13,9 @@ let getColumnElem = (date)=>{
         days:$(`tr>td.day[date="${date}"]`)
     };
 }
+let getRowTdElems=(rowidx)=>{
+    return $('tr[rowidx="'+rowidx+'"]>td')
+}
 let getRow = (rowidx)=>{
     return $(`tr[rowIdx="${rowidx}"]>td[date]`);
 }

@@ -9,6 +9,7 @@ let handleTdClick=(td)=>{
     $(`tr>td[id$="${date}"]`).addClass('selected_daycol')
     let daytd = getDayElem(rowidx, date);
     daytd.addClass('selected_day')
+    getRowTdElems(rowidx).addClass('selected_day')
     console.log(tdid, rowidx, date, td.className)//)
     showDateInfo(null, date)
 }

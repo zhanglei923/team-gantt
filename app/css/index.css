@@ -27,7 +27,7 @@ body{
     position: absolute;
     width:4px;
     /* background-color: #50d40c; */
-    background-color:rgba(80,212,12,0.4);
+    background-color:#ff0000dd;
     -webkit-animation: twinkling 1s infinite ease-in-out;
 }
 @-webkit-keyframes twinkling{  
@@ -116,11 +116,17 @@ body{
 .gantt_section .day{
     position: relative;
 }
+.gantt_section .day.selected_day{
+    border-top: 1px solid #9a9ad0 !important;
+    border-right:1px solid #9a9ad0 !important;
+    border-bottom:1px solid #9a9ad0 !important;
+    border-left:1px solid #9a9ad0 !important;
+}
 .gantt_section .day.selected_daycol.selected_day{
-    border-top:2px solid #000099 !important;
-    border-right:3px solid #000099 !important;
-    border-bottom:2px solid #000099 !important;
-    border-left:3px solid #000099 !important;
+    border-top:2px solid #9a9ad0 !important;
+    border-right:3px solid #9a9ad0 !important;
+    border-bottom:2px solid #9a9ad0 !important;
+    border-left:3px solid #9a9ad0 !important;
 }
 .gantt_section .day.selected_daycol{
     border-left:2px dotted #999999 !important;
