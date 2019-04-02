@@ -102,6 +102,7 @@ let handler = {
         let fpath = getSavePath(repoName, prjName) + '/latest.json';//latest.file;
         if(!fs.existsSync(fpath)) return result;
         let todos = fs.readFileSync(fpath, 'utf8');
+        if(!todos) return result;
         todos = JSON.parse(todos)
         if(_.isArray(todos)){
             result.items = todos;//for old data
