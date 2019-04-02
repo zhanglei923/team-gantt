@@ -17,8 +17,8 @@ body{
     background-color: powderblue;
 }
 .console .btn.save_btn{
-    width:100px;
-    height:30px;
+    /* width:100px;
+    height:30px; */
     background-color: green;
     color: white;
     float: right;
@@ -185,7 +185,7 @@ body{
 }
 .gantt_section .important-workingday.dir_start{
     /* border:1px solid red !important; */
-    border-left: 1px solid #b9282873 !important;
+    border-left: 1px solid #b92828c2 !important;
     border-left-width: 2px !important;
     /* border-left-width: 2px !important; */
     /* border-top-width: 2px !important;
@@ -193,7 +193,7 @@ body{
 }
 .gantt_section .important-workingday.dir_end{
     /* border:1px solid red !important; */
-    border-right: 1px solid #b9282873 !important;
+    border-right: 1px solid #b92828c2 !important;
     border-right-width: 2px !important;
     /* border-left-width: 2px !important; */
     /* border-top-width: 2px !important;
@@ -209,7 +209,7 @@ body{
 }
 .gantt_section .notice-workingday{
     /* border:1px solid red !important; */
-    border-left: 1px solid #ffd891 !important;
+    border-left: 1px solid #dcaf5c !important;
     border-left-width: 2px !important;
     /* border-left-width: 2px !important; */
     /* border-top-width: 2px !important;

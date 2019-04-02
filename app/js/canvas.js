@@ -123,6 +123,7 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[id];
         headhtml += `<th class="${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
+                                ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}
                                 ${dateinfo.isNoticeWorkingDay?' notice-workingday':''}
                                 ${dateinfo.isWeekend?'weekend':''}
