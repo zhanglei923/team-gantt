@@ -98,5 +98,14 @@ let initEvent = ()=>{
     $('#saveBtn').click(()=>{
         saveServerTasks();
     })
+    $('#taskEditor input').keydown((e)=>{
+        if(e.metaKey || e.ctrlKey){
+            if(e.key.toLowerCase()==='s') {
+                saveServerTasks()
+                e.preventDefault()
+            }
+        }
+    })
+    
     
 }

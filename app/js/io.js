@@ -24,12 +24,14 @@ let saveServerTasks = ()=>{
     let data = {
         tasks: g_Tasks
     }
+    $('td').addClass('saving')
     $.ajax({
         method: "POST",
         url: "/action/save-data",
         data: { reponsitoryName, projectName, data }
     }).done(function( data ) {
         console.log(data)
+        $('td').removeClass('saving')
     });
 }
 let loadProjectList=()=>{

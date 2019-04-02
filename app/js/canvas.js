@@ -195,7 +195,7 @@ window.setInterval(showCurrentTimeline, 10*60*1000)
 let showTipsOfImportantDay=()=>{
     let tdw = $('td.day:first').outerWidth()
     let html = ``
-    let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'NOW'}}];
+    let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'TODAY'}}];
     for(let date in g_ImportantWorkingDay) arr.push({date, tip:g_ImportantWorkingDay[date]})
     arr.forEach((data)=>{
         let date = data.date;
@@ -208,7 +208,7 @@ let showTipsOfImportantDay=()=>{
             let pos = th.offset();
             let left = pos.left;
             let offtop = 18;
-            if(tip.now) offtop = -47;
+            if(tip.now) offtop = 36;
             if(tip.level==='notice') offtop = 4;
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())

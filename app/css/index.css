@@ -7,6 +7,9 @@
 body{
     background-color: powderblue;
 }
+td.saving{
+    background-color: #ff0000cc !important; 
+}
 .console{
     position: fixed;
     z-index: 999;
@@ -64,8 +67,10 @@ body{
     z-index: 1000;
 }
 .tasks .tip_of_day.now{
-    color: black;
-    background-color: rgba(0,255,0,0);
+    z-index: 9999;
+    padding:1px 2px 1px 2px;
+    color: black !important;
+    background-color: greenyellow !important;
     border: 1px dotted green;
 }
 .tasks .tip_of_day.ispassed{
