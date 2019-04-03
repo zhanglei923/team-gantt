@@ -221,7 +221,7 @@ let showTipsOfImportantDay=()=>{
                 left -= 2;
             }
             let top = pos.top - offtop;
-            let isafter = moment(date).isAfter(moment())
+            let isafter = moment(date+'T23:59:59').isAfter(moment())
             html += `<div is="${is}" class="tip_of_day dir_${is} ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" 
                         title="[${date}] ${escapeHtml(desc)}"
                         style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
