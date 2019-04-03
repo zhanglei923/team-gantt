@@ -10,8 +10,9 @@ let g_sprintSchedules = {
 
 }
 let test_ImportantWorkingDay = {
-    '2019-04-11': {desc:'1904腾讯云压测', level:'notice'},
+    '2019-04-08': {desc:'1904腾讯云压测', level:'notice'},
     '2019-04-23': {desc:'1904Staging', level:'notice'},
+    '2019-04-28': {desc:'1904腾讯云UAT', level:'notice'},
     '2019-04-30': {desc:'1904ApiTest', level:'notice'},
     '2019-05-22': {desc:'1904腾讯云UAT', level:'notice'},
     '2019-05-25': {desc:'1904腾讯云', level:'notice'},
