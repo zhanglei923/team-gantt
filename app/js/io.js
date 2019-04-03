@@ -3,6 +3,7 @@ let projectName = window.location.search?window.location.search.replace(/^\?proj
 
 g_holidays = test_holidays;
 g_ImportantWorkingDay = test_ImportantWorkingDay;
+updateImportantDaysData()
 
 let loadServerTasks = (callback)=>{
     $.ajax({

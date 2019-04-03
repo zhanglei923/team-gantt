@@ -56,10 +56,10 @@ let initDate = ()=>{
         let isImportantWorkingDay;
         let isNoticeWorkingDay;
         if(g_ImportantWorkingDay[dateTxt]){
-            g_ImportantWorkingDay[dateTxt].id='iwd'+Math.random()
-            if(!g_ImportantWorkingDay[dateTxt].is) g_ImportantWorkingDay[dateTxt].is = 'start'
-            if(g_ImportantWorkingDay[dateTxt].level==='important')isImportantWorkingDay = g_ImportantWorkingDay[dateTxt];
-            if(g_ImportantWorkingDay[dateTxt].level==='notice')isNoticeWorkingDay = g_ImportantWorkingDay[dateTxt];
+            g_ImportantWorkingDay[dateTxt].forEach((d)=>{
+                if(d.level === 'important'){isImportantWorkingDay = d;}
+                if(d.level === 'notice'){isNoticeWorkingDay = d;}
+            })
         }
         //console.warn(isNoticeWorkingDay)
 
@@ -196,7 +196,10 @@ let showTipsOfImportantDay=()=>{
     let tdw = $('td.day:first').outerWidth()
     let html = ``
     let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'TODAY'}}];
-    for(let date in g_ImportantWorkingDay) arr.push({date, tip:g_ImportantWorkingDay[date]})
+    let allimportantdays = getAllImportantDays();
+    allimportantdays.forEach((d)=>{
+        arr.push({date: d.date, tip:d})
+    })
     arr.forEach((data)=>{
         let date = data.date;
         let tip = data.tip;
