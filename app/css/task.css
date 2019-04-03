@@ -1,5 +1,6 @@
 .task{
     position: absolute;
+    z-index: 999;
     height:16px;
     min-width:20px;
     background-color:#030235eb;

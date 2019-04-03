@@ -197,7 +197,7 @@ td.saving{
     color: #523030;
     background-color: #ff737380 !important;
 }
-.gantt_section .important-workingday.dir_start{
+.gantt_section th.important-workingday.dir_start{
     /* border:1px solid red !important; */
     border-left: 1px solid #b92828c2 !important;
     border-left-width: 2px !important;
@@ -205,7 +205,7 @@ td.saving{
     /* border-top-width: 2px !important;
     border-bottom-width: 2px !important; */
 }
-.gantt_section .important-workingday.dir_end{
+.gantt_section th.important-workingday.dir_end{
     /* border:1px solid red !important; */
     border-right: 1px solid #b92828c2 !important;
     border-right-width: 2px !important;
