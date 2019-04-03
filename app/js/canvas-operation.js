@@ -72,4 +72,4 @@ let showDaysInbetween=(rowidx, startDate, endDate)=>{
         //console.log(startMom.format('YYYY-MM-DD'))
     }
 
-}
+};
