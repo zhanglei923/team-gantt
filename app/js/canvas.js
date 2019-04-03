@@ -223,7 +223,8 @@ let showTipsOfImportantDay=()=>{
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())
             html += `<div is="${is}" class="tip_of_day dir_${is} ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" 
-                            style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
+                        title="[${date}] ${escapeHtml(desc)}"
+                        style="left:${left}px;top:${top}px;">${escapeHtml(desc)}</div>`
         }
     })
     $('#tasks').append(html)
