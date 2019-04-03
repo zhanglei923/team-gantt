@@ -214,8 +214,8 @@ let showTipsOfImportantDay=()=>{
                 left -= 10;
             }
             if(tip.level==='notice') {                
-                offtop = 4;
-                //left -= 22;
+                offtop = -48;
+                left -= 2;
             }
             let top = pos.top - offtop;
             let isafter = moment(date).isAfter(moment())

@@ -10,6 +10,10 @@ body{
 td.saving{
     background-color: #ff0000cc !important; 
 }
+.projectname.current{
+    background-color:green;
+    color: yellow;
+}
 .console{
     position: fixed;
     z-index: 999;
@@ -217,7 +221,7 @@ td.saving{
     color: #999;
     /* background-color: #f7f700; */
 }
-.gantt_section .notice-workingday{
+.gantt_section th.notice-workingday{
     /* border:1px solid red !important; */
     border-right: 1px solid #dcaf5c !important;
     border-right-width: 2px !important;

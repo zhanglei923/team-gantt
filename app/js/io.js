@@ -45,8 +45,8 @@ let loadProjectList=()=>{
     }).done(function( data ) {
         console.log(data)
         let html=''
-        data.forEach((projectName)=>{
-            html += `<a href="./?projectName=${projectName}" target="_blank">${projectName}</a>&nbsp;`
+        data.forEach((pName)=>{
+            html += `<a href="./?projectName=${pName}" class="projectname ${pName===projectName?'current':''}" target="_self">${pName}</a>&nbsp;`
         })
         $('#projectslist').html(html)
     });
