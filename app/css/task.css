@@ -26,3 +26,7 @@
     border-radius: 10px;
     margin: 3px 0 0 0;
 }
+.task .delete{
+    color: #ffc7c7;
+    padding: 0 0 0 2px;
+}

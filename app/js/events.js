@@ -85,7 +85,7 @@ let initEvent = ()=>{
         let td=e.currentTarget;
         handleCreateTaskPrompt(text, td)
     })
-    $('#root').on('dblclick', '.task', (e)=>{
+    $('#root').on('click', '.task', (e)=>{
         let taskid = e.currentTarget.getAttribute('id')
         showTaskEditor(taskid)
         e.preventDefault()
@@ -106,11 +106,15 @@ let initEvent = ()=>{
                 e.preventDefault()
             }
         }
+        if(e.key.toLowerCase()==='escape'){
+            hideEditors()
+        }
+    })
+    $('#deleteTaskBtn').click(()=>{
+        askDeleteTask($('#taskEditor').attr('taskid'))
     })
     $('#taskEditor input').keydown((e)=>{
-        if(e.key.toLowerCase()==='delete'){
-            askDeleteTask($('#taskEditor').attr('taskid'))
-        }
+        
     })
     
     
