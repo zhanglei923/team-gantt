@@ -137,7 +137,10 @@ td.saving{
     border-right:1px dotted #ae44e4 !important;
     border-bottom:1px dotted #ae44e4 !important;
     border-left:1px dotted #ae44e4 !important;
-
+}
+.gantt_section .rowcol.selected_day_row{
+    background-color: #2623c7 !important;
+    color: white;
 }
 .gantt_section .rowcol.selected_day{
     background-color: #2623c7 !important;

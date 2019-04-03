@@ -4,7 +4,7 @@ let handleTdClick=(td)=>{
     let rowidx = td.getAttribute('rowidx');
     let date = td.getAttribute('date');
 
-    let alltd = $('td.day')
+    let alltd = $('td')
     alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_day_row').removeClass('selected_daycol')
     $(`tr>td[id$="${date}"]`).addClass('selected_daycol')
     let daytd = getDayElem(rowidx, date);
