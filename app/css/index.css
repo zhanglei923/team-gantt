@@ -132,15 +132,19 @@ td.saving{
 .gantt_section .rowcol{
     padding:2px;
 }
+.gantt_section .selected_day_row{
+    border-top: 1px dotted #ae44e4 !important;
+    border-right:1px dotted #ae44e4 !important;
+    border-bottom:1px dotted #ae44e4 !important;
+    border-left:1px dotted #ae44e4 !important;
+
+}
 .gantt_section .rowcol.selected_day{
     background-color: #2623c7 !important;
     color:white;
 }
 .gantt_section .day.selected_day{
-    border-top: 1px dotted #ae44e4 !important;
-    border-right:1px dotted #ae44e4 !important;
-    border-bottom:1px dotted #ae44e4 !important;
-    border-left:1px dotted #ae44e4 !important;
+    background-color: pink !important;
 }
 .gantt_section .day.selected_daycol{
     border-left:1px dotted #ae44e4 !important;

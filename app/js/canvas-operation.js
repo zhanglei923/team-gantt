@@ -30,11 +30,10 @@ let resetChooseDay=()=>{
 }
 let g_chooseDate1;
 let chooseDay=(rowidx, date, td)=>{
-    if(!g_chooseDate1){
-        g_choosingRowIdx = rowidx;
-        g_chooseDate1 = date;
-        td.addClass('choosed_day1') 
-    }else{
+    if(g_chooseDate1){
+        let day1td = getDayElem(g_choosingRowIdx, g_chooseDate1)
+        day1td.addClass('choosed_day1');
+        //day1td
         let d1 = moment(g_chooseDate1);
         let d2 = moment(date);
         $('td').removeClass('choosed_day2');
@@ -62,9 +61,9 @@ let showDaysInbetween=(rowidx, startDate, endDate)=>{
         let isWorkDay = dayinfo.isWorkDay;
         countDays++;
         if(isWorkDay) countWorkingDays++;
-        console.log(dayinfo)
+        //console.log(dayinfo)
         if(startMom.isAfter(endMom,'day')){
-            console.warn(startMom.format())
+            //console.warn(startMom.format())
             break;
         }
         let td=getDayElem(rowidx, daytxt);

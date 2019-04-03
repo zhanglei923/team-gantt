@@ -4,12 +4,12 @@ let handleTdClick=(td)=>{
     let rowidx = td.getAttribute('rowidx');
     let date = td.getAttribute('date');
 
-    let alltd = $('tr>td')
-    alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
+    let alltd = $('td.day')
+    alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_day_row').removeClass('selected_daycol')
     $(`tr>td[id$="${date}"]`).addClass('selected_daycol')
     let daytd = getDayElem(rowidx, date);
     daytd.addClass('selected_day')
-    getRowTdElems(rowidx).addClass('selected_day')
+    getRowTdElems(rowidx).addClass('selected_day_row')
     //console.log(tdid, rowidx, date, td.className)//)
     showDateInfo(null, date)
 }
@@ -18,9 +18,7 @@ let handleTdChoosed=(td)=>{
     let rowidx = td.getAttribute('rowidx');
     let date = td.getAttribute('date');
 
-    let alltd = $('tr>td')
     td=$(td);
-    alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_daycol')
     if(td.hasClass('choosed_day')){
         unChooseDay(rowidx, date)
     }else{
@@ -68,11 +66,16 @@ let handleCreateTaskPrompt=(text, td)=>{
 
 let initEvent = ()=>{
     $('#root').on('mousedown', 'td[id].day', (e)=>{
+        let td = e.currentTarget;
         if(e.ctrlKey||e.metaKey){
-            handleTdChoosed(e.currentTarget);
+            handleTdChoosed(td);
         }else{
             resetChooseDay()
-            handleTdClick(e.currentTarget);
+            let rowidx = td.getAttribute('rowidx');
+            let date = td.getAttribute('date');
+            g_chooseDate1 = date;
+            g_choosingRowIdx = rowidx;
+            handleTdClick(td);
         }
         e.preventDefault();
         return false;            
