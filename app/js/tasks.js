@@ -73,6 +73,7 @@ let updateTask=()=>{
     $('#'+tdid).html(getTaskHtml(data))
 
     g_Tasks[taskid] = data;
+    hideEditors()
 }
 let loadTaskData = (data)=>{
     for(let id in data){
