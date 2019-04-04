@@ -48,6 +48,33 @@ let createTask=(data)=>{
     // let taskobj = $(`#tasks>div[id="${taskid}"]`)
     // taskobj.css({left: pos.left - taskobj.outerWidth()})
 }
+let moveTask=(id, dir)=>{
+    let task = g_Tasks[id];
+    let editTaskRowIdxIpt = $('#editTaskRowIdxIpt')
+    let editTaskDateIpt = $('#editTaskDateIpt')
+    let rowidx = parseInt(editTaskRowIdxIpt.val())
+    let date = editTaskDateIpt.val()
+    let mom = moment(date)
+    if(dir==='up'){//ArrowUp
+        rowidx -= 1;
+        if(rowidx>=0)
+        editTaskRowIdxIpt.val(rowidx);
+    }else
+    if(dir==='down'){//ArrowDown
+        rowidx += 1;
+        if(rowidx<=initRowSize-1)
+        editTaskRowIdxIpt.val(rowidx);        
+    }else
+    if(dir==='left'){//ArrowLeft
+        mom.subtract(1, 'days');
+        editTaskDateIpt.val(mom.format('YYYY-MM-DD'))
+    }else
+    if(dir==='right'){//ArrowRight
+        mom.add(1, 'days');
+        editTaskDateIpt.val(mom.format('YYYY-MM-DD'))        
+    }
+    updateTask(true)
+}
 let showTaskEditor=(taskid)=>{
     let data = g_Tasks[taskid];
     if(!data)return;
@@ -56,9 +83,10 @@ let showTaskEditor=(taskid)=>{
     $('#taskEditor').show().attr('taskid', taskid)
     $('#editTaskRowIdxIpt').val(data.rowIdx)
     $('#editTaskDateIpt').val(data.endDate)
-    $('#editTaskSubjectIpt').val(data.subject)
+    $('#editTaskSubjectIpt').val(data.subject).get(0).focus()
 }
-let updateTask=()=>{
+let updateTask=(nohide)=>{
+    if(typeof nohide=== 'undefined') nohide=false;
     let taskid = $('#taskEditor').attr('taskid')
     let rowIdx = _.trim($('#editTaskRowIdxIpt').val())
     let endDate = _.trim($('#editTaskDateIpt').val())
@@ -76,7 +104,7 @@ let updateTask=()=>{
     $('#'+tdid).html(getTaskHtml(data))
 
     g_Tasks[taskid] = data;
-    hideEditors()
+    if(!nohide)hideEditors()
 }
 let loadTaskData = (data)=>{
     for(let id in data){
