@@ -3,8 +3,8 @@
     z-index: 999;
     height:16px;
     min-width:20px;
-    background-color:#030235eb;
-    color: white;
+    background-color:#e9e9f5eb;
+    color: black;
     border:1px solid #3f49bf;
     /* border-right-color: #0000ff99;
     border-right-width: 2px; */
@@ -28,6 +28,7 @@
     margin: 3px 0 0 0;
 }
 .task .delete{
-    color: #ffc7c7;
+    color: #442727;
     padding: 0 0 0 2px;
+    text-decoration: none;
 }
