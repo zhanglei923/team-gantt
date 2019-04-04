@@ -38,6 +38,26 @@ let test_ImportantWorkingDay = {
     '2019-07-08': [{desc:'1907Intg', level:'important'}],
     '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
 };
+let test_RangeTasks = {
+    'adsfasdfdsf12': {
+        start: '2019-04-10', 
+        end: '2019-04-30',
+        subject: 'aaaaaaaa',
+        rowIdx: 4
+    },
+    'iop123423poui': {
+        start: '2019-04-20', 
+        end: '2019-06-21',
+        subject: 'bbbbbbbb',
+        rowIdx: 6
+    },
+    'iop123423poui': {
+        start: '2019-04-01', 
+        end: '2019-09-23',
+        subject: 'cccccccc',
+        rowIdx: 7
+    }
+}
 Object.assign(test_ImportantWorkingDay, g_sprintSchedules)
 let test_TaskData = {
     'task_1': {
