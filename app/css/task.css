@@ -19,13 +19,20 @@
     word-wrap: normal ;
     word-break: keep-all ;
 }
-.task .pointer{
+.pointer{
     background-color: #52577b;
     width: 10px;
     height:10px;
     display: inline-block;
     border-radius: 10px;
     margin: 3px 0 0 0;
+}
+.task .pointer{
+    background-color: #52577b;
+}
+.tip_of_day .pointer{
+    background-color: #e88145;
+    margin: 3px 0 0 3px;
 }
 .task .delete{
     color: #442727;
