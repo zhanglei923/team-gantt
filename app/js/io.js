@@ -13,12 +13,14 @@ let loadServerTasks = (callback)=>{
         data: { reponsitoryName, projectName }
     }).done(function( data ) {
         let tasks = {};
+        let rangeevents = {}
         if(!_.isEmpty(data)){
             tasks = data.tasks;
+            rangeevents = data.rangeevents;
         }else{
             tasks = test_TaskData;
         }
-        callback(tasks)
+        callback(tasks, rangeevents)
     });
 }
 let saveServerTasks = ()=>{

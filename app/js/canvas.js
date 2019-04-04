@@ -97,7 +97,7 @@ let initSections = ()=>{
         let date = id;
         days.push(id)
         if(is_a_newbegin) {
-            g_sectionRangeEvents.push({start: date, end: null});
+            g_rangeEvents.push({start: date, end: null});
             is_a_newbegin=false;
         }
         count++;
@@ -105,12 +105,12 @@ let initSections = ()=>{
             sectionDaysList.push(days);
             days=[];
             count=0;
-            g_sectionRangeEvents[sectionDaysList.length-1].end = id;
+            g_rangeEvents[sectionDaysList.length-1].end = id;
             is_a_newbegin=true;
             continue;
         }else if(i===g_CanvasDateList.length-1){
             sectionDaysList.push(days);
-            g_sectionRangeEvents[sectionDaysList.length-1].end = id;
+            g_rangeEvents[sectionDaysList.length-1].end = id;
         }
     }
     let html = ''
