@@ -95,7 +95,6 @@ let initSections = ()=>{
     let count=0;
     for(let i=0;i<g_CanvasDateList.length;i++){
         let id = g_CanvasDateList[i];
-        let info = g_CanvasDateInfo[id];
         let date = id;
         days.push(id)
         if(is_a_newbegin) {
