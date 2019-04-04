@@ -5,7 +5,7 @@
     min-width:20px;
     background-color:#e9e9f5eb;
     color: black;
-    border:1px solid #3f49bf;
+    border:1px dotted #3f49bf;
     /* border-right-color: #0000ff99;
     border-right-width: 2px; */
     /* border-radius:8px; */
@@ -20,7 +20,7 @@
     word-break: keep-all ;
 }
 .task .pointer{
-    background-color: #ffffff;
+    background-color: #52577b;
     width: 10px;
     height:10px;
     display: inline-block;
