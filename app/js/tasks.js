@@ -7,6 +7,9 @@ let escapeHtml=(txt)=>{
                     .replace(/"/g, '&quot;')
                     .replace(/\n/g, '<br />');
 }
+let getNewTaskId=()=>{
+    return 'task_'+((Math.random()+'').replace(/0\./,'')*1).toString(36);     
+}
 let askDeleteTask=(taskid)=>{
     let task = g_Tasks[taskid];
     if(confirm(`Sure to delete "${task.subject}"?`)){

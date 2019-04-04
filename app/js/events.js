@@ -55,7 +55,7 @@ let handleCreateTaskPrompt=(text, td)=>{
     if(!text) return;
     var title = text;
     createTask({
-        id: 'task_'+((Math.random()+'').replace(/0\./,'')*1).toString(36),
+        id: getNewTaskId(),
         rowIdx: rowIdx,
         startDate: null,
         endDate: date,

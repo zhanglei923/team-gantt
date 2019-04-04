@@ -220,6 +220,7 @@ let showTipsOfImportantDay=()=>{
                 offtop = -48;
                 left -= 2;
             }
+            if(tip.offset_y) offtop -= tip.offset_y*21;
             let top = pos.top - offtop;
             let isafter = moment(date+'T23:59:59').isAfter(moment())
             html += `<div is="${is}" class="tip_of_day dir_${is} ${level?level:''} ${tip.now?'now':''} ${isafter||tip.now?'':'ispassed'}" 
