@@ -88,7 +88,6 @@ let initDate = ()=>{
     }
 }
 let sectionDaysList = [];
-let sectionRangeDates = [];//每个section的起始日期
 let is_a_newbegin = true;
 let initSections = ()=>{
     let days = [];
@@ -98,7 +97,7 @@ let initSections = ()=>{
         let date = id;
         days.push(id)
         if(is_a_newbegin) {
-            sectionRangeDates.push({start: date, end: null});
+            g_sectionRangeEvents.push({start: date, end: null});
             is_a_newbegin=false;
         }
         count++;
@@ -106,12 +105,12 @@ let initSections = ()=>{
             sectionDaysList.push(days);
             days=[];
             count=0;
-            sectionRangeDates[sectionDaysList.length-1].end = id;
+            g_sectionRangeEvents[sectionDaysList.length-1].end = id;
             is_a_newbegin=true;
             continue;
         }else if(i===g_CanvasDateList.length-1){
             sectionDaysList.push(days);
-            sectionRangeDates[sectionDaysList.length-1].end = id;
+            g_sectionRangeEvents[sectionDaysList.length-1].end = id;
         }
     }
     let html = ''

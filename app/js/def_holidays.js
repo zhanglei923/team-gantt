@@ -40,6 +40,12 @@ let test_ImportantWorkingDay = {
 };
 let test_RangeTasks = {
     'adsfasdfdsf12': {
+        start: '2019-01-10', 
+        end: '2019-05-08',
+        subject: '0000000',
+        rowIdx: 4
+    },
+    'adsfasdfdsf12': {
         start: '2019-04-10', 
         end: '2019-04-30',
         subject: 'aaaaaaaa',
