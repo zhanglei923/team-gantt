@@ -24,6 +24,7 @@ let loadRangeEvents = (startend_events)=>{
             // [  ooooo  ]
             if(eventStartMom.isSameOrAfter(sectionStartMom) && eventEndMom.isSameOrBefore(sectionEndMom)){
                 htmlSegments.push(Object.assign(seg, {
+                    all_close:true,
                     head: {
                         date: event.start,
                         isBegin: true,
@@ -36,6 +37,7 @@ let loadRangeEvents = (startend_events)=>{
             } //[    ooooo]
             if(eventStartMom.isSameOrAfter(sectionStartMom) && eventEndMom.isAfter(sectionEndMom) && eventStartMom.isBefore(sectionEndMom)){
                 htmlSegments.push(Object.assign(seg, {
+                    left_close:true,
                     head: {
                         date: event.start,
                         isBegin: true
@@ -48,6 +50,7 @@ let loadRangeEvents = (startend_events)=>{
             }//[ooooo    ]
             if(eventStartMom.isBefore(sectionStartMom) && eventEndMom.isBefore(sectionEndMom) && eventEndMom.isAfter(sectionStartMom)){
                 htmlSegments.push(Object.assign(seg, {
+                    right_close:true,
                     head: {
                         date: section.start,
                         isBegin: false
@@ -60,6 +63,7 @@ let loadRangeEvents = (startend_events)=>{
             }//[ooooooooo]
             if(eventStartMom.isBefore(sectionStartMom) && eventEndMom.isAfter(sectionEndMom)){
                 htmlSegments.push(Object.assign(seg, {
+                    all_open: true,
                     head: {
                         date: section.start,
                         isBegin: false
@@ -87,12 +91,17 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth();
             if(seg.section_idx === i){
-                html += `<div class="eventsegment" eventid="${seg.eventId}"
+                html += `<div eventid="${seg.eventId}" class="eventsegment 
+                        ${seg.left_close?' left-is-close':''}
+                        ${seg.right_close?' right-is-close':''}
+                        ${seg.all_close?' all-close':''}
+                        ${seg.all_open?' all-open':''}
+                        "
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
                 >
-                    ${seg.head.isBegin?'<span class="begin-mark">BEGIN:</span>':''}
+                    ${seg.head.isBegin?'<span class="begin-mark">Begin:</span>':''}
                     ${seg.subject}
-                    ${seg.tail.isEnd?'<span class="end-mark">END.</span>':''}
+                    ${seg.tail.isEnd?'<span class="end-mark">End.</span>':''}
                 </div>`
             }            
         })

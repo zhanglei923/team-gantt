@@ -1,11 +1,27 @@
 .eventsegment{
     position: absolute;
-    height:20px;
-    background-color: red;
+    height:16px;
+    background-color: greenyellow;
 }
 .eventsegment .begin-mark{
     float:left;
 }
 .eventsegment .end-mark{
     float:right;
+}
+.eventsegment.left-is-close{
+    border: 3px dotted orange;
+    border-right: 0;
+}
+.eventsegment.right-is-close{
+    border: 3px dotted orange;
+    border-left: 0;
+}
+.eventsegment.all-close{
+    border: 3px dotted orange;
+}
+.eventsegment.all-open{
+    border: 3px dotted orange;
+    border-top: 0;
+    border-bottom: 0;
 }
