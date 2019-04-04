@@ -89,6 +89,7 @@ let initDate = ()=>{
 }
 let sectionDaysList = [];
 let is_a_newbegin = true;
+let section_count = 0;
 let initSections = ()=>{
     let days = [];
     let count=0;
@@ -97,8 +98,9 @@ let initSections = ()=>{
         let date = id;
         days.push(id)
         if(is_a_newbegin) {
-            g_sectionStartEneDate.push({start: date, end: null});
+            g_sectionStartEneDate.push({section_count:section_count, start: date, end: null});
             is_a_newbegin=false;
+            section_count++
         }
         count++;
         if(count >= sectionDays){
