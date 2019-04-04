@@ -2,7 +2,7 @@
 let holidayDays = {};
 let alteredWorkingDays = {};
 let initRowSize = 12;
-let displayDays = 126;
+let displayDays = 326;
 let sectionDays = 7*9;
 let g_Tasks = {};
 let g_CanvasDateList = [];
@@ -88,21 +88,31 @@ let initDate = ()=>{
     }
 }
 let sectionDaysList = [];
+let sectionScopeDate = [];//每个section的起始日期
+let is_a_newbegin = true;
 let initSections = ()=>{
     let days = [];
     let count=0;
     for(let i=0;i<g_CanvasDateList.length;i++){
         let id = g_CanvasDateList[i];
         let info = g_CanvasDateInfo[id];
+        let date = id;
         days.push(id)
+        if(is_a_newbegin) {
+            sectionScopeDate.push({start: date, end: null});
+            is_a_newbegin=false;
+        }
         count++;
         if(count >= sectionDays){
             sectionDaysList.push(days);
             days=[];
             count=0;
+            sectionScopeDate[sectionDaysList.length-1].end = id;
+            is_a_newbegin=true;
             continue;
         }else if(i===g_CanvasDateList.length-1){
             sectionDaysList.push(days);
+            sectionScopeDate[sectionDaysList.length-1].end = id;
         }
     }
     let html = ''
