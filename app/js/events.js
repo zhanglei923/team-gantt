@@ -117,11 +117,6 @@ let initEvent = ()=>{
         askDeleteTask($('#taskEditor').attr('taskid'))
     })
     $('#taskEditor input').keydown((e)=>{
-        // 38 "ArrowUp"
-        // 40 "ArrowDown"
-        // 37 "ArrowLeft"
-        // 39 "ArrowRight"
-        console.log(e.keyCode, e.key)
         if(e.metaKey || e.ctrlKey){
             let taskid = $('#taskEditor').attr('taskid')
             if(e.keyCode===38){//ArrowUp
