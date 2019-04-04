@@ -87,7 +87,7 @@ let initDate = ()=>{
         g_CanvasDateInfo[dateId] = info;
     }
 }
-let sectionDaysList = [];
+let g_sectionDaysList = [];
 let is_a_newbegin = true;
 let section_count = 0;
 let initSections = ()=>{
@@ -98,25 +98,25 @@ let initSections = ()=>{
         let date = id;
         days.push(id)
         if(is_a_newbegin) {
-            g_sectionStartEneDate.push({section_count:section_count, start: date, end: null});
+            g_sectionStartEneDate.push({section_idx:section_count, start: date, end: null});
             is_a_newbegin=false;
             section_count++
         }
         count++;
         if(count >= sectionDays){
-            sectionDaysList.push(days);
+            g_sectionDaysList.push(days);
             days=[];
             count=0;
-            g_sectionStartEneDate[sectionDaysList.length-1].end = id;
+            g_sectionStartEneDate[g_sectionDaysList.length-1].end = id;
             is_a_newbegin=true;
             continue;
         }else if(i===g_CanvasDateList.length-1){
-            sectionDaysList.push(days);
-            g_sectionStartEneDate[sectionDaysList.length-1].end = id;
+            g_sectionDaysList.push(days);
+            g_sectionStartEneDate[g_sectionDaysList.length-1].end = id;
         }
     }
     let html = ''
-    sectionDaysList.forEach((sec, i)=>{
+    g_sectionDaysList.forEach((sec, i)=>{
         html += `<div id="tip_ofsection${i}" class="tip_ofsection"></div>
                  <table id="gantt_section${i}" class="gantt_section">
                     <thead id="gantt_section_thead${i}"></thead>
@@ -257,7 +257,7 @@ let initGantt = ()=>{
     // console.log(g_CanvasDateList);
     // console.log(g_CanvasDateInfo);
     // console.log(sections);
-    sectionDaysList.forEach((days, i)=>{        
+    g_sectionDaysList.forEach((days, i)=>{        
         renderSection(days, i);
     })
     window.setTimeout(()=>{
