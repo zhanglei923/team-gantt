@@ -89,7 +89,11 @@ let drawStartEndEvents=(segments)=>{
             if(seg.section_idx === i){
                 html += `<div class="eventsegment" eventid="${seg.eventId}"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
-                >${seg.subject}</div>`
+                >
+                    ${seg.head.isBegin?'<span class="begin-mark">BEGIN:</span>':''}
+                    ${seg.subject}
+                    ${seg.tail.isEnd?'<span class="end-mark">END.</span>':''}
+                </div>`
             }            
         })
     })

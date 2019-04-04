@@ -3,3 +3,9 @@
     height:20px;
     background-color: red;
 }
+.eventsegment .begin-mark{
+    float:left;
+}
+.eventsegment .end-mark{
+    float:right;
+}
