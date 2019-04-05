@@ -1,6 +1,6 @@
 .eventsegment{
     position: absolute;
-    height:16px;
+    height:14px;
     background-color: greenyellow;
 }
 .eventsegment .begin-mark{
@@ -10,18 +10,16 @@
     float:right;
 }
 .eventsegment.left-is-close{
-    border: 3px dotted orange;
+    border: 2px solid orange;
     border-right: 0;
 }
 .eventsegment.right-is-close{
-    border: 3px dotted orange;
+    border: 2px solid orange;
     border-left: 0;
 }
 .eventsegment.all-close{
-    border: 3px dotted orange;
+    border: 2px solid orange;
 }
 .eventsegment.all-open{
-    border: 3px dotted orange;
-    border-top: 0;
-    border-bottom: 0;
+    border: 0;
 }
