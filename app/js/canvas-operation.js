@@ -25,6 +25,7 @@ let resetChooseDay=()=>{
     g_choosingRowIdx=null;
     g_choosingDates=[];
     g_chooseDate1=null;
+    hideEventEditor()
     $('td').removeClass('choosed_day').removeClass('choosed_day1').removeClass('choosed_day2')
     $('tr>td>.diffdays').remove()
 }
@@ -33,6 +34,11 @@ let chooseDay=(rowidx, date, td)=>{
     if(g_chooseDate1){
         let day1td = getDayElem(g_choosingRowIdx, g_chooseDate1)
         day1td.addClass('choosed_day1');
+        showEventEditor({
+            start:g_chooseDate1,
+            end:date,
+            rowIdx: rowidx
+        })
         //day1td
         let d1 = moment(g_chooseDate1);
         let d2 = moment(date);

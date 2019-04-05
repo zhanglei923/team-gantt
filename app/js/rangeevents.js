@@ -109,3 +109,18 @@ let drawStartEndEvents=(segments)=>{
     console.log(html)
     $('#tasks').append(html)
 }
+let hideEventEditor=()=>{
+    $('#startendeventEditor').hide()
+    $("#editEventRowIdxIpt").val('');
+    $("#editEventStartIpt").val('');
+    $("#editEventEndIpt").val('');
+    $("#editEventSubjectIpt").val('');
+}
+let showEventEditor=(event)=>{
+    $('#startendeventEditor').show()
+    console.log(event)
+    $("#editEventRowIdxIpt").val(event.rowIdx);
+    $("#editEventStartIpt").val(event.start);
+    $("#editEventEndIpt").val(event.end);
+    $("#editEventSubjectIpt").val(event.subject?event.subject:'').focus();
+}
