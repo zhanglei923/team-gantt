@@ -86,6 +86,7 @@ let showTaskEditor=(taskid)=>{
     $('#editTaskSubjectIpt').val(data.subject).get(0).focus()
 }
 let updateTask=(nohide)=>{
+    if(!$('#taskEditor').is(':visible'))return;
     if(typeof nohide=== 'undefined') nohide=false;
     let taskid = $('#taskEditor').attr('taskid')
     let rowIdx = _.trim($('#editTaskRowIdxIpt').val())

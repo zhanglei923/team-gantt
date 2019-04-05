@@ -46,7 +46,7 @@ let loadProjectList=()=>{
         dataType:'json',
         data: { reponsitoryName }
     }).done(function( data ) {
-        console.log(data)
+        //console.log(data)
         let html=''
         data.forEach((pName)=>{
             html += `<a href="./?projectName=${pName}" class="projectname ${pName===projectName?'current':''}" target="_self">${pName}</a>&nbsp;`

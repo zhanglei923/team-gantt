@@ -2,8 +2,8 @@ let g_sectionStartEneDate = [];//每个section的起始日期
 let loadRangeEvents = (startend_events)=>{
     startend_events = test_RangeTasks;
 
-    console.log('g_sectionStartEneDate:', g_sectionStartEneDate)
-    console.log('startend_events:', startend_events)
+    //console.log('g_sectionStartEneDate:', g_sectionStartEneDate)
+    //console.log('startend_events:', startend_events)
     let htmlSegments = []
 
     g_sectionStartEneDate.forEach((section)=>{
@@ -76,7 +76,7 @@ let loadRangeEvents = (startend_events)=>{
             }
         }
     });
-    console.log(htmlSegments)
+    //console.log(htmlSegments)
     drawStartEndEvents(htmlSegments)
 }
 let drawStartEndEvents=(segments)=>{
@@ -106,7 +106,7 @@ let drawStartEndEvents=(segments)=>{
             }            
         })
     })
-    console.log(html)
+    //console.log(html)
     $('#tasks').append(html)
 }
 let hideEventEditor=()=>{
@@ -118,9 +118,25 @@ let hideEventEditor=()=>{
 }
 let showEventEditor=(event)=>{
     $('#startendeventEditor').show()
-    console.log(event)
+    //console.log(event)
     $("#editEventRowIdxIpt").val(event.rowIdx);
     $("#editEventStartIpt").val(event.start);
     $("#editEventEndIpt").val(event.end);
     $("#editEventSubjectIpt").val(event.subject?event.subject:'').focus();
+}
+let createEvent=()=>{
+    if(!$('#startendeventEditor').is(':visible'))return;
+    let taskid = $('#startendeventEditor').attr('taskid')
+    let rowIdx = _.trim($('#editEventRowIdxIpt').val())
+    let endDate = _.trim($('#editEventDateIpt').val())
+    let subject = _.trim($('#editEventSubjectIpt').val())
+
+}
+let updateEvent=()=>{
+    if(!$('#startendeventEditor').is(':visible'))return;
+    let taskid = $('#startendeventEditor').attr('taskid')
+    let rowIdx = _.trim($('#editEventRowIdxIpt').val())
+    let endDate = _.trim($('#editEventDateIpt').val())
+    let subject = _.trim($('#editEventSubjectIpt').val())
+    if(!taskid)return;
 }
