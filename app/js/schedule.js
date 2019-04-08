@@ -1,18 +1,18 @@
 let g_sectionStartEneDate = [];//每个section的起始日期
-let loadRangeEvents = (startend_events)=>{
-    startend_events = test_RangeTasks;
+let loadSchedules = (schedulelist)=>{
+    schedulelist = test_Schedules;
 
     //console.log('g_sectionStartEneDate:', g_sectionStartEneDate)
-    //console.log('startend_events:', startend_events)
+    //console.log('schedulelist:', schedulelist)
     let htmlSegments = []
 
     g_sectionStartEneDate.forEach((section)=>{
         let sectionStartMom = moment(section.start+'T00:00:00');
         let sectionEndMom = moment(section.end+'T23:59:59');
 
-        for(let eventId in startend_events){
-            //console.log(section, startend_events)
-            let event = startend_events[eventId];
+        for(let eventId in schedulelist){
+            //console.log(section, schedulelist)
+            let event = schedulelist[eventId];
             let eventStartMom = moment(event.start+'T00:00:00');
             let eventEndMom = moment(event.end+'T23:59:59');
             let seg = {

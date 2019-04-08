@@ -40,19 +40,19 @@
     <script src="./js/def_holidays.js"></script>
     <script src="./js/io.js"></script>
     <script src="./js/events.js"></script>
-    <script src="./js/rangeevents.js"></script>
+    <script src="./js/schedule.js"></script>
     <script src="./js/tasks.js"></script>
     <script src="./js/console.js"></script>
     <script src="./js/canvas-operation.js"></script>
     <script src="./js/canvas.js"></script>
     <script>    
         $(()=>{
-            loadServerTasks((tasks, rangeevents)=>{
+            loadServerTasks((tasks, schedule)=>{
                 loadProjectList()
                 initGantt()
                 //loadTaskData(test_TaskData)
                 loadTaskData(tasks);
-                loadRangeEvents(rangeevents)
+                loadSchedules(schedule)
             })
         })
     </script>

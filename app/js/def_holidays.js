@@ -38,7 +38,7 @@ let test_ImportantWorkingDay = {
     '2019-07-08': [{desc:'1907Intg', level:'important'}],
     '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
 };
-let test_RangeTasks = {
+let test_Schedules = {
     'adsfasdfdsf12': {
         start: '2019-01-10', 
         end: '2019-05-08',
