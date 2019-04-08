@@ -91,7 +91,7 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth();
             if(seg.section_idx === i){
-                html += `<div eventid="${seg.eventId}" class="eventsegment 
+                html += `<div eventid="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
                         ${seg.right_close?' right-is-close':''}
                         ${seg.all_close?' all-close':''}

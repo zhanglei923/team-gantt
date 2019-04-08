@@ -1,25 +1,31 @@
-.eventsegment{
+.schedule_segment{
     position: absolute;
     height:14px;
-    background-color: greenyellow;
+    background-color: #d6d8ff;
 }
-.eventsegment .begin-mark{
+.schedule_segment .begin-mark{
     float:left;
 }
-.eventsegment .end-mark{
+.schedule_segment .end-mark{
     float:right;
 }
-.eventsegment.left-is-close{
+.schedule_segment.left-is-close{
     border: 2px solid orange;
     border-right: 0;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
-.eventsegment.right-is-close{
+.schedule_segment.right-is-close{
     border: 2px solid orange;
     border-left: 0;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
-.eventsegment.all-close{
+.schedule_segment.all-close{
     border: 2px solid orange;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
-.eventsegment.all-open{
+.schedule_segment.all-open{
     border: 0;
 }
