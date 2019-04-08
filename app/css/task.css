@@ -20,7 +20,7 @@
     word-break: keep-all ;
 }
 .pointer{
-    background-color: #52577b;
+    background-color: #4577e8;
     width: 10px;
     height:10px;
     display: inline-block;
@@ -28,10 +28,10 @@
     margin: 3px 0 0 0;
 }
 .task .pointer{
-    background-color: #52577b;
+    background-color: #4577e8;
 }
 .tip_of_day .pointer{
-    background-color: #e88145;
+    background-color: #4577e8;
     margin: 3px 0 0 3px;
 }
 .task .delete{
