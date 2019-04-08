@@ -94,6 +94,12 @@ let initEvent = ()=>{
         e.preventDefault()
         e.stopPropagation();        
     })
+    $('#tasks').on('click', '.schedule_segment', (e)=>{
+        let id = e.currentTarget.getAttribute('id')
+        showScheduleEditorFromHtml(id)
+        e.preventDefault()
+        e.stopPropagation();        
+    })    
     $('#updateTaskBtn').click(updateTask)
     $('#updateScheduleBtn').click(updateSchedule)
     $('#root').on('mousemove', 'td[id].day', (e)=>{

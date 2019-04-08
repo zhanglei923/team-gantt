@@ -92,7 +92,7 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth();
             if(seg.section_idx === i){
-                html += `<div eventid="${seg.eventId}" class="schedule_segment 
+                html += `<div id="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
                         ${seg.right_close?' right-is-close':''}
                         ${seg.all_close?' all-close':''}
@@ -117,15 +117,20 @@ let hideEventEditor=()=>{
     $("#editScheduleEndIpt").val('');
     $("#editScheduleSubjectIpt").val('');
 }
-let showEventEditor=(event)=>{
+let showScheduleEditorFromHtml=(id)=>{
+    let div = $('#'+id);
+    let schedule = g_Schedules[id];
+    showScheduleEditor(schedule);
+}
+let showScheduleEditor=(schedule)=>{
     $('#scheduleEditor').show()
-    console.log(event)
-    if(!event.id) event.id = 'schedule_'+(Math.random()+'').replace(/\./g,'')
-    $('#scheduleEditor').attr('schedule_id', event.id)
-    $("#editScheduleRowIdxIpt").val(event.rowIdx);
-    $("#editScheduleStartIpt").val(event.start);
-    $("#editScheduleEndIpt").val(event.end);
-    $("#editScheduleSubjectIpt").val(event.subject?event.subject:'').focus();
+    console.log(schedule)
+    if(!schedule.id) schedule.id = 'schedule_'+(Math.random()+'').replace(/\./g,'')
+    $('#scheduleEditor').attr('schedule_id', schedule.id)
+    $("#editScheduleRowIdxIpt").val(schedule.rowIdx);
+    $("#editScheduleStartIpt").val(schedule.start);
+    $("#editScheduleEndIpt").val(schedule.end);
+    $("#editScheduleSubjectIpt").val(schedule.subject?schedule.subject:'').focus();
 }
 let updateSchedule=()=>{
     if(!$('#scheduleEditor').is(':visible'))return;
@@ -137,6 +142,7 @@ let updateSchedule=()=>{
 
     if(!schedule_id)return;
     if(!subject)return;
+    $('#'+schedule_id).off().remove();
     let schedule = {
         [schedule_id]:{
             start: startDate, 

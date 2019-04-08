@@ -34,7 +34,7 @@ let chooseDay=(rowidx, date, td)=>{
     if(g_chooseDate1){
         let day1td = getDayElem(g_choosingRowIdx, g_chooseDate1)
         day1td.addClass('choosed_day1');
-        showEventEditor({
+        showScheduleEditor({
             start:g_chooseDate1,
             end:date,
             rowIdx: rowidx
