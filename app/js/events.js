@@ -95,6 +95,7 @@ let initEvent = ()=>{
         e.stopPropagation();        
     })
     $('#updateTaskBtn').click(updateTask)
+    $('#updateScheduleBtn').click(updateSchedule)
     $('#root').on('mousemove', 'td[id].day', (e)=>{
         handleTdMouseOver(e, e.currentTarget);
     })

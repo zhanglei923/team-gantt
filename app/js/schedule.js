@@ -111,33 +111,40 @@ let drawStartEndEvents=(segments)=>{
     $('#tasks').append(html)
 }
 let hideEventEditor=()=>{
-    $('#startendeventEditor').hide()
-    $("#editEventRowIdxIpt").val('');
-    $("#editEventStartIpt").val('');
-    $("#editEventEndIpt").val('');
-    $("#editEventSubjectIpt").val('');
+    $('#scheduleEditor').hide()
+    $("#editScheduleRowIdxIpt").val('');
+    $("#editScheduleStartIpt").val('');
+    $("#editScheduleEndIpt").val('');
+    $("#editScheduleSubjectIpt").val('');
 }
 let showEventEditor=(event)=>{
-    $('#startendeventEditor').show()
-    //console.log(event)
-    $("#editEventRowIdxIpt").val(event.rowIdx);
-    $("#editEventStartIpt").val(event.start);
-    $("#editEventEndIpt").val(event.end);
-    $("#editEventSubjectIpt").val(event.subject?event.subject:'').focus();
+    $('#scheduleEditor').show()
+    console.log(event)
+    if(!event.id) event.id = 'schedule_'+(Math.random()+'').replace(/\./g,'')
+    $('#scheduleEditor').attr('schedule_id', event.id)
+    $("#editScheduleRowIdxIpt").val(event.rowIdx);
+    $("#editScheduleStartIpt").val(event.start);
+    $("#editScheduleEndIpt").val(event.end);
+    $("#editScheduleSubjectIpt").val(event.subject?event.subject:'').focus();
 }
-let createEvent=()=>{
-    if(!$('#startendeventEditor').is(':visible'))return;
-    let taskid = $('#startendeventEditor').attr('taskid')
-    let rowIdx = _.trim($('#editEventRowIdxIpt').val())
-    let endDate = _.trim($('#editEventDateIpt').val())
-    let subject = _.trim($('#editEventSubjectIpt').val())
+let updateSchedule=()=>{
+    if(!$('#scheduleEditor').is(':visible'))return;
+    let schedule_id = $('#scheduleEditor').attr('schedule_id')
+    let rowIdx = _.trim($('#editScheduleRowIdxIpt').val())    
+    let startDate = _.trim($('#editScheduleStartIpt').val())
+    let endDate = _.trim($('#editScheduleEndIpt').val())
+    let subject = _.trim($('#editScheduleSubjectIpt').val())
 
-}
-let updateEvent=()=>{
-    if(!$('#startendeventEditor').is(':visible'))return;
-    let taskid = $('#startendeventEditor').attr('taskid')
-    let rowIdx = _.trim($('#editEventRowIdxIpt').val())
-    let endDate = _.trim($('#editEventDateIpt').val())
-    let subject = _.trim($('#editEventSubjectIpt').val())
-    if(!taskid)return;
+    if(!schedule_id)return;
+    if(!subject)return;
+    let schedule = {
+        [schedule_id]:{
+            start: startDate, 
+            end: endDate,
+            subject: subject,
+            rowIdx: rowIdx
+        }
+    }
+    console.log(schedule)
+    loadSchedules(schedule);
 }
