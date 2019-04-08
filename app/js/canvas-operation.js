@@ -25,7 +25,7 @@ let resetChooseDay=()=>{
     g_choosingRowIdx=null;
     g_choosingDates=[];
     g_chooseDate1=null;
-    hideEventEditor()
+    hideScheduleEditor()
     $('td').removeClass('choosed_day').removeClass('choosed_day1').removeClass('choosed_day2')
     $('tr>td>.diffdays').remove()
 }

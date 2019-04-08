@@ -124,6 +124,7 @@ let initEvent = ()=>{
     $('#deleteTaskBtn').click(()=>{
         askDeleteTask($('#taskEditor').attr('taskid'))
     })
+
     $('#taskEditor input').keydown((e)=>{
         if(e.metaKey || e.ctrlKey){
             let taskid = $('#taskEditor').attr('taskid')
@@ -138,6 +139,24 @@ let initEvent = ()=>{
             }else
             if(e.keyCode===39){//ArrowRight
                 moveTask(taskid, 'right')                
+            }
+            e.preventDefault()
+        }
+    })
+    $('#scheduleEditor input').keydown((e)=>{
+        if(e.metaKey || e.ctrlKey){
+            let schedule_id = $('#scheduleEditor').attr('schedule_id')
+            if(e.keyCode===38){//ArrowUp
+                moveSchedule(schedule_id, 'up')
+            }else
+            if(e.keyCode===40){//ArrowDown
+                moveSchedule(schedule_id, 'down')
+            }else
+            if(e.keyCode===37){//ArrowLeft
+                moveSchedule(schedule_id, 'left')
+            }else
+            if(e.keyCode===39){//ArrowRight
+                moveSchedule(schedule_id, 'right')                
             }
             e.preventDefault()
         }
