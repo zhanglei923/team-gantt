@@ -1,7 +1,8 @@
 .schedule_segment{
     position: absolute;
-    height:14px;
+    min-height: 20px;
     background-color: #d6d8ff;
+    line-break: strict;
 }
 .schedule_segment .begin-mark{
     float:left;
