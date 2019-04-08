@@ -1,7 +1,7 @@
 let g_sectionStartEneDate = [];//每个section的起始日期
 let loadSchedules = (schedulelist)=>{
-    schedulelist = test_Schedules;
-
+    //schedulelist = test_Schedules;
+    for(let schedule_id in schedulelist) g_Schedules[schedule_id] = schedulelist[schedule_id];
     //console.log('g_sectionStartEneDate:', g_sectionStartEneDate)
     //console.log('schedulelist:', schedulelist)
     let htmlSegments = []
@@ -81,6 +81,7 @@ let loadSchedules = (schedulelist)=>{
 }
 let drawStartEndEvents=(segments)=>{
     let html = '';
+    console.log(segments)
     segments.forEach((seg)=>{
         g_sectionDaysList.forEach((section, i)=>{
             section = $(section);

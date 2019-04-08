@@ -5,6 +5,7 @@ let initRowSize = 12;
 let displayDays = 326;
 let sectionDays = 7*9;
 let g_Tasks = {};
+let g_Schedules = {};
 let g_CanvasDateList = [];
 let g_CanvasDateInfo = {};
 let weekdayCN = ['', '一','二','三','四','五','六','日']

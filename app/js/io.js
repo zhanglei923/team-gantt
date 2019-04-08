@@ -13,19 +13,20 @@ let loadServerTasks = (callback)=>{
         data: { reponsitoryName, projectName }
     }).done(function( data ) {
         let tasks = {};
-        let rangeevents = {}
+        let schedules = {}
         if(!_.isEmpty(data)){
             tasks = data.tasks;
-            rangeevents = data.rangeevents;
+            schedules = data.schedules;
         }else{
             tasks = test_TaskData;
         }
-        callback(tasks, rangeevents)
+        callback(tasks, schedules)
     });
 }
 let saveServerTasks = ()=>{
     let data = {
-        tasks: g_Tasks
+        tasks: g_Tasks,
+        schedules: g_Schedules
     }
     $('td').addClass('saving')
     $.ajax({
