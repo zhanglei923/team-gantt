@@ -22,6 +22,9 @@
     border-top-width:1px;
     border-bottom-width: 1px;
 }
+.schedule_segment.right-is-close .subject{
+    float: right;
+}
 .schedule_segment.all-close{
     border: 2px solid orange;
     border-top-width:1px;
