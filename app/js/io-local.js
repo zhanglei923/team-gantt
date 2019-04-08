@@ -19,7 +19,7 @@ let loadServerTasks = (callback)=>{
     }
     callback(tasks)
 }
-let saveServerTasks = ()=>{
+let saveToServer = ()=>{
     let savedata = {
         holidays: g_holidays,
         importantDays: g_ImportantWorkingDay,

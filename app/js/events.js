@@ -100,13 +100,14 @@ let initEvent = ()=>{
         handleTdMouseOver(e, e.currentTarget);
     })
     $('#saveBtn').click(()=>{
-        saveServerTasks();
+        saveToServer();
     })
     $(window).keydown((e)=>{
         if(e.metaKey || e.ctrlKey){
             if(e.key.toLowerCase()==='s') {
                 updateTask()
-                saveServerTasks()
+                updateSchedule()
+                saveToServer()
                 e.preventDefault()
             }
         }

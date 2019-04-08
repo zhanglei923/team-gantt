@@ -23,7 +23,7 @@ let loadServerTasks = (callback)=>{
         callback(tasks, schedules)
     });
 }
-let saveServerTasks = ()=>{
+let saveToServer = ()=>{
     let data = {
         tasks: g_Tasks,
         schedules: g_Schedules
