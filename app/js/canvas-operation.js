@@ -37,7 +37,7 @@ let chooseDay=(rowidx, date, td)=>{
         showScheduleEditor({
             start:g_chooseDate1,
             end:date,
-            rowIdx: rowidx
+            rowIdx: g_choosingRowIdx
         })
         //day1td
         let d1 = moment(g_chooseDate1);
