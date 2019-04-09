@@ -1,6 +1,6 @@
 .schedule_segment{
     position: absolute;
-    min-height: 20px;
+    min-height: 18px;
     background-color: #d6d8ff;
     line-break: strict;
 }
