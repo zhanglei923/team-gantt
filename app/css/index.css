@@ -181,7 +181,7 @@ td.saving{
     border:1px solid green;
 }
 .gantt_section td.is-today{
-
+    background-color: greenyellow !important;
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
