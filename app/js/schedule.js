@@ -101,6 +101,7 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.all_close?' all-close':''}
                         ${seg.all_open?' all-open':''}
                         "
+                        title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
                 >
                     ${seg.head.isBegin?'<span class="begin-mark">^</span>':'<span class="begin-mark">...</span>'}
