@@ -127,6 +127,7 @@ let showScheduleEditorFromHtml=(id)=>{
     showScheduleEditor(schedule);
 }
 let showScheduleEditor=(schedule)=>{
+    hideEditors()
     $('#scheduleEditor').show()
     console.log(schedule)
     if(!schedule.id) schedule.id = 'schedule_'+(Math.random()+'').replace(/\./g,'')

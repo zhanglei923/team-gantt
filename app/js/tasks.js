@@ -78,6 +78,7 @@ let moveTask=(id, dir)=>{
 let showTaskEditor=(taskid)=>{
     let data = g_Tasks[taskid];
     if(!data)return;
+    hideEditors()
     console.log(data)
     let code = `${data.rowIdx},${data.endDate},${data.subject}`;
     $('#taskEditor').show().attr('taskid', taskid)
