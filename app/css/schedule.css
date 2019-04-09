@@ -3,6 +3,7 @@
     min-height: 18px;
     background-color: #d6d8ff;
     line-break: strict;
+    z-index: 999;
 }
 .schedule_segment .begin-mark{
     float:left;
