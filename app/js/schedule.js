@@ -196,3 +196,17 @@ let moveSchedule=(id, dir)=>{
     }
     updateSchedule(true)
 }
+let askDeleteSchedule=(id)=>{
+    let data = g_Schedules[id];
+    if(data){
+        let ok = confirm('Sure to delete "'+data.subject+'"?')
+        if(ok){
+            deleteSchedule(id)
+        }
+    }
+}
+let deleteSchedule=(id)=>{
+    delete g_Schedules[id];
+    $('#'+id).off().remove()
+    hideEditors()
+};

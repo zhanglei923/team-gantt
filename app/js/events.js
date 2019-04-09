@@ -105,6 +105,9 @@ let initEvent = ()=>{
     $('#root').on('mousemove', 'td[id].day', (e)=>{
         handleTdMouseOver(e, e.currentTarget);
     })
+    $('#deleteScheduleBtn').on('click', (e)=>{
+        askDeleteSchedule($('#scheduleEditor').attr('schedule_id'))        
+    })
     $('#saveBtn').click(()=>{
         saveToServer();
     })

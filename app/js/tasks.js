@@ -117,4 +117,7 @@ let loadTaskData = (data)=>{
 let hideEditors=()=>{
     $('#taskEditor').removeAttr('taskid')
     $('#taskEditor').hide()
+    $('#scheduleEditor').removeAttr('schedule_id')
+    $('#scheduleEditor').hide()
+    
 }
