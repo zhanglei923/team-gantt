@@ -84,7 +84,7 @@ let initEvent = ()=>{
         askDeleteTask($(e.currentTarget).closest('.task').attr('id'))
         e.preventDefault();
     })
-    $('#root').on('click', '.schedule_segment .delete', (e)=>{
+    $('#tasks').on('click', '.schedule_segment .delete', (e)=>{
         askDeleteSchedule($(e.currentTarget).closest('.schedule_segment').attr('seg_schedule_id'))
         e.preventDefault();
     })
