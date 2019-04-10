@@ -141,9 +141,9 @@ let renderSection = (days, secidx)=>{
                                 "
                          date="${id}"                                
                         >
+                        <div>${dateinfo.textofWeekend}</div>
                         <div>${dateinfo.monthText}</div>
                         <div>${dateinfo.dayText}</div>
-                        <div>${dateinfo.textofWeekend}</div>
                     </th>`
     }
     headhtml += '</tr>'
