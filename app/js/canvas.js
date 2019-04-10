@@ -221,7 +221,7 @@ let showCurrentTimeline=()=>{
         top:pos.top,
     })
 }
-window.setInterval(showCurrentTimeline, 2*60*1000)
+window.setInterval(showCurrentTimeline, 1.5*60*1000)
 let showTipsOfImportantDay=()=>{
     let tdw = $('td.day:first').outerWidth()
     let html = ``
