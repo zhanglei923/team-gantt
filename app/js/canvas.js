@@ -184,12 +184,17 @@ let renderSection = (days, secidx)=>{
     $(`#gantt_section_tbody${secidx}`).html(bigbodyhtml)
 }
 let showCurrentTimeline=()=>{
+    let todayDateText = moment().format('YYYY-MM-DD');
+    $('td.is-today').removeClass('is-today')
+    $('th.is-today').removeClass('is-today')
+    $(`td[date="${todayDateText}"]`).addClass('is-today')
+    $(`th[date="${todayDateText}"]`).addClass('is-today')
     let tbody0 = $('#gantt_section_tbody0')
     let tr0 = $('#sec0_r0')
     let firstTd = tr0.find('>td.is-today');
     let pos = firstTd.offset();
     let width = firstTd.width();
-    let clock0 = moment(moment().format('YYYY-MM-DD')+'T00:00:00');
+    let clock0 = moment(todayDateText+'T00:00:00');
     let clock1 = moment(moment().add(1,'days').format('YYYY-MM-DD')+'T00:00:00');
     let clocknow = moment();
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
