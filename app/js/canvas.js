@@ -202,9 +202,9 @@ let showCurrentTimeline=()=>{
     let timelineWidth = 5;
     // $('#tasks>div.currentTimeline').remove();
     // $('#tasks>div.currentTimelineCover').remove();
-
-    let left = pos.left + percentage*width - timelineWidth/1
-    let cover_width=width-timelineWidth+0;
+    let percentagewidth = percentage*width
+    let left = pos.left + percentagewidth - timelineWidth/1
+    let cover_width=percentagewidth;
     if(!$('#currentTimeline').get(0)){
         $('#tasks').append(`<div id="currentTimeline" class="currentTimeline"></div>
         <div id="currentTimelineCover" class="currentTimelineCover"></div>`)
