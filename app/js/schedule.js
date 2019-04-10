@@ -95,7 +95,7 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth();
             if(seg.section_idx === i){
-                html += `<div id="${seg.eventId}" class="schedule_segment 
+                html += `<div id="${seg.eventId}_${Math.random()}" seg_schedule_id="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
                         ${seg.right_close?' right-is-close':''}
                         ${seg.all_close?' all-close':''}
@@ -122,7 +122,6 @@ let hideScheduleEditor=()=>{
     $("#editScheduleSubjectIpt").val('');
 }
 let showScheduleEditorFromHtml=(id)=>{
-    let div = $('#'+id);
     let schedule = g_Schedules[id];
     schedule.id=id;
     showScheduleEditor(schedule);
@@ -149,7 +148,7 @@ let updateSchedule=(nohide)=>{
 
     if(!schedule_id)return;
     if(!subject)return;
-    $('#'+schedule_id).off().remove();
+    getScheduleSegments(schedule_id).off().remove();
     delete g_Schedules[schedule_id];
     let schedule = {
         [schedule_id]:{
@@ -207,8 +206,11 @@ let askDeleteSchedule=(id)=>{
         }
     }
 }
+let getScheduleSegments=(id)=>{
+    return $(`div.schedule_segment[seg_schedule_id="${id}"]`);
+}
 let deleteSchedule=(id)=>{
     delete g_Schedules[id];
-    $('#'+id).off().remove()
+    getScheduleSegments(id).off().remove()
     hideEditors()
 };

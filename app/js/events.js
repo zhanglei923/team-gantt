@@ -95,7 +95,7 @@ let initEvent = ()=>{
         e.stopPropagation();        
     })
     $('#tasks').on('click', '.schedule_segment', (e)=>{
-        let id = e.currentTarget.getAttribute('id')
+        let id = e.currentTarget.getAttribute('seg_schedule_id')
         showScheduleEditorFromHtml(id)
         e.preventDefault()
         e.stopPropagation();        
