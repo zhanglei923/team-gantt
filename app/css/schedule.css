@@ -5,6 +5,9 @@
     line-break: strict;
     z-index: 999;
 }
+.schedule_segment .delete{
+    text-decoration: none;
+}
 .schedule_segment .begin-mark{
     float:left;
 }

@@ -82,6 +82,11 @@ let initEvent = ()=>{
     })
     $('#root').on('click', '.task .delete', (e)=>{
         askDeleteTask($(e.currentTarget).closest('.task').attr('id'))
+        e.preventDefault();
+    })
+    $('#root').on('click', '.schedule_segment .delete', (e)=>{
+        askDeleteSchedule($(e.currentTarget).closest('.schedule_segment').attr('seg_schedule_id'))
+        e.preventDefault();
     })
     $('#root').on('dblclick', 'td[id].day', (e)=>{
         let text=prompt('Please input, like "Your Subject..."')
