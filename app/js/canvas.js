@@ -194,13 +194,27 @@ let showCurrentTimeline=()=>{
     let clocknow = moment();
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
     console.log('percentage', percentage)
-    let timelineWidth = 4;
+    let timelineWidth = 5;
     $('#tasks>div.currentTimeline').remove();
+    $('#tasks>div.currentTimelineCover').remove();
+
+    let left = pos.left + percentage*width - timelineWidth/1
+    let cover_width=width-timelineWidth+0;
     $('#tasks').append(`<div id="currentTimeline" class="currentTimeline" style="
         height:${tbody0.height()}px;
-        left:${pos.left + percentage*width - timelineWidth/2}px;
+        left:${left}px;
         top:${pos.top}px;
-    "></div>`)
+    "></div>
+    <div id="currentTimelineCover" class="currentTimelineCover" style="
+        background-color: #333;
+        opacity: 0.1;
+        position:absolute;
+        width:${cover_width}px;
+        height:${tbody0.height()}px;
+        left:${left-cover_width}px;
+        top:${pos.top}px;
+    "></div>
+    `)
 }
 window.setInterval(showCurrentTimeline, 10*60*1000)
 let showTipsOfImportantDay=()=>{

@@ -33,6 +33,7 @@ td.saving{
 .currentTimeline{
     position: absolute;
     width:4px;
+    border-right:1px solid #aaa;
     /* background-color: #50d40c; */
     /* background-color:#ff0000dd; */
     -webkit-animation: twinkling 1s infinite ease-in-out;
@@ -182,7 +183,7 @@ td.saving{
     border:1px solid green;
 }
 .gantt_section td.is-today{
-    background-color: greenyellow !important;
+    /* background-color: greenyellow !important; */
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
