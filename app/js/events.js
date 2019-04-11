@@ -119,8 +119,8 @@ let initEvent = ()=>{
     $(window).keydown((e)=>{
         if(e.metaKey || e.ctrlKey){
             if(e.key.toLowerCase()==='s') {
-                updateTask()
-                updateSchedule()
+                // updateTask()
+                // updateSchedule()
                 saveToServer()
                 e.preventDefault()
             }
@@ -134,6 +134,11 @@ let initEvent = ()=>{
     })
 
     $('#taskEditor input').keydown((e)=>{
+        // if(e.key.toLowerCase()==='enter'){
+        //     $('#updateTaskBtn').click()
+        //     //hideEditors()
+        //     e.preventDefault();
+        // }
         if(e.metaKey || e.ctrlKey){
             let taskid = $('#taskEditor').attr('taskid')
             if(e.keyCode===38){//ArrowUp
@@ -152,6 +157,11 @@ let initEvent = ()=>{
         }
     })
     $('#scheduleEditor input').keydown((e)=>{
+        // if(e.key.toLowerCase()==='enter'){
+        //     $('#updateScheduleBtn').click()
+        //     //hideEditors()
+        //     e.preventDefault();
+        // }
         if(e.metaKey || e.ctrlKey){
             let schedule_id = $('#scheduleEditor').attr('schedule_id')
             if(e.keyCode===38){//ArrowUp
@@ -169,6 +179,14 @@ let initEvent = ()=>{
             e.preventDefault()
         }
     })
-    
-    
+    let handleSubjectKeyup_timer;
+    let handleSubjectKeyup=()=>{
+        window.clearTimeout(handleSubjectKeyup_timer)
+        handleSubjectKeyup_timer = window.setTimeout(()=>{
+            updateTask(true)
+            updateSchedule(true)
+        }, 150)
+    }
+    $('#editScheduleSubjectIpt').keyup(handleSubjectKeyup)
+    $('#editTaskSubjectIpt').keyup(handleSubjectKeyup)
 }
