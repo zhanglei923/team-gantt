@@ -4,16 +4,19 @@
     height:16px;
     min-width:20px;
     background-color:#e9e9f5eb;
+    background-color: rgba(255,255,255,0.1);
     color: black;
-    border:1px dotted #3f49bf;
+    /* border:1px dotted #3f49bf; */
     /* border-right-color: #0000ff99;
     border-right-width: 2px; */
     /* border-radius:8px; */
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    /* filter:alpha(Opacity=60);
-    -moz-opacity:0.6;
-    opacity: 0.6; */
+    /* filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8; */
+    border: 0;
+    /* border-bottom: 1px solid #3f49bf; */
 }
 .task {
     word-wrap: normal ;
