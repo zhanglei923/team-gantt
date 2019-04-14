@@ -141,8 +141,8 @@ let initEvent = ()=>{
             //hideEditors()
             e.preventDefault();
         }
+        let taskid = $('#taskEditor').attr('taskid')
         if(e.metaKey || e.ctrlKey){
-            let taskid = $('#taskEditor').attr('taskid')
             let prevent = false;
             if(e.keyCode===38){//ArrowUp
                 prevent=true;
@@ -161,6 +161,16 @@ let initEvent = ()=>{
                 moveTask(taskid, 'right')                
             }
             if(prevent) e.preventDefault()
+        }
+        let ipt = $(e.currentTarget);
+        let ipt_id = ipt.attr('id');
+        if(ipt_id==='editTaskDateIpt'){
+            let dir;
+            if(e.keyCode===38) dir = 'left'
+            if(e.keyCode===40) dir = 'right'
+            if(dir){
+                moveTask(taskid, dir)
+            }
         }
     })
     $('#scheduleEditor input').keydown((e)=>{
