@@ -73,10 +73,10 @@ td.saving{
 }
 .tasks .tip_of_day.notice{
     padding-left:2px;
-    background-color:#ffffb3cc !important;
-    border: 1px solid orange;
+    background-color:#ffffb3aa !important;
     z-index: 1000;
     pointer-events: none;
+    border:0;
 }
 .tasks .tip_of_day.now{
     z-index: 9999;
