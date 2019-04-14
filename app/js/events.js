@@ -134,11 +134,11 @@ let initEvent = ()=>{
     })
 
     $('#taskEditor input').keydown((e)=>{
-        // if(e.key.toLowerCase()==='enter'){
-        //     $('#updateTaskBtn').click()
-        //     //hideEditors()
-        //     e.preventDefault();
-        // }
+        if(e.key.toLowerCase()==='enter'){
+            $('#updateTaskBtn').click()
+            //hideEditors()
+            e.preventDefault();
+        }
         if(e.metaKey || e.ctrlKey){
             let taskid = $('#taskEditor').attr('taskid')
             if(e.keyCode===38){//ArrowUp
@@ -153,15 +153,14 @@ let initEvent = ()=>{
             if(e.keyCode===39){//ArrowRight
                 moveTask(taskid, 'right')                
             }
-            e.preventDefault()
         }
     })
     $('#scheduleEditor input').keydown((e)=>{
-        // if(e.key.toLowerCase()==='enter'){
-        //     $('#updateScheduleBtn').click()
-        //     //hideEditors()
-        //     e.preventDefault();
-        // }
+        if(e.key.toLowerCase()==='enter'){
+            $('#updateScheduleBtn').click()
+            //hideEditors()
+            e.preventDefault();
+        }
         if(e.metaKey || e.ctrlKey){
             let schedule_id = $('#scheduleEditor').attr('schedule_id')
             if(e.keyCode===38){//ArrowUp
@@ -176,7 +175,6 @@ let initEvent = ()=>{
             if(e.keyCode===39){//ArrowRight
                 moveSchedule(schedule_id, 'right')                
             }
-            e.preventDefault()
         }
     })
     let handleSubjectKeyup_timer;
