@@ -169,8 +169,8 @@ let initEvent = ()=>{
             //hideEditors()
             e.preventDefault();
         }
+        let schedule_id = $('#scheduleEditor').attr('schedule_id')
         if(e.metaKey || e.ctrlKey){
-            let schedule_id = $('#scheduleEditor').attr('schedule_id')
             let prevent = false;
             if(e.keyCode===38){//ArrowUp
                 prevent=true;
@@ -189,6 +189,16 @@ let initEvent = ()=>{
                 moveSchedule(schedule_id, 'right')                
             }
             if(prevent)e.preventDefault()
+        }
+        let ipt = $(e.currentTarget);
+        let ipt_id = ipt.attr('id');
+        if(ipt_id==='editScheduleStartIpt' || ipt_id==='editScheduleEndIpt'){
+            let dir;
+            if(e.keyCode===38) dir = 'up'
+            if(e.keyCode===40) dir = 'down'
+            if(dir){
+                changeScheduleRange(ipt, dir, schedule_id)
+            }
         }
     })
     let handleSubjectKeyup_timer;

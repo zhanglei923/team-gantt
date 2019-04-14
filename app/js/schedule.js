@@ -204,6 +204,16 @@ let moveSchedule=(id, dir)=>{
     }
     updateSchedule(true)
 }
+let changeScheduleRange=(ipt, dir, schedule_id)=>{
+    let date = ipt.val();
+    if(isValidDate(date)){
+        let mom = moment(date);
+        if(dir==='up') mom.add(1, 'days');
+        if(dir==='down') mom.subtract(1, 'days');
+        ipt.val(mom.format('YYYY-MM-DD'));
+        updateSchedule(true)
+    }
+}
 let askDeleteSchedule=(id)=>{
     let data = g_Schedules[id];
     if(data){
