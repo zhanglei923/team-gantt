@@ -199,6 +199,8 @@ let initEvent = ()=>{
             updateSchedule(true)
         }, 150)
     }
-    $('#editScheduleSubjectIpt').keyup(handleSubjectKeyup)
-    $('#editTaskSubjectIpt').keyup(handleSubjectKeyup)
+    $('#scheduleEditor').on('keyup', 'input', handleSubjectKeyup)
+    $('#taskEditor').on('keyup', 'input', handleSubjectKeyup)
+    // $('#editScheduleSubjectIpt').keyup(handleSubjectKeyup)
+    // $('#editTaskSubjectIpt').keyup(handleSubjectKeyup)
 }

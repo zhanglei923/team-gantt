@@ -151,6 +151,10 @@ let updateSchedule=(nohide)=>{
 
     if(!schedule_id)return;
     if(!subject)return;
+    if(!isValidDate(startDate) || !isValidDate(endDate)) {
+        //console.log(isValidDate(startDate), isValidDate(endDate), startDate, endDate)
+        return;
+    }
     getScheduleSegments(schedule_id).off().remove();
     delete g_Schedules[schedule_id];
     let schedule = {
