@@ -141,18 +141,24 @@ let initEvent = ()=>{
         }
         if(e.metaKey || e.ctrlKey){
             let taskid = $('#taskEditor').attr('taskid')
+            let prevent = false;
             if(e.keyCode===38){//ArrowUp
+                prevent=true;
                 moveTask(taskid, 'up')
             }else
             if(e.keyCode===40){//ArrowDown
+                prevent=true;
                 moveTask(taskid, 'down')
             }else
             if(e.keyCode===37){//ArrowLeft
+                prevent=true;
                 moveTask(taskid, 'left')
             }else
             if(e.keyCode===39){//ArrowRight
+                prevent=true;
                 moveTask(taskid, 'right')                
             }
+            if(prevent) e.preventDefault()
         }
     })
     $('#scheduleEditor input').keydown((e)=>{
@@ -163,18 +169,24 @@ let initEvent = ()=>{
         }
         if(e.metaKey || e.ctrlKey){
             let schedule_id = $('#scheduleEditor').attr('schedule_id')
+            let prevent = false;
             if(e.keyCode===38){//ArrowUp
+                prevent=true;
                 moveSchedule(schedule_id, 'up')
             }else
             if(e.keyCode===40){//ArrowDown
+                prevent=true;
                 moveSchedule(schedule_id, 'down')
             }else
             if(e.keyCode===37){//ArrowLeft
+                prevent=true;
                 moveSchedule(schedule_id, 'left')
             }else
             if(e.keyCode===39){//ArrowRight
+                prevent=true;
                 moveSchedule(schedule_id, 'right')                
             }
+            if(prevent)e.preventDefault()
         }
     })
     let handleSubjectKeyup_timer;
