@@ -7,6 +7,8 @@ let handleTdClick=(td)=>{
     let alltd = $('td')
     alltd.removeClass('choosed_day').removeClass('selected_day').removeClass('selected_day_row').removeClass('selected_daycol')
     $(`tr>td[id$="${date}"]`).addClass('selected_daycol')
+    $('th.selected_dayheader').removeClass('selected_dayheader')
+    $(`th[date$="${date}"]`).addClass('selected_dayheader')
     let daytd = getDayElem(rowidx, date);
     daytd.addClass('selected_day')
     getRowTdElems(rowidx).addClass('selected_day_row')

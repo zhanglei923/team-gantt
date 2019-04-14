@@ -161,6 +161,9 @@ td.saving{
     border-left:1px dotted #ae44e4 !important;
     border-right:1px dotted #ae44e4 !important;
 }
+.gantt_section .selected_dayheader{
+
+}
 .gantt_section .choosed_day{
     background-color: #ff6883 !important;
 }
