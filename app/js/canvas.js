@@ -197,14 +197,15 @@ let showCurrentTimeline=()=>{
     let clock0 = moment(todayDateText+'T00:00:00');
     let clock1 = moment(moment().add(1,'days').format('YYYY-MM-DD')+'T00:00:00');
     let clocknow = moment();
+    //clocknow.add(14,'hours')
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
-    console.log('percentage', percentage)
+    //console.log('percentage', percentage)
     let timelineWidth = 4;
     // $('#tasks>div.currentTimeline').remove();
     // $('#tasks>div.currentTimelineCover').remove();
     let percentagewidth = percentage*width
     let left = pos.left + percentagewidth - timelineWidth/1
-    let cover_width=percentagewidth;
+    let cover_width=percentagewidth-timelineWidth;
     if(!$('#currentTimeline').get(0)){
         $('#tasks').append(`<div id="currentTimeline" class="currentTimeline"></div>
         <div id="currentTimelineCover" class="currentTimelineCover"></div>`)
