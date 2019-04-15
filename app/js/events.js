@@ -166,8 +166,10 @@ let initEvent = ()=>{
             let ipt_id = ipt.attr('id');
             if(ipt_id==='editTaskDateIpt'){
                 let dir;
-                if(e.keyCode===38) dir = 'left'
-                if(e.keyCode===40) dir = 'right'
+                if(e.keyCode===37) dir = 'left'
+                if(e.keyCode===39) dir = 'right'
+                if(e.keyCode===38) dir = 'left'//意义相同
+                if(e.keyCode===40) dir = 'right'//意义相同
                 if(dir){
                     moveTask(taskid, dir)
                 }
