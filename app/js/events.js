@@ -161,15 +161,16 @@ let initEvent = ()=>{
                 moveTask(taskid, 'right')                
             }
             if(prevent) e.preventDefault()
-        }
-        let ipt = $(e.currentTarget);
-        let ipt_id = ipt.attr('id');
-        if(ipt_id==='editTaskDateIpt'){
-            let dir;
-            if(e.keyCode===38) dir = 'left'
-            if(e.keyCode===40) dir = 'right'
-            if(dir){
-                moveTask(taskid, dir)
+        }else{
+            let ipt = $(e.currentTarget);
+            let ipt_id = ipt.attr('id');
+            if(ipt_id==='editTaskDateIpt'){
+                let dir;
+                if(e.keyCode===38) dir = 'left'
+                if(e.keyCode===40) dir = 'right'
+                if(dir){
+                    moveTask(taskid, dir)
+                }
             }
         }
     })
@@ -199,15 +200,16 @@ let initEvent = ()=>{
                 moveSchedule(schedule_id, 'right')                
             }
             if(prevent)e.preventDefault()
-        }
-        let ipt = $(e.currentTarget);
-        let ipt_id = ipt.attr('id');
-        if(ipt_id==='editScheduleStartIpt' || ipt_id==='editScheduleEndIpt'){
-            let dir;
-            if(e.keyCode===38) dir = 'up'
-            if(e.keyCode===40) dir = 'down'
-            if(dir){
-                changeScheduleRange(ipt, dir, schedule_id)
+        }else{
+            let ipt = $(e.currentTarget);
+            let ipt_id = ipt.attr('id');
+            if(ipt_id==='editScheduleStartIpt' || ipt_id==='editScheduleEndIpt'){
+                let dir;
+                if(e.keyCode===38) dir = 'up'
+                if(e.keyCode===40) dir = 'down'
+                if(dir){
+                    changeScheduleRange(ipt, dir, schedule_id)
+                }
             }
         }
     })
