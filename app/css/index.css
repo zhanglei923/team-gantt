@@ -103,7 +103,7 @@ td.saving{
     border: 1px solid #ccc;
     border-bottom: 1px solid #ccc;    
     border-collapse:collapse;
-    width:1600px;
+    width:1650px;
 }
 .gantt_section thead{
     border: 0;
@@ -132,7 +132,7 @@ td.saving{
     height: 18px;
 }
 .gantt_section th{
-    width:20px;
+    width:24px;
 }
 .gantt_section .day{
     position: relative;
