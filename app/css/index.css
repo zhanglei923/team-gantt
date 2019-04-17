@@ -137,6 +137,9 @@ td.saving{
 .gantt_section .day{
     position: relative;
 }
+.gantt_section .day.day_hover{
+    background-color: greenyellow !important;
+}
 .gantt_section .rowcol{
     padding:2px;
 }

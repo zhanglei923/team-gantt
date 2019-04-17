@@ -82,6 +82,14 @@ let initEvent = ()=>{
         e.preventDefault();
         return false;            
     })
+    $('body').on('mouseover', 'td.day', (e)=>{
+        let td = e.currentTarget;
+        $(td).addClass('day_hover')
+    })
+    $('body').on('mouseout', 'td.day', (e)=>{
+        let td = e.currentTarget;
+        $(td).removeClass('day_hover')
+    })
     $('#root').on('click', '.task .delete', (e)=>{
         askDeleteTask($(e.currentTarget).closest('.task').attr('id'))
         e.preventDefault();
