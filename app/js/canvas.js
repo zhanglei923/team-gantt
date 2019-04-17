@@ -200,7 +200,7 @@ let showCurrentTimeline=()=>{
     //clocknow.add(14,'hours')
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
     //console.log('percentage', percentage)
-    let timelineWidth = 4;
+    let timelineWidth = 6;
     // $('#tasks>div.currentTimeline').remove();
     // $('#tasks>div.currentTimelineCover').remove();
     let percentagewidth = percentage*width
