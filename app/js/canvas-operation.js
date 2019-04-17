@@ -37,7 +37,7 @@ let chooseDay=(rowidx, date, td)=>{
         showScheduleEditor({
             start:g_chooseDate1,
             end:date,
-            rowIdx: g_choosingRowIdx
+            rowIdx: rowidx//g_choosingRowIdx
         })
         //day1td
         let d1 = moment(g_chooseDate1);
@@ -46,7 +46,8 @@ let chooseDay=(rowidx, date, td)=>{
         let rowtd = getDayElem(g_choosingRowIdx, date)
         rowtd.addClass('choosed_day2') 
         if(d2.isAfter(d1)){
-            showDaysInbetween(g_choosingRowIdx, d1, d2)
+            //showDaysInbetween(g_choosingRowIdx, d1, d2)
+            showDaysInbetween(rowidx, d1, d2)
         }else{
             $('td').removeClass('choosed_day2');
         }
