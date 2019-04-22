@@ -6,7 +6,9 @@
     z-index: 999;
 }
 .schedule_segment .subject{
-    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .schedule_segment .delete{
     text-decoration: none;
