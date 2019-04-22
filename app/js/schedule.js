@@ -104,12 +104,9 @@ let drawStartEndEvents=(segments)=>{
                         title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
                 >
-                    ${seg.head.isBegin?'<span class="begin-mark">^</span>':'<span class="begin-mark">...</span>'}
-                    <a href="javascript:void(0)" class="delete">X</a>|
-                    <span class="subject">
-                        ${seg.subject}
+                <span class="subject">
+                    ${seg.head.isBegin?'^':'...'}${seg.subject}${seg.tail.isEnd?'$':'...'}
                     </span>
-                    ${seg.tail.isEnd?'<span class="end-mark">$</span>':'<span class="end-mark">...</span>'}
                 </div>`
             }            
         })
