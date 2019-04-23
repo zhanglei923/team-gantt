@@ -5,6 +5,9 @@
     line-break: strict;
     z-index: 999;
 }
+.schedule_segment.selected{
+    background-color:#0037ff29;
+}
 .schedule_segment .subject{
     overflow: hidden;
     text-overflow:ellipsis;

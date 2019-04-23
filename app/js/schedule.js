@@ -120,6 +120,7 @@ let hideScheduleEditor=()=>{
     $("#editScheduleStartIpt").val('');
     $("#editScheduleEndIpt").val('');
     $("#editScheduleSubjectIpt").val('');
+    $('.schedule_segment').removeClass('selected');
 }
 let showScheduleEditorFromHtml=(id)=>{
     let schedule = g_Schedules[id];
@@ -136,6 +137,8 @@ let showScheduleEditor=(schedule)=>{
     $("#editScheduleStartIpt").val(schedule.start);
     $("#editScheduleEndIpt").val(schedule.end);
     $("#editScheduleSubjectIpt").val(schedule.subject?schedule.subject:'').focus();
+    $('.schedule_segment').removeClass('selected');
+    $(`[seg_schedule_id="${schedule.id}"]`).addClass('selected');
 }
 let updateSchedule=(nohide)=>{
     if(!$('#scheduleEditor').is(':visible'))return;
