@@ -105,7 +105,7 @@ let drawStartEndEvents=(segments)=>{
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
                 >
                 <span class="subject">
-                    ${seg.head.isBegin?'^':'...'}${seg.subject}${seg.tail.isEnd?'$':'...'}
+                    ${seg.head.isBegin?'':'...'}${seg.subject}${seg.tail.isEnd?'':'...'}
                     </span>
                 </div>`
             }            
