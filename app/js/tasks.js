@@ -23,7 +23,7 @@ let deleteTask=(taskId)=>{
 };
 let getTaskHtml=(data)=>{
     let taskHtml = `<div id="${data.id}" class="task" style="right:${0}px;top:${0}px;" title="${escapeHtml(data.subject)}">
-        <pre><a href="javascript:void(0)" class="delete" style="display:none;">X</a><span>|${escapeHtml(data.subject)}</span><span style="width: 18px;display: inline-block;"><span class="pointer"></span></span></pre>
+        <pre><a href="javascript:void(0)" class="delete" style="display:none;">X</a><span>${escapeHtml(data.subject)}</span><span style="width: 18px;display: inline-block;"><span class="pointer"></span></span></pre>
     </div>`
     return taskHtml;
 }
