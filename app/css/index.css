@@ -33,7 +33,7 @@ td.saving{
 }
 .currentTimeline{
     position: absolute;
-    width:6px;
+    width:2px;
     border-right:1px solid #aaa;
     /* background-color: #50d40c; */
     /* background-color:#ff0000dd; */

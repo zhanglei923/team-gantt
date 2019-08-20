@@ -29,7 +29,7 @@ let extractHolidays=()=>{
 let initDate = ()=>{
     extractHolidays();
     let thisweekday = todayMom.day();
-    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+7, 'days');
+    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+21, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
@@ -200,7 +200,7 @@ let showCurrentTimeline=()=>{
     //clocknow.add(14,'hours')
     let percentage = (clocknow.valueOf() - clock0.valueOf()) / (clock1.valueOf() - clock0.valueOf());
     //console.log('percentage', percentage)
-    let timelineWidth = 6;
+    let timelineWidth = 2;
     // $('#tasks>div.currentTimeline').remove();
     // $('#tasks>div.currentTimelineCover').remove();
     let percentagewidth = percentage*width
