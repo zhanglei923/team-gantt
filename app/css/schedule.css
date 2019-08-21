@@ -1,7 +1,7 @@
 .schedule_segment{
     position: absolute;
-    min-height: 18px;
-    background-color: #ffffffc6;
+    min-height: 12px;
+    background-color: #feff43;
     line-break: strict;
     z-index: 999;
 }
@@ -23,24 +23,24 @@
     float:right;
 }
 .schedule_segment.left-is-close{
-    border: 3px solid orange;
+    border: 1px solid orange;
     border-right: 0;
-    border-top-width:2px;
-    border-bottom-width: 2px;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
 .schedule_segment.right-is-close{
-    border: 3px solid orange;
+    border: 1px solid orange;
     border-left: 0;
-    border-top-width:2px;
-    border-bottom-width: 2px;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
 .schedule_segment.right-is-close .subject{
     float: right;
 }
 .schedule_segment.all-close{
-    border: 3px solid orange;
-    border-top-width:2px;
-    border-bottom-width: 2px;
+    border: 1px solid orange;
+    border-top-width:1px;
+    border-bottom-width: 1px;
 }
 .schedule_segment.all-open{
     border: 0;

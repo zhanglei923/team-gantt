@@ -93,7 +93,7 @@ let drawStartEndEvents=(segments)=>{
             let tailTd = $(`td.day[date="${seg.tail.date}"][rowidx="${seg.rowIdx}"]`);
             let head_pos = headTd.offset()
             let tail_pos = tailTd.offset()
-            let width = tail_pos.left - head_pos.left+tailTd.outerWidth()-4;
+            let width = tail_pos.left - head_pos.left+tailTd.outerWidth() - 0;
             if(seg.section_idx === i){
                 html += `<div id="${seg.eventId}_${Math.random()}" seg_schedule_id="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
