@@ -21,7 +21,7 @@ let test_holidays = [
     {startDate: '2019-05-01', duration: 4, alteredWorkingDays:['2019-04-28', '2019-05-05']},
     {startDate: '2019-06-07', duration: 3, alteredWorkingDays:[]},
     {startDate: '2019-09-13', duration: 3, alteredWorkingDays:[]},
-    {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29']},
+    {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29','2019-10-12']},
     {startDate: '2019-12-31', duration: 3, alteredWorkingDays:[]},
 ];
 let g_sprintSchedules = {
