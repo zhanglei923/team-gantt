@@ -54,6 +54,8 @@ let test_ImportantWorkingDay = {
     '2019-07-05': [{desc:'1907Sp4结束', level:'important', is:'end'}],
     '2019-07-08': [{desc:'1907Intg', level:'important'}],
     '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
+    '2019-09-02': [{desc:'1910集成', level:'important'}],
+    '2019-09-20': [{desc:'1910集成', level:'important', is:'end'}],
 };
 let test_Schedules = {
     'adsfasdfdsf12': {
