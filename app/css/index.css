@@ -112,7 +112,7 @@ td.saving{
     padding-right:2px;
 }
 .gantt_section{
-    background-color: powderblue;
+    /* background-color: powderblue; */
     margin-left: 6px;
     display: block;
     border: 0px solid #ccc;
