@@ -21,7 +21,7 @@ let test_holidays = [
     {startDate: '2019-05-01', duration: 4, alteredWorkingDays:['2019-04-28', '2019-05-05']},
     {startDate: '2019-06-07', duration: 3, alteredWorkingDays:[]},
     {startDate: '2019-09-13', duration: 3, alteredWorkingDays:[]},
-    {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29']},
+    {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29','2019-10-12']},
     {startDate: '2019-12-31', duration: 3, alteredWorkingDays:[]},
 ];
 let g_sprintSchedules = {
@@ -54,6 +54,16 @@ let test_ImportantWorkingDay = {
     '2019-07-05': [{desc:'1907Sp4结束', level:'important', is:'end'}],
     '2019-07-08': [{desc:'1907Intg', level:'important'}],
     '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
+    '2019-09-02': [{desc:'1910集成', level:'important'}],
+    '2019-09-20': [{desc:'1910集成', level:'important', is:'end'}],
+    '2019-09-23': [{desc:'预发布', level:'important'}],
+    '2019-10-11': [{desc:'预发布', level:'important', is:'end'}],
+    '2019-10-21': [{desc:'SP0-SP6', level:'important'}],
+    '2020-02-01': [{desc:'SP0-SP6', level:'important', is:'end'}],
+    '2020-02-03': [{desc:'集成测试', level:'important'}],
+    '2020-02-21': [{desc:'集成测试', level:'important', is:'end'}],
+    '2020-02-24': [{desc:'预发布', level:'important'}],
+    '2020-02-28': [{desc:'预发布', level:'important', is:'end'}],
 };
 let test_Schedules = {
     'adsfasdfdsf12': {
