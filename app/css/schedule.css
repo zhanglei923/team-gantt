@@ -4,6 +4,8 @@
     background-color: #feff43;
     line-break: strict;
     z-index: 999;
+    color: blue;
+    text-decoration: underline;
 }
 .schedule_segment.selected{
     background-color:#0037ff29;
@@ -46,12 +48,17 @@
     border: 0;
 }
 .schedule_segment.ispassed{
+    text-decoration: none;
+    color: black;
     background-color: #bbb !important;
     border:0;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
 .schedule_segment.isnotbegin{
+    text-decoration: none;
+    color: #222;
     background-color: #feff43 !important;
-    border:0;
-    filter:alpha(Opacity=75);-moz-opacity:0.75opacity: 0.75 
+    filter:alpha(Opacity=75);
+    -moz-opacity:0.75;
+    opacity: 0.75;
 }
