@@ -100,10 +100,10 @@ td.saving{
     font-size: 11px;
 }
 .gantt_section{
-    background-color: white;
+    background-color: powderblue;
     margin-left: 6px;
     display: block;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-bottom: 1px solid #ccc;    
     border-collapse:collapse;
     width:1650px;
