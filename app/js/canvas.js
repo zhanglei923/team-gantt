@@ -132,7 +132,7 @@ let renderSection = (days, secidx)=>{
     for(let i=0;i<days.length;i++){
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
-        headhtml += `<th class="${dateinfo.isToday?' is-today':''}
+        headhtml += `<th class="datetitle ${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}
@@ -141,9 +141,9 @@ let renderSection = (days, secidx)=>{
                                 "
                          date="${id}"                                
                         >
-                        <div>${dateinfo.textofWeekend}</div>
-                        <div>${dateinfo.monthText}</div>
-                        <div>${dateinfo.dayText}</div>
+                        <div class="w">${dateinfo.textofWeekend}</div>
+                        <div class="m">${dateinfo.monthText}</div>
+                        <div class="d">${dateinfo.dayText}</div>
                     </th>`
     }
     headhtml += '</tr>'

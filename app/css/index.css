@@ -99,6 +99,18 @@ td.saving{
     width: 100%;
     font-size: 11px;
 }
+.datetitle{
+
+}
+.datetitle .m{
+    font-size: 14px;
+    text-align:right;
+    padding-right:2px;
+}
+.datetitle .d{
+    text-align:right;
+    padding-right:2px;
+}
 .gantt_section{
     background-color: white;
     margin-left: 6px;
