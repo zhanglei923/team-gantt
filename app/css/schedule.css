@@ -45,3 +45,6 @@
 .schedule_segment.all-open{
     border: 0;
 }
+.schedule_segment.ispassed{
+    background-color: #ddd !important;
+}

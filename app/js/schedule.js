@@ -16,13 +16,15 @@ let loadSchedules = (schedulelist)=>{
         for(let eventId in schedulelist){
             //console.log(section, schedulelist)
             let event = schedulelist[eventId];
+            let currentMom = moment();
             let eventStartMom = moment(event.start+'T00:00:00');
             let eventEndMom = moment(event.end+'T23:59:59');
             let seg = {
                 eventId,
                 section_idx: section.section_idx,
                 subject: event.subject,
-                rowIdx: event.rowIdx
+                rowIdx: event.rowIdx,
+                isPassed: eventEndMom.isSameOrBefore(currentMom)
             }
             // [  ooooo  ]
             if(eventStartMom.isSameOrAfter(sectionStartMom) && eventEndMom.isSameOrBefore(sectionEndMom)){
@@ -100,6 +102,7 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.right_close?' right-is-close':''}
                         ${seg.all_close?' all-close':''}
                         ${seg.all_open?' all-open':''}
+                        ${seg.isPassed?' ispassed':''}
                         "
                         title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
