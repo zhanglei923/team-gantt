@@ -56,6 +56,14 @@ let test_ImportantWorkingDay = {
     '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
     '2019-09-02': [{desc:'1910集成', level:'important'}],
     '2019-09-20': [{desc:'1910集成', level:'important', is:'end'}],
+    '2019-09-23': [{desc:'预发布', level:'important'}],
+    '2019-10-11': [{desc:'预发布', level:'important', is:'end'}],
+    '2019-10-21': [{desc:'SP0-SP6', level:'important'}],
+    '2020-02-01': [{desc:'SP0-SP6', level:'important', is:'end'}],
+    '2020-02-03': [{desc:'集成测试', level:'important'}],
+    '2020-02-21': [{desc:'集成测试', level:'important', is:'end'}],
+    '2020-02-24': [{desc:'预发布', level:'important'}],
+    '2020-02-28': [{desc:'预发布', level:'important', is:'end'}],
 };
 let test_Schedules = {
     'adsfasdfdsf12': {
