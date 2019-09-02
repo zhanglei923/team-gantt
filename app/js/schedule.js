@@ -24,7 +24,8 @@ let loadSchedules = (schedulelist)=>{
                 section_idx: section.section_idx,
                 subject: event.subject,
                 rowIdx: event.rowIdx,
-                isPassed: eventEndMom.isSameOrBefore(currentMom)
+                isPassed: eventEndMom.isSameOrBefore(currentMom),
+                isNotbegin: eventStartMom.isSameOrAfter(currentMom)
             }
             // [  ooooo  ]
             if(eventStartMom.isSameOrAfter(sectionStartMom) && eventEndMom.isSameOrBefore(sectionEndMom)){
@@ -103,6 +104,7 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.all_close?' all-close':''}
                         ${seg.all_open?' all-open':''}
                         ${seg.isPassed?' ispassed':''}
+                        ${seg.isNotbegin?' isnotbegin':''}
                         "
                         title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"

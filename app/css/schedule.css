@@ -47,4 +47,11 @@
 }
 .schedule_segment.ispassed{
     background-color: #bbb !important;
+    border:0;
+    filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
+}
+.schedule_segment.isnotbegin{
+    background-color: #feff43 !important;
+    border:0;
+    filter:alpha(Opacity=75);-moz-opacity:0.75opacity: 0.75 
 }
