@@ -108,6 +108,7 @@ td.saving{
     color: #222 !important;
     width: 150px;
     font-weight: normal !important;
+    pointer-events: none;
 }
 .datetitle{
     position: relative;
