@@ -58,7 +58,7 @@
     text-decoration: none;
     color: #000;
     background-color: #ffffd1 !important;
-    filter:alpha(Opacity=75);
-    -moz-opacity:0.75;
-    opacity: 0.75;
+    filter:alpha(Opacity=85);
+    -moz-opacity:0.85;
+    opacity: 0.85;
 }
