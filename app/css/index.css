@@ -99,8 +99,18 @@ td.saving{
     width: 100%;
     font-size: 11px;
 }
+.dayofweek{
+    position: absolute;
+    top: 48px;
+    left: 2px;
+    z-index: 9;
+    border: 1px solid #f9bebe;
+    color: #222 !important;
+    width: 150px;
+    font-weight: normal !important;
+}
 .datetitle{
-
+    position: relative;
 }
 .datetitle .m{
     font-size: 14px;

@@ -83,6 +83,8 @@ let initDate = ()=>{
             daysFromToday,
             isBeforeToday,
             isAfterToday,
+            dayOfWeek: mom.isoWeekday(),
+            weekOfYear: mom.week(),
         }
         g_CanvasDateList.push(dateId);
         g_CanvasDateInfo[dateId] = info;
@@ -142,8 +144,9 @@ let renderSection = (days, secidx)=>{
                          date="${id}"                                
                         >
                         <div class="w">${dateinfo.textofWeekend}</div>
-                        <div class="m">${dateinfo.monthText}</div>
+                        <div class="m">${dateinfo.dayOfWeek%4===0?dateinfo.monthText:'&nbsp;'}</div>
                         <div class="d">${dateinfo.dayText}</div>
+                        ${dateinfo.dayOfWeek === 1?`<div class="dayofweek">第${dateinfo.weekOfYear}周</div>`:''}
                     </th>`
     }
     headhtml += '</tr>'
