@@ -144,7 +144,7 @@ let renderSection = (days, secidx)=>{
                          date="${id}"                                
                         >
                         <div class="w">${dateinfo.textofWeekend}</div>
-                        <div class="m">${dateinfo.dayOfWeek%4===0?dateinfo.monthText:'&nbsp;'}</div>
+                        <div class="m">-<span class="mt">${dateinfo.dayOfWeek%4===0?dateinfo.monthText:'&nbsp;'}</span>-</div>
                         <div class="d">${dateinfo.dayText}</div>
                         ${dateinfo.dayOfWeek === 1?`<div class="dayofweek">第${dateinfo.weekOfYear}周</div>`:''}
                     </th>`
