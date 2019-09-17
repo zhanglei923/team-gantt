@@ -134,6 +134,11 @@ let renderSection = (days, secidx)=>{
     for(let i=0;i<days.length;i++){
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
+        //console.log(dateinfo)
+        let showmonthtxt = false;
+        let isfirstmonthday = false;
+        if(_.includes([1,8,15,23], dateinfo.day)) showmonthtxt = true; 
+        if(dateinfo.day === 1) isfirstmonthday = true; 
         headhtml += `<th class="datetitle ${dateinfo.isToday?' is-today':''}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
@@ -144,7 +149,7 @@ let renderSection = (days, secidx)=>{
                          date="${id}"                                
                         >
                         <div class="w">${dateinfo.textofWeekend}</div>
-                        <div class="m">-<span class="mt">${dateinfo.dayOfWeek%4===0?dateinfo.monthText:'&nbsp;'}</span>-</div>
+                        <div class="m">${showmonthtxt?('<span class="mt '+(isfirstmonthday?'isfirstmonthday':'')+'">'+dateinfo.monthText+'</span>'):'--'}</div>
                         <div class="d">${dateinfo.dayText}</div>
                         ${dateinfo.dayOfWeek === 1?`<div class="dayofweek">第${dateinfo.weekOfYear}周</div>`:''}
                     </th>`

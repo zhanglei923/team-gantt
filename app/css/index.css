@@ -125,6 +125,10 @@ td.saving{
     font-family: Impact;
     font-size:15px;
 }
+.datetitle .m .mt.isfirstmonthday{
+    color: #b32121;
+    text-decoration: underline;
+}
 .datetitle .d{
     text-align:right;
     padding-right:2px;
