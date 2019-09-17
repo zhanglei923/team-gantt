@@ -232,6 +232,7 @@ let initEvent = ()=>{
         }, 150)
     }
     $('#scheduleEditor').on('keyup', 'input', handleSubjectKeyup)
+    $('#scheduleEditor').on('change', 'select', handleSubjectKeyup)
     $('#taskEditor').on('keyup', 'input', handleSubjectKeyup)
     // $('#editScheduleSubjectIpt').keyup(handleSubjectKeyup)
     // $('#editTaskSubjectIpt').keyup(handleSubjectKeyup)
