@@ -50,7 +50,7 @@
 .schedule_segment.ispassed{
     text-decoration: none;
     color: black;
-    background-color: #bbb !important;
+    background-color: #bbbbbb73 !important;
     border:0;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
