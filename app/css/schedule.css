@@ -51,7 +51,7 @@
     text-decoration: none;
     color: black;
     background-color: #bbbbbb73 !important;
-    border:0;
+    border-color:#5f5f5fbd !important;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
 .schedule_segment.isnotbegin{
