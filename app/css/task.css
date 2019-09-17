@@ -42,3 +42,9 @@
     padding: 0 0 0 2px;
     text-decoration: none;
 }
+.isBeforeToday .task{
+    background-color: #ccc !important;
+}
+.isBeforeToday .task .pointer{
+    background-color: #666 !important;
+}
