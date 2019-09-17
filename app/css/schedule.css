@@ -63,7 +63,7 @@
     opacity: 0.85;
 }
 .schedule_segment.type_holiday{
-    background-color: #a9a8a8;
-    color: black;
-    border: 1px solid #333;
+    background-color: #a9a8a8 !important;
+    color: black !important;
+    border: 1px solid #333 !important;
 }
