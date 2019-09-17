@@ -62,3 +62,8 @@
     -moz-opacity:0.85;
     opacity: 0.85;
 }
+.schedule_segment.type_holiday{
+    background-color: #a9a8a8;
+    color: black;
+    border: 1px solid #333;
+}

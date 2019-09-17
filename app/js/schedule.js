@@ -23,6 +23,7 @@ let loadSchedules = (schedulelist)=>{
                 eventId,
                 section_idx: section.section_idx,
                 subject: event.subject,
+                styletype: event.styletype,
                 rowIdx: event.rowIdx,
                 isPassed: eventEndMom.isSameOrBefore(currentMom),
                 isNotbegin: eventStartMom.isSameOrAfter(currentMom)
@@ -105,6 +106,7 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.all_open?' all-open':''}
                         ${seg.isPassed?' ispassed':''}
                         ${seg.isNotbegin?' isnotbegin':''}
+                        ${seg.styletype?' '+seg.styletype:''}
                         "
                         title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
@@ -125,6 +127,7 @@ let hideScheduleEditor=()=>{
     $("#editScheduleStartIpt").val('');
     $("#editScheduleEndIpt").val('');
     $("#editScheduleSubjectIpt").val('');
+    $("#editScheduleStyleTypeSel").val('');    
     $('.schedule_segment').removeClass('selected');
 }
 let showScheduleEditorFromHtml=(id)=>{
@@ -134,6 +137,7 @@ let showScheduleEditorFromHtml=(id)=>{
 }
 let showScheduleEditor=(schedule)=>{
     hideEditors()
+    initScheuleStyleType();
     $('#scheduleEditor').show()
     console.log(schedule)
     if(!schedule.id) schedule.id = 'schedule_'+(Math.random()+'').replace(/\./g,'')
@@ -142,6 +146,7 @@ let showScheduleEditor=(schedule)=>{
     $("#editScheduleStartIpt").val(schedule.start);
     $("#editScheduleEndIpt").val(schedule.end);
     $("#editScheduleSubjectIpt").val(schedule.subject?schedule.subject:'').focus();
+    $("#editScheduleStyleTypeSel").val(schedule.styletype);
     $('.schedule_segment').removeClass('selected');
     $(`[seg_schedule_id="${schedule.id}"]`).addClass('selected');
 }
@@ -153,6 +158,7 @@ let updateSchedule=(nohide)=>{
     let startDate = _.trim($('#editScheduleStartIpt').val())
     let endDate = _.trim($('#editScheduleEndIpt').val())
     let subject = _.trim($('#editScheduleSubjectIpt').val())
+    let styletype = _.trim($('#editScheduleStyleTypeSel').val())
 
     if(!schedule_id)return;
     if(!subject)return;
@@ -168,6 +174,7 @@ let updateSchedule=(nohide)=>{
             start: startDate, 
             end: endDate,
             subject: subject,
+            styletype,
             rowIdx: rowIdx
         }
     }
@@ -236,3 +243,11 @@ let deleteSchedule=(id)=>{
     getScheduleSegments(id).off().remove()
     hideEditors()
 };
+let styleTypeList = ['default', 'type_holiday']
+let initScheuleStyleType = ()=>{
+    let options = ''
+    styleTypeList.forEach((type)=>{
+        options += `<option val="${type}">${type}</option>`
+    })
+    $('#editScheduleStyleTypeSel').html(options)
+}
