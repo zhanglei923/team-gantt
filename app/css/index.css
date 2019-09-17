@@ -33,6 +33,7 @@ td.saving{
 }
 .currentTimeline{
     position: absolute;
+    z-index: 9;
     width:2px;
     border-right:1px solid #aaa;
     /* background-color: #50d40c; */
@@ -103,10 +104,10 @@ td.saving{
     position: absolute;
     top: 48px;
     left: 2px;
-    z-index: 9;
+    z-index: 8;
     border: 1px dotted #1f1f1f;
     color: #fff !important;
-    background-color: #000;
+    background-color: #6d6d6d;
     width: 150px;
     font-weight: normal !important;
     pointer-events: none;
