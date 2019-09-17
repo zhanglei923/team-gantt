@@ -123,11 +123,11 @@ td.saving{
 .datetitle .m .mt{
     color:#3a3a3a;
     font-family: Impact;
-    font-size:15px;
 }
 .datetitle .m .mt.isfirstmonthday{
     color: #b32121;
     text-decoration: underline;
+    font-size:15px;
 }
 .datetitle .d{
     text-align:right;
