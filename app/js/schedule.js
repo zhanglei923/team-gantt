@@ -243,7 +243,8 @@ let deleteSchedule=(id)=>{
     getScheduleSegments(id).off().remove()
     hideEditors()
 };
-let styleTypeList = ['default', 'type_holiday']
+let styleTypeList = ['type_holiday']
+styleTypeList = styleTypeList.concat(['type_color_red', 'type_color_green', 'type_color_greenyellow', 'type_color_black', 'type_color_orange'])
 let initScheuleStyleType = ()=>{
     let options = ''
     styleTypeList.forEach((type)=>{

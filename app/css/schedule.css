@@ -62,8 +62,25 @@
     -moz-opacity:0.85;
     opacity: 0.85;
 }
+
 .schedule_segment.type_holiday{
     background-color: #8f9eff !important;
     color: #b10000 !important;
     border: 1px solid #333 !important;
+}
+.schedule_segment.type_color_red{
+    background-color: #f00 !important;
+}
+.schedule_segment.type_color_green{
+    background-color: green !important;    
+}
+.schedule_segment.type_color_greenyellow{
+    background-color: greenyellow !important;      
+}
+.schedule_segment.type_color_black{
+    background-color: black !important;  
+    color: white;      
+}
+.schedule_segment.type_color_orange{
+    background-color: orange !important;         
 }
