@@ -73,6 +73,7 @@
 }
 .schedule_segment.type_color_green{
     background-color: green !important;    
+    color: white;
 }
 .schedule_segment.type_color_greenyellow{
     background-color: greenyellow !important;      
