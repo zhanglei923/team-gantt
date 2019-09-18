@@ -241,7 +241,7 @@ window.setInterval(showCurrentTimeline, 1.5*60*1000)
 let showTipsOfImportantDay=()=>{
     let tdw = $('td.day:first').outerWidth()
     let html = ``
-    let arr = [{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'TODAY'}}];
+    let arr = [];//[{date:todayText,tip: {id:'now', now:true, date:todayText,desc:'TODAY'}}];
     let allimportantdays = getAllImportantDays();
     allimportantdays.forEach((d)=>{
         arr.push({date: d.date, tip:d})
