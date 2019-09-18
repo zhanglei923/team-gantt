@@ -57,31 +57,31 @@
 .schedule_segment.isnotbegin{
     text-decoration: none;
     color: #000;
-    background-color: #ffffd1 !important;
+    background-color: #ffffd1;
     filter:alpha(Opacity=85);
     -moz-opacity:0.85;
     opacity: 0.85;
 }
 
 .schedule_segment.type_holiday{
-    background-color: #8f9eff !important;
-    color: #b10000 !important;
-    border: 1px solid #333 !important;
+    background-color: #8f9eff;
+    color: #b10000;
+    border: 1px solid #333;
 }
 .schedule_segment.type_color_red{
-    background-color: #f00 !important;
+    background-color: #f00;
 }
 .schedule_segment.type_color_green{
-    background-color: green !important;    
+    background-color: green;    
     color: white;
 }
 .schedule_segment.type_color_greenyellow{
-    background-color: greenyellow !important;      
+    background-color: greenyellow;      
 }
 .schedule_segment.type_color_black{
-    background-color: black !important;  
+    background-color: black;  
     color: white;      
 }
 .schedule_segment.type_color_orange{
-    background-color: orange !important;         
+    background-color: orange;         
 }

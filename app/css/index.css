@@ -179,7 +179,7 @@ td.saving{
     position: relative;
 }
 .gantt_section .day.day_hover{
-    background-color: greenyellow !important;
+    /* background-color: greenyellow !important; */
 }
 .gantt_section .rowcol{
     padding:2px;
