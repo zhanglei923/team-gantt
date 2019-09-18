@@ -103,7 +103,7 @@ let updateTask=(nohide)=>{
     console.log(data)
     $('#'+taskid).off().remove()
     let tdid = getDayId(rowIdx, endDate)
-    $('#'+tdid).html(getTaskHtml(data))
+    $('#'+tdid).append(getTaskHtml(data))
 
     g_Tasks[taskid] = data;
     if(!nohide)hideEditors()
