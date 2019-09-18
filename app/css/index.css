@@ -124,10 +124,14 @@ td.saving{
     color:#3a3a3a;
     font-family: Impact;
 }
+.datetitle .m.misfirstmonthday{
+    border:1px solid #b32121;
+    background-color: #ffe9ca5e;
+}
 .datetitle .m .mt.isfirstmonthday{
     color: #b32121;
     text-decoration: underline;
-    font-size:15px;
+    font-size:14px;
 }
 .datetitle .d{
     text-align:right;
