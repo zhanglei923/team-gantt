@@ -1,5 +1,5 @@
 let reponsitoryName = 'team-gantt-data';
-let projectName = window.location.search?window.location.search.replace(/^\?projectName\=/,''):'default'//'creek-workflow';
+let projectName = $.query('projectName')?$.query('projectName'):'default'//'creek-workflow';
 
 g_holidays = test_holidays;
 g_ImportantWorkingDay = test_ImportantWorkingDay;
