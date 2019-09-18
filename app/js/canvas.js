@@ -2,7 +2,9 @@
 let holidayDays = {};
 let alteredWorkingDays = {};
 let initRowSize = 20;
-let displayDays = 126;
+//http://localhost:3006/?backDays=100&displayDays=365
+let backDays = 21;if($.query('backDays')) backDays = parseInt($.query('backDays'));
+let displayDays = 126;if($.query('displayDays')) displayDays = parseInt($.query('displayDays'));
 let sectionDays = 7*9;
 let g_Tasks = {};
 let g_Schedules = {};
@@ -29,7 +31,7 @@ let extractHolidays=()=>{
 let initDate = ()=>{
     extractHolidays();
     let thisweekday = todayMom.day();
-    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+21, 'days');
+    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+backDays, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
@@ -206,7 +208,7 @@ let showCurrentTimeline=()=>{
     $(`th[date="${todayDateText}"]`).addClass('is-today')
     let tbody0 = $('#gantt_section_tbody0')
     let tr0 = $('#sec0_r0')
-    let firstTd = tr0.find('>td.is-today');
+    let firstTd = $('td.is-today:first');
     let pos = firstTd.offset();
     let width = firstTd.width();
     let clock0 = moment(todayDateText+'T00:00:00');

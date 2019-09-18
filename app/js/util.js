@@ -3,3 +3,27 @@ let isValidDate = (date)=>{
     if(!moment(date)._isValid) return false;
     return true;
 }
+(()=>{
+    var queryJson, str;
+    $.query = function (name) {
+        if (!queryJson) {
+            queryJson = {};
+            str = location.search.slice(1) + '&' + location.hash.slice(1);
+            if (str) {
+                $.each(str.split('&'), function (i, s, key, value) {
+                    s = s.split('='), key = s[0], value = s[1];
+                    if (key in queryJson) {
+                        if ($.isArray(queryJson[key])) {
+                            queryJson[key].push(value);
+                        } else {
+                            queryJson[key] = [queryJson[key], value];
+                        }
+                    } else {
+                        queryJson[key] = value;
+                    }
+                });
+            }
+        }
+        return queryJson[name];
+    };
+})()
