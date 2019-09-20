@@ -144,11 +144,13 @@ let renderSection = (days, secidx)=>{
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
         //console.log(dateinfo)
+        let monthzebra = dateinfo.month%2;
         let showmonthtxt = false;
         let isfirstmonthday = false;
         if(_.includes([1,8,15,23], dateinfo.day)) showmonthtxt = true; 
         if(dateinfo.day === 1) isfirstmonthday = true; 
         headhtml += `<th class="datetitle ${dateinfo.isToday?' is-today':''}
+                                monthzebra${monthzebra} belong_month_${dateinfo.month}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isImportantWorkingDay?' dir_'+dateinfo.isImportantWorkingDay.is:''}
                                 ${dateinfo.isImportantWorkingDay?' important-workingday':''}

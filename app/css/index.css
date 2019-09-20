@@ -219,6 +219,12 @@ td.saving{
 .gantt_section .choosed_day2{
     background-color: #ff6883 !important;
 }
+.gantt_section .datetitle.monthzebra0{
+    border-bottom: 3px solid #6565ff !important;
+}
+.gantt_section .datetitle.monthzebra1{
+    border-bottom: 3px solid #79c700 !important;
+}
 .gantt_section .day.monthzebra0{
     background-color: #fff;
 }
