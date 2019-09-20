@@ -173,8 +173,9 @@ let renderSection = (days, secidx)=>{
         let dateinfo = g_CanvasDateInfo[dateid];
         //let dateTxt = dateinfo.dateTxt;
         let monthzebra = dateinfo.month%2;
-        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%" date="${dateid}"
-                            class="day monthzebra${monthzebra} row%RowIdx%
+        bodyhtml += `<td id="r%RowIdx%_${dateid}" align="center" rowIdx="%RowIdx%" date="${dateid}" 
+                            belong_month="${dateinfo.month}"
+                            class="day monthzebra${monthzebra} row%RowIdx% belong_month_${dateinfo.month}
                                 ${dateinfo.isBeforeToday?'isBeforeToday':''}
                                 ${dateinfo.isWeekend&&!dateinfo.isWorkDay?' weekend':''} 
                                 ${dateinfo.isToday?' is-today':''} ${dateinfo.isHoliday?' holiday':''}
