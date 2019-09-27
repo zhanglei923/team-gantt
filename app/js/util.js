@@ -1,3 +1,12 @@
+let escapeHtml=(txt)=>{
+    return (txt + '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/'/g, '&#039;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/\n/g, '<br />');
+}
 let isValidDate = (date)=>{
     if(!/^20[1-9][1-9]\-[01][0-9]\-[0123][0-9]/.test(date)) return false;
     if(!moment(date)._isValid) return false;

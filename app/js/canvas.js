@@ -170,8 +170,8 @@ let renderSection = (days, secidx)=>{
     $(`#gantt_section_thead${secidx}`).html(headhtml)
     
     let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%" rowIdx="%RowIdx%">
-                        <td class="rowcol isBeforeToday">r%RowIdx%</td>
-                        <td class="lanecol" rowid="r%RowIdx%"></td>`;
+                        <td class="rowcol isBeforeToday">%RowIdx%</td>
+                        <td class="lanecol" rowIdx="%RowIdx%"></td>`;
     for(let i=0;i<days.length;i++){
         let dateid = days[i];
         let dateinfo = g_CanvasDateInfo[dateid];
@@ -204,6 +204,27 @@ let renderSection = (days, secidx)=>{
         bigbodyhtml += s
     }
     $(`#gantt_section_tbody${secidx}`).html(bigbodyhtml)
+    initLane()
+}
+let getLaneInfo = (i)=>{
+    let lanename = g_lanes[i];
+    let laneinfo = g_lanes_type[lanename]
+    return laneinfo;
+};
+let initLane = ()=>{
+    $('td.lanecol').each(function(i, td){
+        td = $(td);
+        let idx = parseInt(td.attr('rowIdx'))
+        let laneinfo = getLaneInfo(idx)
+        if(laneinfo){
+            let html = ``
+            if(laneinfo.icon){
+                html += `<img src="${laneinfo.icon}" style="width:18px;height:18px;">`
+            }
+            html += escapeHtml(laneinfo.title)
+            td.addClass(laneinfo.className).html(html)
+        }
+    })
 }
 let showCurrentTimeline=()=>{
     let todayDateText = moment().format('YYYY-MM-DD');

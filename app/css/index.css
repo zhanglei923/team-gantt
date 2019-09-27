@@ -199,7 +199,16 @@ td.saving{
     color:white;
 }
 .gantt_section .lanecol{
+    width: 37px;
     background-color: #f9f9f9;
+    font-weight: bolder;
+    text-align: right;
+}
+.gantt_section .lane_1{
+    background-color: lavenderblush;
+}
+.gantt_section .lane_2{
+    background-color: #e6a2ff;    
 }
 .gantt_section .day.selected_day{
     background-color: #c6ffa2 !important;

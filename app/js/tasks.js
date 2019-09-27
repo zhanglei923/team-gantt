@@ -1,12 +1,4 @@
-let escapeHtml=(txt)=>{
-    return (txt + '')
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;')
-                    .replace(/'/g, '&#039;')
-                    .replace(/"/g, '&quot;')
-                    .replace(/\n/g, '<br />');
-}
+
 let getNewTaskId=()=>{
     return 'task_'+((Math.random()+'').replace(/0\./,'')*1).toString(36);     
 }
