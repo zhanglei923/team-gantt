@@ -236,6 +236,8 @@ let initLane = ()=>{
         let laneinfo = getLaneInfo(idx)
         if(laneinfo && laneinfo.islast){
             laneclass_zebra = !laneclass_zebra;
+            let target = $('tr[rowidx="'+idx+'"]')
+            target.addClass('lane_breaker')
         }
         let target = $('tr[rowidx="'+idx+'"]')
         target.removeClass('lane_breaker1').removeClass('lane_breaker2');
