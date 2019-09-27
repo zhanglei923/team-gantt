@@ -206,9 +206,13 @@ let renderSection = (days, secidx)=>{
     $(`#gantt_section_tbody${secidx}`).html(bigbodyhtml)
     initLane()
 }
-let getLaneInfo = (i)=>{
-    let lanename = g_lanes[i];
-    let laneinfo = g_lanes_type[lanename]
+let getLaneInfo = (ci)=>{
+    let lanename = g_lanes[ci];
+    let lanename2 = g_lanes[ci+1];
+    let laneinfo = g_lanes_type[lanename] ? JSON.parse(JSON.stringify(g_lanes_type[lanename])) : null;
+    if(lanename!=lanename2) {
+        laneinfo.islast = true;
+    }
     return laneinfo;
 };
 let initLane = ()=>{
@@ -225,6 +229,14 @@ let initLane = ()=>{
             td.addClass(laneinfo.className).html(html)
         }
     })
+    $('tr[id][rowidx]').each(function(i, tr){
+        tr = $(tr);
+        let idx = parseInt(tr.attr('rowIdx'))
+        let laneinfo = getLaneInfo(idx)
+        if(laneinfo && laneinfo.islast){
+            tr.addClass('lane_breaker')
+        }
+    });
 }
 let showCurrentTimeline=()=>{
     let todayDateText = moment().format('YYYY-MM-DD');

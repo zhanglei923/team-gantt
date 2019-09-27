@@ -198,6 +198,9 @@ td.saving{
     background-color: #2623c7 !important;
     color:white;
 }
+.gantt_section .lane_breaker{
+    border-bottom: 1px solid #656565;
+}
 .gantt_section .lanecol{
     width: 37px;
     background-color: #f9f9f9;
