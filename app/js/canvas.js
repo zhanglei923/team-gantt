@@ -215,6 +215,7 @@ let getLaneInfo = (ci)=>{
     }
     return laneinfo;
 };
+let laneclass_zebra=true;
 let initLane = ()=>{
     $('td.lanecol').each(function(i, td){
         td = $(td);
@@ -234,8 +235,12 @@ let initLane = ()=>{
         let idx = parseInt(tr.attr('rowIdx'))
         let laneinfo = getLaneInfo(idx)
         if(laneinfo && laneinfo.islast){
-            tr.addClass('lane_breaker')
+            laneclass_zebra = !laneclass_zebra;
         }
+        let target = $('tr[rowidx="'+idx+'"]')
+        target.removeClass('lane_breaker1').removeClass('lane_breaker2');
+        target.addClass(laneclass_zebra?'lane_breaker2':'lane_breaker1')
+        //target.find('td').html(laneclass_zebra?'.':'')
     });
 }
 let showCurrentTimeline=()=>{
