@@ -132,14 +132,14 @@ let initSections = ()=>{
 }
 let renderSection = (days, secidx)=>{    
     //console.log('days', days)
-    let headhtml = `<tr class="isBeforeToday"><th>\\</th>`
+    let headhtml = `<tr class="isBeforeToday"><th>\\</th><th></th>`
     for(let i=0;i<days.length;i++){
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
         //console.log(dateinfo)
         headhtml += `${dateinfo.dayOfWeek===1?'<th style="border:1px solid white;background-color:#6d6d6d;color:#fff;margin:0 1px 0 1px;" colspan="7">第'+dateinfo.weekOfYear+'周</th>':''}`
     }
-    headhtml += `</tr><tr class="isBeforeToday"><th>\\</th>`
+    headhtml += `</tr><tr class="isBeforeToday"><th>\\</th><th></th>`
     for(let i=0;i<days.length;i++){
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
@@ -169,7 +169,9 @@ let renderSection = (days, secidx)=>{
 
     $(`#gantt_section_thead${secidx}`).html(headhtml)
     
-    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%" rowIdx="%RowIdx%"><td class="rowcol isBeforeToday">r%RowIdx%</td>`;
+    let bodyhtml = `<tr id="sec${secidx}_r%RowIdx%" rowIdx="%RowIdx%">
+                        <td class="rowcol isBeforeToday">r%RowIdx%</td>
+                        <td class="lanecol" rowid="r%RowIdx%"></td>`;
     for(let i=0;i<days.length;i++){
         let dateid = days[i];
         let dateinfo = g_CanvasDateInfo[dateid];

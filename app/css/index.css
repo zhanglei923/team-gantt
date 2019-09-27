@@ -198,6 +198,9 @@ td.saving{
     background-color: #2623c7 !important;
     color:white;
 }
+.gantt_section .lanecol{
+    background-color: #f9f9f9;
+}
 .gantt_section .day.selected_day{
     background-color: #c6ffa2 !important;
 }
