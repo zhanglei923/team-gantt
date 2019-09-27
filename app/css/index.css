@@ -199,7 +199,7 @@ td.saving{
     color:white;
 }
 .gantt_section .lane_breaker{
-    border-bottom: 1px solid #656565;
+    border-bottom: 1px solid #3bd28a;
 }
 .gantt_section .lanecol{
     width: 37px;
