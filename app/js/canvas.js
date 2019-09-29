@@ -155,7 +155,7 @@ let renderSection = (days, secidx)=>{
         let monthzebra = dateinfo.month%2;
         let showmonthtxt = false;
         let isfirstmonthday = false;
-        if(_.includes([1,8,15,23], dateinfo.day)) showmonthtxt = true; 
+        if(_.includes([1,4,7,10,13,16,19,22,25,28], dateinfo.day)) showmonthtxt = true; 
         if(dateinfo.day === 1) isfirstmonthday = true; 
         headhtml += `<th class="datetitle ${dateinfo.isToday?' is-today':''}
                                 monthzebra${monthzebra} belong_month_${dateinfo.month}
