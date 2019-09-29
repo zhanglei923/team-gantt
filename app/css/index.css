@@ -50,7 +50,7 @@ td.saving{
     pointer-events: none;
 }
 .currentTimelineCover{
-    background-color: #f2f2f2;
+    background-color: #aaa;
     opacity: 0.1;
     position: absolute;
     pointer-events: none;
