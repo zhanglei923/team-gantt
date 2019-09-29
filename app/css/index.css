@@ -262,10 +262,10 @@ td.saving{
     background-color: #fff;
 }
 .gantt_section .weekend{
-    background-color: #ddd !important;
+    background-color: #f9f9f9 !important;
 }
 .gantt_section .holiday{
-    background-color: #ddd !important;
+    background-color: #f9f9f9 !important;
 }
 .gantt_section th.is-today{
     color: black;
@@ -277,11 +277,11 @@ td.saving{
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
-    background-color: #eee !important;
+    background-color: #f7f7f7 !important;
 }
 .gantt_section .isBeforeToday.weekend{
     color: #aaa;
-    background-color: #ddd !important;
+    background-color: #ededed !important;
 }
 .gantt_section .isBeforeToday.important-workingday{
     border-color: #aaa !important;
