@@ -25,13 +25,13 @@
     float:right;
 }
 .schedule_segment.left-is-close{
-    border: 1px solid orange;
+    border: 1px solid #ffa50052;
     border-right: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
 }
 .schedule_segment.right-is-close{
-    border: 1px solid orange;
+    border: 1px solid #ffa50052;
     border-left: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
@@ -40,7 +40,7 @@
     float: right;
 }
 .schedule_segment.all-close{
-    border: 1px solid orange;
+    border: 1px solid #ffa50052;
     border-top-width:1px;
     border-bottom-width: 1px;
 }
@@ -51,7 +51,7 @@
     text-decoration: none;
     color: black;
     background-color: #bbbbbb73 !important;
-    border-color:#5f5f5fbd !important;
+    border-color:#73737321 !important;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
 .schedule_segment.isnotbegin{
@@ -66,7 +66,7 @@
 .schedule_segment.type_holiday{
     background-color: #8f9eff;
     color: #b10000;
-    border: 1px solid #333;
+    border: 1px solid #3333335c;
 }
 .schedule_segment.type_color_red{
     background-color: #ff0000de;
