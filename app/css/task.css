@@ -3,8 +3,12 @@
     z-index: 999;
     height:16px;
     min-width:20px;
-    background-color:#e9e9f5eb;
-    background-color: rgba(194, 255, 193, 0.22);
+    /* background-color:#e9e9f5eb;
+    background-color: rgba(194, 255, 193, 0.22); */
+    background: -webkit-linear-gradient(left, ff000000 , 00e7ff1a);
+    background: -o-linear-gradient(right, ff000000, 00e7ff1a);
+    background: -moz-linear-gradient(right, ff000000, 00e7ff1a);
+    background: linear-gradient(to right, #ff000000 , #00e7ff1a);
     color: black;
     /* border:1px dotted #3f49bf; */
     /* border-right-color: #0000ff99;
