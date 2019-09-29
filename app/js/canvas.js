@@ -3,7 +3,7 @@ let holidayDays = {};
 let alteredWorkingDays = {};
 let initRowSize = 20;
 //http://localhost:3006/?backDays=100&displayDays=365
-let backDays = 21;if($.query('backDays')) backDays = parseInt($.query('backDays'));
+let backDays = 25;if($.query('backDays')) backDays = parseInt($.query('backDays'));
 let displayDays = 126;if($.query('displayDays')) displayDays = parseInt($.query('displayDays'));
 let sectionDays = 7*9;
 let g_Tasks = {};
