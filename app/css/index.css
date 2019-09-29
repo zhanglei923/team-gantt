@@ -50,9 +50,9 @@ td.saving{
     pointer-events: none;
 }
 .currentTimelineCover{
-    background-color: #333;
+    background-color: #f2f2f2;
     opacity: 0.1;
-    position:absolute;
+    position: absolute;
     pointer-events: none;
 }
 @-webkit-keyframes twinkling{  
