@@ -5,7 +5,7 @@
     font-family: Courier, Monaco, monospace;
 }
 body{
-    background-color: powderblue;
+    background-color: #709ba0;
 }
 td.saving{
     background-color: #ff0000cc !important; 
@@ -22,7 +22,11 @@ td.saving{
     height: 60px;
     width: 100%;
     border-bottom: 1px solid black;
-    background-color: #d2deffd9;
+    background-color: #2f3a58b5;
+    color: white;
+}
+.console span, dev, a{
+    color: white;
 }
 .console .btn.save_btn{
     /* width:100px;
@@ -60,7 +64,7 @@ td.saving{
     100%{ opacity: 1; }  
 }  
 .tip_ofsection{
-    background-color: powderblue;
+    background-color: #709ba0;
     height:20px;
     width:100%;
 }
@@ -138,11 +142,10 @@ td.saving{
     padding-right:2px;
 }
 .gantt_section{
-    /* background-color: powderblue; */
+    /* background-color: #709ba0; */
     margin-left: 6px;
     display: block;
     border: 0px solid #ccc;
-    border-bottom: 1px solid #ccc;    
     border-collapse:collapse;
     width:1650px;
 }
@@ -199,7 +202,7 @@ td.saving{
     color:white;
 }
 .gantt_section .lane_breaker{
-    border-bottom: 1px solid #3bd28a;
+    border-bottom: 1px solid #709ba0;
 }
 .gantt_section .lane_breaker1{
     /* border-bottom: 1px solid #3bd28a; */
