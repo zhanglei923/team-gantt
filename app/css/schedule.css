@@ -49,7 +49,7 @@
 }
 .schedule_segment.ispassed{
     text-decoration: none;
-    color: black;
+    color: #656565;
     background-color: #bbbbbb73 !important;
     border-color:#73737321 !important;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
