@@ -177,7 +177,7 @@ td.saving{
     border:1px dotted red;
 }
 .gantt_section td{
-    border-left: 1px solid #eee;
+    border-left: 1px solid #f6f6f6;
     /* border-top: 1px dotted #ccc; */
     height: 19px;
 }
@@ -218,7 +218,7 @@ td.saving{
 }
 .gantt_section .lanecol{
     width: 37px;
-    background-color: #f9f9f9;
+    background-color: #efefef;
     font-weight: bolder;
     text-align: right;
 }
@@ -250,7 +250,7 @@ td.saving{
     background-color: #ff6883 !important;
 }
 .gantt_section .datetitle.monthzebra0{
-    border-bottom: 4px solid #f2f2ff !important;
+    border-bottom: 4px solid #d0beff !important;
 }
 .gantt_section .datetitle.monthzebra1{
     border-bottom: 4px solid #596494 !important;
@@ -262,10 +262,10 @@ td.saving{
     background-color: #fff;
 }
 .gantt_section .weekend{
-    background-color: #f9f9f9 !important;
+    background-color: #efefef !important;
 }
 .gantt_section .holiday{
-    background-color: #f9f9f9 !important;
+    background-color: #efefef !important;
 }
 .gantt_section th.is-today{
     color: black;
