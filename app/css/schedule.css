@@ -79,9 +79,15 @@
     background-color: greenyellow;      
 }
 .schedule_segment.type_color_black{
-    background-color: black;  
+    background-color: #545454;  
     color: white;      
 }
 .schedule_segment.type_color_orange{
     background-color: orange;         
+}
+.schedule_segment.type_color_cyan{
+    background-color: rgb(64, 255, 239);    
+}
+.schedule_segment.type_color_cyangreen{
+    background-color: #c6ffd9;    
 }

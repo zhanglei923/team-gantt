@@ -244,7 +244,9 @@ let deleteSchedule=(id)=>{
     hideEditors()
 };
 let styleTypeList = ['', 'type_holiday']
-styleTypeList = styleTypeList.concat(['type_color_red', 'type_color_green', 'type_color_greenyellow', 'type_color_black', 'type_color_orange'])
+styleTypeList = styleTypeList.concat(['type_color_red', 'type_color_green', 'type_color_greenyellow', 'type_color_black', 'type_color_orange',
+                            'type_color_cyan','type_color_cyangreen'
+                    ])
 let initScheuleStyleType = ()=>{
     let options = ''
     styleTypeList.forEach((type)=>{
