@@ -48,7 +48,7 @@
 }
 .isBeforeToday .task{
     /* background-color: #cccccc61 !important; */
-    color: #828282;
+    color: #717171;
     background: none !important;
 }
 .isBeforeToday .task .pointer{
