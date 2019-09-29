@@ -63,6 +63,12 @@ td.saving{
     0%{ opacity: 0.1; }  
     100%{ opacity: 1; }  
 }  
+.title_of_week{
+    border:2px solid #709ba0;
+    background-color:#6d6d6d;
+    color:#fff;
+    margin:0 1px 0 1px;
+}
 .tip_ofsection{
     background-color: #709ba0;
     height:20px;
