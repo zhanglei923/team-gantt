@@ -25,13 +25,13 @@
     float:right;
 }
 .schedule_segment.left-is-close{
-    border: 1px solid #ffa50052;
+    border: 1px solid #ffa50033;
     border-right: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
 }
 .schedule_segment.right-is-close{
-    border: 1px solid #ffa50052;
+    border: 1px solid #ffa50033;
     border-left: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
@@ -40,7 +40,7 @@
     float: right;
 }
 .schedule_segment.all-close{
-    border: 1px solid #ffa50052;
+    border: 1px solid #ffa50033;
     border-top-width:1px;
     border-bottom-width: 1px;
 }
@@ -67,6 +67,7 @@
     background-color: #8f9eff;
     color: #b10000;
     border: 1px solid #3333335c;
+    text-decoration:line-through; 
 }
 .schedule_segment.type_color_red{
     background-color: #ff0000de;
