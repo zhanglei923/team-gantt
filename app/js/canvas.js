@@ -137,7 +137,15 @@ let renderSection = (days, secidx)=>{
         let id = days[i];
         let dateinfo = g_CanvasDateInfo[id];
         //console.log(dateinfo)
-        headhtml += `${dateinfo.dayOfWeek===1?'<th style="border:1px solid white;background-color:#6d6d6d;color:#fff;margin:0 1px 0 1px;" colspan="7">第'+dateinfo.weekOfYear+'周</th>':''}`
+        let show = false;
+        let colspan=7;
+        if(i===0 && dateinfo.dayOfWeek!== 1){
+            colspan = (7 - dateinfo.dayOfWeek)+1;
+            show = true
+        }else if(dateinfo.dayOfWeek===1){
+            show = true;
+        }
+        headhtml += `${show?'<th style="border:1px solid white;background-color:#6d6d6d;color:#fff;margin:0 1px 0 1px;" colspan="'+colspan+'">第'+dateinfo.weekOfYear+'周</th>':''}`
     }
     headhtml += `</tr><tr class="isBeforeToday"><th>\\</th><th></th>`
     for(let i=0;i<days.length;i++){
