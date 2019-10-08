@@ -19,10 +19,14 @@ let loadSchedules = (schedulelist)=>{
             let currentMom = moment();
             let eventStartMom = moment(event.start+'T00:00:00');
             let eventEndMom = moment(event.end+'T23:59:59');
+            let days = eventEndMom.diff(eventStartMom, 'days') + 1;
             let seg = {
                 eventId,
                 section_idx: section.section_idx,
                 subject: event.subject,
+                start: event.start,
+                end: event.end,
+                days,
                 styletype: event.styletype,
                 rowIdx: event.rowIdx,
                 isPassed: eventEndMom.isSameOrBefore(currentMom),
@@ -99,6 +103,7 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth() - 2;
             if(seg.section_idx === i){
+                let subject = `${seg.subject}${seg.days>2?(','+seg.days+'d'):''}`;
                 html += `<div id="${seg.eventId}_${Math.random()}" seg_schedule_id="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
                         ${seg.right_close?' right-is-close':''}
@@ -108,11 +113,11 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.isNotbegin?' isnotbegin':''}
                         ${seg.styletype?' '+seg.styletype:''}
                         "
-                        title="${seg.head.date} to ${seg.tail.date}: '${seg.subject}'"
+                        title="${seg.start} to ${seg.end}，共${seg.days}个自然日: '${seg.subject}'"
                         style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
                 >
                 <span class="subject">
-                    ${seg.head.isBegin?'':'...'}${seg.subject}${seg.tail.isEnd?'':'...'}
+                    ${seg.head.isBegin?'':'...'}${subject}${seg.tail.isEnd?'':'...'}
                     </span>
                 </div>`
             }            
