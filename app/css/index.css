@@ -186,6 +186,7 @@ td.saving{
 }
 .gantt_section .day{
     position: relative;
+    background-color: white;
 }
 .gantt_section .day.day_hover{
     /* background-color: greenyellow !important; */
@@ -256,10 +257,10 @@ td.saving{
     border-bottom: 4px solid #596494 !important;
 }
 .gantt_section .day.monthzebra0{
-    background-color: #fff;
+
 }
 .gantt_section .day.monthzebra1{
-    background-color: #fff;
+
 }
 .gantt_section .weekend{
     background-color: #e9e9e9 !important;
@@ -277,7 +278,7 @@ td.saving{
 }
 .gantt_section .isBeforeToday{
     color: #aaa;
-    background-color: #f7f7f7 !important;
+    background-color: #f7f7f7;
 }
 .gantt_section .isBeforeToday.weekend{
     color: #aaa;
