@@ -7,6 +7,10 @@
     color: #000;
     /* text-decoration: underline; */
 }
+.schedule_segment .subject .days{
+    margin-left:2px;
+    background-color: #fbfbdf;
+}
 .schedule_segment.selected{
     background-color:#0037ff29;
 }
