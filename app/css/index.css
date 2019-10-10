@@ -255,8 +255,8 @@ td.saving{
     border-right:1px dotted #ae44e4 !important; */
 }
 .gantt_section .selected_dayheader *{
-    border-left: 3px solid #2623c7 !important;
-    border-right: 3px solid #2623c7 !important;
+    border-left: 1px solid #2623c7 !important;
+    border-right: 1px solid #2623c7 !important;
     color: red !important;
 }
 .gantt_section .choosed_day{
