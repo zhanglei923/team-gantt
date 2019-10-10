@@ -85,6 +85,24 @@ td.saving{
     border: 1px solid red;
     z-index: 1001;
 }
+.tasks .tip_of_day.important.dir_start{
+    color:white;
+    background: -webkit-linear-gradient(left, ff0000  , 00e7ff2b);
+    background: -o-linear-gradient(right, ff0000 , 00e7ff2b);
+    background: -moz-linear-gradient(right, ff0000 , 00e7ff2b);
+    background: linear-gradient(to right, #ff0000  , #00e7ff2b);
+    border-right:0;
+    z-index: 1001;
+}
+.tasks .tip_of_day.important.dir_end{
+    color:white;
+    background: -webkit-linear-gradient(left, 00e7ff2b  , ff0000);
+    background: -o-linear-gradient(right, 00e7ff2b , ff0000);
+    background: -moz-linear-gradient(right, 00e7ff2b , ff0000);
+    background: linear-gradient(to right, #00e7ff2b  , #ff0000);
+    border-left:0;
+    z-index: 1001;
+}
 .tasks .tip_of_day.notice{
     padding-left:2px;
     background-color:#ffffb3aa !important;
