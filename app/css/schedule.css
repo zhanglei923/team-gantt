@@ -10,6 +10,7 @@
 .schedule_segment .subject .days{
     margin-left:2px;
     background-color: #fbfbdf;
+    color: black;
 }
 .schedule_segment.selected{
     background-color:#0037ff29;
