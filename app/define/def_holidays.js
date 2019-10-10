@@ -80,8 +80,6 @@ let test_ImportantWorkingDay = {
     '2019-12-23': [{desc:'GA&PLAN', level:'important'}],
     '2019-12-27': [{desc:'GA&PLAN', level:'important', is:'end'}],
 
-    '2019-10-21': [{desc:'SP0-SP6', level:'important'}],
-    '2020-02-01': [{desc:'SP0-SP6', level:'important', is:'end'}],
     '2020-02-03': [{desc:'集成测试', level:'important'}],
     '2020-02-21': [{desc:'集成测试', level:'important', is:'end'}],
     '2020-02-24': [{desc:'预发布', level:'important'}],
