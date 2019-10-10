@@ -58,6 +58,28 @@ let test_ImportantWorkingDay = {
     '2019-09-20': [{desc:'1910集成', level:'important', is:'end'}],
     '2019-09-23': [{desc:'预发布', level:'important'}],
     '2019-10-11': [{desc:'预发布', level:'important', is:'end'}],
+
+    '2019-10-08': [{desc:'SP0', level:'important'}],
+    '2019-10-18': [{desc:'SP0', level:'important', is:'end'}],
+    
+    '2019-10-21': [{desc:'SP1', level:'important'}],
+    '2019-11-01': [{desc:'SP1', level:'important', is:'end'}],
+    
+    '2019-11-04': [{desc:'SP2', level:'important'}],
+    '2019-11-15': [{desc:'SP2', level:'important', is:'end'}],
+    
+    '2019-11-18': [{desc:'GA&PLAN', level:'important'}],
+    '2019-11-22': [{desc:'GA&PLAN', level:'important', is:'end'}],
+
+    '2019-11-25': [{desc:'SP1', level:'important'}],
+    '2019-12-06': [{desc:'SP1', level:'important', is:'end'}],
+    
+    '2019-12-09': [{desc:'SP2', level:'important'}],
+    '2019-12-20': [{desc:'SP2', level:'important', is:'end'}],
+
+    '2019-12-23': [{desc:'GA&PLAN', level:'important'}],
+    '2019-12-27': [{desc:'GA&PLAN', level:'important', is:'end'}],
+
     '2019-10-21': [{desc:'SP0-SP6', level:'important'}],
     '2020-02-01': [{desc:'SP0-SP6', level:'important', is:'end'}],
     '2020-02-03': [{desc:'集成测试', level:'important'}],
