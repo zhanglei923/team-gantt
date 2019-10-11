@@ -56,7 +56,8 @@
     text-decoration: none;
     color: #4c4c4c;
     background-color: #bbbbbb73 !important;
-    border-color:#73737321 !important;
+    /* border-color:#73737321 !important; */
+    border: 1px solid #808080 !important;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
 .schedule_segment.isnotbegin{
