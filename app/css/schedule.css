@@ -60,6 +60,9 @@
     border: 1px solid #808080 !important;
     filter:alpha(Opacity=75);-moz-opacity:0.75;opacity: 0.75; 
 }
+.schedule_segment.ispassed .days{
+    background-color: inherit;
+}
 .schedule_segment.isnotbegin{
     text-decoration: none;
     color: #000;
