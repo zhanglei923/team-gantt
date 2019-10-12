@@ -254,7 +254,7 @@ let deleteSchedule=(id)=>{
 let ALWAYS_HIGHLIGHT_TYPE = {
     'type_holiday': true
 }
-let styleTypeList = ['', 'type_holiday']
+let styleTypeList = ['', 'type_holiday', 'type_extraworkingday']
 styleTypeList = styleTypeList.concat(['type_color_red', 'type_color_green', 'type_color_greenyellow', 'type_color_black', 'type_color_orange',
                             'type_color_cyan','type_color_cyangreen'
                     ])

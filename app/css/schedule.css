@@ -75,6 +75,10 @@
     opacity: 0.85;
 }
 
+.schedule_segment.type_extraworkingday *{
+    color: blue !important;
+    font-weight: bold;
+}
 .schedule_segment.type_holiday{
     background-color: #8f9eff;
     color: #b10000;
