@@ -119,8 +119,9 @@ td.saving{
     border: 1px dotted green;
 }
 .tasks .tip_of_day.ispassed{
-    background-color: #b5b5b5;
-    border-color: #ccc;
+    background-color: #b5b5b5 !important;
+    border-color: #ccc !important;
+    color: black !important;
 }
 .root{
     margin-top: 60px;

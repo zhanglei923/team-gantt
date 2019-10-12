@@ -63,6 +63,9 @@
 .schedule_segment.ispassed .days{
     background-color: inherit;
 }
+.schedule_segment.ispassed .subject{
+    color: #4c4c4c;
+}
 .schedule_segment.isnotbegin{
     text-decoration: none;
     color: #000;

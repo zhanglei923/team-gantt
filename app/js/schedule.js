@@ -114,9 +114,11 @@ let drawStartEndEvents=(segments)=>{
                         ${seg.styletype?' '+seg.styletype:''}
                         "
                         title="${seg.start} to ${seg.end}，共${seg.days}个自然日: '${seg.subject}'"
-                        style="left:${head_pos.left}px;top:${head_pos.top}px;width:${width}px;"
+                        style="left:${head_pos.left}px;
+                                top:${head_pos.top}px;
+                                width:${width}px;"
                 >
-                <span class="subject">
+                <span class="subject" style="${ALWAYS_HIGHLIGHT_TYPE[seg.styletype]?'color:#b10000;':''}">
                     ${seg.head.isBegin?'':'...'}${subject}${seg.tail.isEnd?'':'...'}
                     </span>
                 </div>`
@@ -248,6 +250,10 @@ let deleteSchedule=(id)=>{
     getScheduleSegments(id).off().remove()
     hideEditors()
 };
+
+let ALWAYS_HIGHLIGHT_TYPE = {
+    'type_holiday': true
+}
 let styleTypeList = ['', 'type_holiday']
 styleTypeList = styleTypeList.concat(['type_color_red', 'type_color_green', 'type_color_greenyellow', 'type_color_black', 'type_color_orange',
                             'type_color_cyan','type_color_cyangreen'
