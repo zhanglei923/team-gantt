@@ -228,7 +228,7 @@ td.saving{
     color:white;
 }
 .gantt_section .lane_breaker{
-    border-bottom: 1px solid #709ba0;
+    border-bottom: 2px solid #709ba0;
 }
 .gantt_section .lane_breaker1{
     /* border-bottom: 1px solid #3bd28a; */
