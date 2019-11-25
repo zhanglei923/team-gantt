@@ -342,3 +342,8 @@ td.saving{
     /* border-top-width: 2px !important;
     border-bottom-width: 2px !important; */
 }
+.errorMsg{
+    display:none;
+    background-color: red;
+    color:white;
+}
