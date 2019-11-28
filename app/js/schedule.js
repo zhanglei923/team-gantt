@@ -158,6 +158,7 @@ let showScheduleEditor=(schedule)=>{
     $(`[seg_schedule_id="${schedule.id}"]`).addClass('selected');
 }
 let updateSchedule=(nohide)=>{
+    $('#errorMsg').hide()
     if(!$('#scheduleEditor').is(':visible'))return;
     if(typeof nohide=== 'undefined') nohide=false;
     let schedule_id = $('#scheduleEditor').attr('schedule_id')
@@ -170,9 +171,14 @@ let updateSchedule=(nohide)=>{
     if(!schedule_id)return;
     if(!subject)return;
     if(!isValidDate(startDate) || !isValidDate(endDate)) {
-        //console.log(isValidDate(startDate), isValidDate(endDate), startDate, endDate)
+        $('#errorMsg').show().html('日期格式不合法')
         return;
     }
+    if(moment(startDate).isAfter(endDate)) {
+        $('#errorMsg').show().html(`开始日期"${startDate}"晚于了结束日期"${endDate}"`)
+        return;
+    }
+    $('#errorMsg').hide()
     getScheduleSegments(schedule_id).off().remove();
     delete g_Schedules[schedule_id];
     let schedule = {
