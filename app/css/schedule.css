@@ -108,3 +108,7 @@
 .schedule_segment.type_color_cyangreen{
     background-color: #c6ffd9;    
 }
+.schedule_segment.type_color_gray{
+    color: #666;
+    background-color: #f1f1f1;
+}
