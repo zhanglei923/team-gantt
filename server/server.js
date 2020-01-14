@@ -65,13 +65,14 @@ app.get('/action/imortantdays',function(req, res){
 
     let holidays = [];
     let fullpath;
-    fullpath = pathutil.resolve('../../', 'gantt_holidays.json');
+    //console.log(__dirname)
+    fullpath = pathutil.resolve(__dirname, '../../gantt_holidays.json');
     if(fs.existsSync(fullpath)){
         let txt = fs.readFileSync(fullpath, 'utf8');
         holidays = JSON.parse(txt)
     }
     let importantdays = {};
-    fullpath = pathutil.resolve('../../', 'gantt_importantdays.json');
+    fullpath = pathutil.resolve(__dirname, '../../gantt_importantdays.json');
     if(fs.existsSync(fullpath)){
         let txt = fs.readFileSync(fullpath, 'utf8');
         importantdays = JSON.parse(txt)
