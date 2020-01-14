@@ -60,6 +60,25 @@ app.get('/action/projects',function(req, res){
 
     res.send(projects)
 })
+app.get('/action/imortantdays',function(req, res){
+    let query = req.query;
+
+    let holidays = [];
+    let fullpath;
+    fullpath = pathutil.resolve('../../', 'gantt_holidays.json');
+    if(fs.existsSync(fullpath)){
+        let txt = fs.readFileSync(fullpath, 'utf8');
+        holidays = JSON.parse(txt)
+    }
+    let importantdays = {};
+    fullpath = pathutil.resolve('../../', 'gantt_importantdays.json');
+    if(fs.existsSync(fullpath)){
+        let txt = fs.readFileSync(fullpath, 'utf8');
+        importantdays = JSON.parse(txt)
+    }
+
+    res.json({holidays,importantdays})
+})
 
 // var server = httpServer.listen(PORT, function() {
 //     var host = server.address().address;

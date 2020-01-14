@@ -1,1 +1,5 @@
 node_modules/
+.holidays.json
+.importantdays.json
+gantt_holidays.json
+gantt_importantdays.json

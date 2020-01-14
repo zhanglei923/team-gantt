@@ -16,6 +16,17 @@ var colorArr = ['AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','
 'SlateGray','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Turquoise','Violet',
 'VioletRed','Wheat','White','WhiteSmoke','Yellow','YellowGreen'];
 
+let daysdata;
+$.ajax({
+                method: "GET",
+                async: false,
+                url: "/action/imortantdays",
+                dataType:'json'
+            }).done(function( data ) {
+                console.log(data)
+                daysdata = data;
+            });
+
 let test_holidays = [
     {startDate: '2019-04-05', duration: 3, alteredWorkingDays:[]},
     {startDate: '2019-05-01', duration: 4, alteredWorkingDays:['2019-04-28', '2019-05-05']},
@@ -24,6 +35,7 @@ let test_holidays = [
     {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29','2019-10-12']},
     {startDate: '2019-12-30', duration: 3, alteredWorkingDays:['2019-12-28','2019-12-29']},
 ];
+test_holidays = test_holidays.concat(daysdata.holidays)
 let g_sprintSchedules = {
 }
 let test_ImportantWorkingDay = {
@@ -89,6 +101,7 @@ let test_ImportantWorkingDay = {
     '2020-11-23': [{desc:'预发布', level:'important'}],
     '2020-11-27': [{desc:'预发布', level:'important', is:'end'}],
 };
+Object.assign(test_ImportantWorkingDay, daysdata.importantdays)
 let test_Schedules = {
     'adsfasdfdsf12': {
         start: '2019-01-10', 
