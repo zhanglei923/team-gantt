@@ -16,7 +16,7 @@ var colorArr = ['AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','
 'SlateGray','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Turquoise','Violet',
 'VioletRed','Wheat','White','WhiteSmoke','Yellow','YellowGreen'];
 
-let daysdata;
+let daysdata = {holidays:[],importantdays:{}};
 $.ajax({
                 method: "GET",
                 async: false,
