@@ -1,7 +1,7 @@
 //------
 let holidayDays = {};
 let alteredWorkingDays = {};
-let initRowSize = 20;
+let initRowSize = 23;
 //http://localhost:3006/?backDays=100&displayDays=365
 let backDays = 25;if($.query('backDays')) backDays = parseInt($.query('backDays'));
 let displayDays = 126;if($.query('displayDays')) displayDays = parseInt($.query('displayDays'));
