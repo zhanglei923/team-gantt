@@ -90,16 +90,7 @@ let test_ImportantWorkingDay = {
     '2019-12-20': [{desc:'SP2', level:'important', is:'end'}],
 
     '2019-12-23': [{desc:'GA&PLAN', level:'important'}],
-    '2019-12-27': [{desc:'GA&PLAN', level:'important', is:'end'}],
-
-    '2020-02-03': [{desc:'集成测试', level:'important'}],
-    '2020-02-21': [{desc:'集成测试', level:'important', is:'end'}],
-    '2020-02-24': [{desc:'预发布', level:'important'}],
-    '2020-02-28': [{desc:'预发布', level:'important', is:'end'}],
-    '2020-07-06': [{desc:'预发布', level:'important'}],
-    '2020-07-10': [{desc:'预发布', level:'important', is:'end'}],
-    '2020-11-23': [{desc:'预发布', level:'important'}],
-    '2020-11-27': [{desc:'预发布', level:'important', is:'end'}],
+    '2019-12-27': [{desc:'GA&PLAN', level:'important', is:'end'}]
 };
 Object.assign(test_ImportantWorkingDay, daysdata.importantdays)
 let test_Schedules = {
