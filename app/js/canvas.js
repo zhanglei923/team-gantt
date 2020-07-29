@@ -169,7 +169,7 @@ let renderSection = (days, secidx)=>{
                         >
                         <div class="w">${dateinfo.textofWeekend}</div>
                         <div class="m ${isfirstmonthday?'misfirstmonthday':''}">${showmonthtxt?('<span class="mt '+(isfirstmonthday?'isfirstmonthday':'')+'">'+dateinfo.monthText+'</span>'):'--'}</div>
-                        <div class="d">${dateinfo.dayText}</div>
+                        <div class="d">${dateinfo.dayText.replace(/^0/,'')}</div>
                         ${false && dateinfo.dayOfWeek === 1?`<div class="dayofweek">第${dateinfo.weekOfYear}周</div>`:''}
                     </th>`
     }
