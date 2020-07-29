@@ -150,7 +150,7 @@ td.saving{
     color: #ccc;
 }
 .datetitle .m .mt{
-    color:#3a3a3a;
+    color:#a2a2a2;
     font-family: Impact;
 }
 .datetitle .m.misfirstmonthday{
@@ -165,6 +165,8 @@ td.saving{
 .datetitle .d{
     text-align:right;
     padding-right:2px;
+    color: black;
+    font-weight: bolder;
 }
 .gantt_section{
     /* background-color: #709ba0; */
