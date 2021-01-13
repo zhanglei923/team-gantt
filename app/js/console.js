@@ -1,3 +1,32 @@
+let getDaysInfo = (startdate, enddate)=>{
+    //console.warn(startdate, enddate)
+    let startmom = moment(startdate);
+    let endmom = moment(enddate);
+    let days = startmom.diff(endmom, 'days');
+    days = Math.abs(days);
+    days = days+1;
+    let alldays = [];
+    let workingdays = [];
+    let restdays = [];
+
+    for(let i=0;i<days;i++){
+        let mom = moment(startdate).add(i, 'days');
+        let dayfmt = mom.format('YYYY-MM-DD');
+        let info = g_CanvasDateInfo[dayfmt];
+        if(info){
+            if(info.isWorkDay){
+                workingdays.push(dayfmt)
+            }else{
+                restdays.push(dayfmt)
+            }
+        }else{
+            //
+        }
+    }
+    return {
+        workingdays, restdays
+    }
+}
 let showDateInfo=(startdate, tddate)=>{
     let startmom;
     startmom = startdate ? moment(startdate) : moment();
