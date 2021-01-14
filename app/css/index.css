@@ -257,7 +257,7 @@ td.saving{
     /* border-left:1px dotted #ae44e4 !important;
     border-right:1px dotted #ae44e4 !important; */
 }
-.gantt_section .selected_dayheader *{
+.gantt_section .selected_dayheader div{
     border-left: 1px solid #2623c7 !important;
     border-right: 1px solid #2623c7 !important;
     color: red !important;
