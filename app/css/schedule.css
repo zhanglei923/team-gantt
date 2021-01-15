@@ -52,6 +52,7 @@
     border: 1px solid #ffa50033;
     border-top-width:1px;
     border-bottom-width: 1px;
+    border-right: 1px solid #404040;
 }
 .schedule_segment.all-open{
     border: 0;
