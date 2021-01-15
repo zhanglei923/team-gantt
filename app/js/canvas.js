@@ -13,6 +13,7 @@ if($.query('backDays')) {
     }    
 }
 let displayDays = 126;if($.query('displayDays')) displayDays = parseInt($.query('displayDays'));
+if(backDays > displayDays)displayDays = backDays + displayDays;
 let sectionDays = 7*9;
 let g_Tasks = {};
 let g_Schedules = {};
@@ -272,6 +273,7 @@ let showCurrentTimeline=()=>{
     let tr0 = $('#sec0_r0')
     let firstTd = $('td.is-today:first');
     let pos = firstTd.offset();
+    if(!pos)return;
     let width = firstTd.width();
     let clock0 = moment(todayDateText+'T00:00:00');
     let clock1 = moment(moment().add(1,'days').format('YYYY-MM-DD')+'T00:00:00');
