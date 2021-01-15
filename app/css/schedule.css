@@ -14,7 +14,7 @@
     color: black;
 }
 .schedule_segment.selected{
-    background-color:#0037ff29;
+    font-weight: bolder;
 }
 .schedule_segment .subject{
     overflow: hidden;
