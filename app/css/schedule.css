@@ -43,6 +43,7 @@
     border-top-width:1px;
     border-bottom-width: 1px;
     border-radius: 0 12px 0 0;
+    border-right: 1px solid #404040;
 }
 .schedule_segment.right-is-close .subject{
     float: right;
