@@ -48,8 +48,11 @@ let showDateInfo=(startdate, tddate)=>{
             if(date ===tddate){break;}
         }
     }
+    let isAfter = moment(tddate).isAfter(todaydate);
+    let isSame = moment(tddate).isSame(todaydate);
+    let btw = isSame ? '=' : (isAfter?'-&gt;':'&lt;-')
     let reportHtml = `
-        [${tddate}]&nbsp;${todaydate}(${getDayInfo(todaydate).textofWeekend}) -&gt; ${tddate}(${getDayInfo(tddate).textofWeekend}),
+        <div style="display:none;">[${tddate}]&nbsp;</div>今天${todaydate}(${getDayInfo(todaydate).textofWeekend}) ${btw} 选中${tddate}(${getDayInfo(tddate).textofWeekend}),
         Days=${betweendays.length},
         Working days=${betweenworkingdays.length}
     `
