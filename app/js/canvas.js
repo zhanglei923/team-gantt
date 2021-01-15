@@ -3,7 +3,7 @@ let holidayDays = {};
 let alteredWorkingDays = {};
 let initRowSize = 23;
 //http://localhost:3006/?backDays=100&displayDays=365
-let backDays = 25;
+let backDays = 7;
 if($.query('backDays')) {
     let days = $.query('backDays');
     if(days.match(/\d{4}-\d{2}-\d{2}/)){
