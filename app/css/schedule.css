@@ -34,17 +34,20 @@
     border-right: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
+    border-radius: 12px 0 0 0;
 }
 .schedule_segment.right-is-close{
     border: 1px solid #ffa50033;
     border-left: 0;
     border-top-width:1px;
     border-bottom-width: 1px;
+    border-radius: 0 12px 0 0;
 }
 .schedule_segment.right-is-close .subject{
     float: right;
 }
-.schedule_segment.all-close{
+.schedule_segment.all-close{    
+    border-radius: 9px 9px 0 0;
     border: 1px solid #ffa50033;
     border-top-width:1px;
     border-bottom-width: 1px;
