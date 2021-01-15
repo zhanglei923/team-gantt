@@ -40,7 +40,7 @@ let extractHolidays=()=>{
 let initDate = ()=>{
     extractHolidays();
     let thisweekday = todayMom.day();
-    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(thisweekday+backDays, 'days');
+    let startmom = moment(todayMom.format('YYYY-MM-DD')+'T00:00:00').subtract(0+backDays, 'days');
     for(let i=0;i<displayDays;i++){
         let mom = startmom.add(1, 'days');
         let dateTxt = mom.format('YYYY-MM-DD')
