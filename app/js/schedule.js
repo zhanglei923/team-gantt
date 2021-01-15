@@ -104,7 +104,7 @@ let drawStartEndEvents=(segments)=>{
             let tail_pos = tailTd.offset()
             let width = tail_pos.left - head_pos.left+tailTd.outerWidth() - 2;
             if(seg.section_idx === i){
-                let subject = `${seg.subject}${seg.days>2?('<span class="days" days="'+seg.days+'">='+`${daysinfo.workingdays.length}wd`+'</span>'):''}`;
+                let subject = `${seg.subject}${seg.days>2?('<span class="days" days="'+seg.days+'">'+`${daysinfo.workingdays.length}wd`+'</span>'):''}`;
                 html += `<div id="${seg.eventId}_${Math.random()}" seg_schedule_id="${seg.eventId}" class="schedule_segment 
                         ${seg.left_close?' left-is-close':''}
                         ${seg.right_close?' right-is-close':''}

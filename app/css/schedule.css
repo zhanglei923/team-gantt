@@ -9,7 +9,8 @@
 }
 .schedule_segment .subject .days{
     margin-left:2px;
-    background-color: #fbfbdf;
+    /* background-color: #fbfbdf; */
+    border-bottom: 1px solid #131111;
     color: black;
 }
 .schedule_segment.selected{
