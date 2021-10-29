@@ -35,6 +35,7 @@ let test_holidays = [
     {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29','2019-10-12']},
     {startDate: '2019-12-30', duration: 3, alteredWorkingDays:['2019-12-28','2019-12-29']},
     {startDate: '2022-01-31', duration: 7, alteredWorkingDays:[]},
+    {startDate: '2022-01-01', duration: 3, alteredWorkingDays:[]},
 ];
 test_holidays = test_holidays.concat(daysdata.holidays)
 let g_sprintSchedules = {
@@ -47,7 +48,9 @@ let test_ImportantWorkingDay = {
     '2019-11-01': [{desc:'SP1', level:'important', is:'end'}],
     
     '2021-11-01': [{desc:'Q4', level:'important'}],
-    '2022-01-31': [{desc:'Q4', level:'important', is:'end'}]
+    '2022-01-31': [{desc:'Q4', level:'important', is:'end'}],
+    '2022-02-01': [{desc:'Q1', level:'important'}],
+    '2022-05-31': [{desc:'Q1', level:'important', is:'end'}]
 };
 Object.assign(test_ImportantWorkingDay, daysdata.importantdays)
 let test_Schedules = {
