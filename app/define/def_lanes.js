@@ -1,33 +1,29 @@
 let g_lanes_type = {
     "global":{
         className: 'lane_global',
-        title:'全局',
+        title:'Global',
         className: 'lane_1'
     },
     "sprint_approval":{
         className: 'lane_global',
-        title:'计划',
+        title:'Sprint',
         className: 'lane_2'
     },
-    "zhanglei":{
+    "person_1":{
         className: 'lane_1',
-        iconxxx:'https://wiki.ingag'+'eapp.com/download/thum'+'bnails/28967268/%E4%BC%81%E4%B8%9A%E'+'5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190918141245.png?version=1&modificationDate=1568787219000&api=v2',
-        title:'磊'
+        title:'Lane1'
     },
-    "chengzhe":{
+    "person_2":{
         className: 'lane_2',
-        iconxxx: 'https://wiki.ingag'+'eapp.com/download/thum'+'bnails/28967268/%E4%BC%81%'+'E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190918141450.png?version=1&modificationDate=1568787341000&api=v2',
-        title:'哲'
+        title:'Lane2'
     },
-    "liuhd":{
+    "person_3":{
         className: 'lane_1',
-        iconxxx: 'https://wiki.ingag'+'eapp.com/download/thumb'+'nails/28967268/%E4%BC%81%E4%B8%9A%E5'+'%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190918141545.png?version=1&modificationDate=1568787389000&api=v2',
-        title:'迪'
+        title:'Lane3'
     },
-    "sunxf":{
+    "person_4":{
         className: 'lane_2',
-        iconxxx: 'https://wiki.ingag'+'eapp.com/download/thumb'+'nails/28967268/%E4%BC%81%E4%B8%9A%E5'+'%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190918141545.png?version=1&modificationDate=1568787389000&api=v2',
-        title:'峰'
+        title:'Lane4'
     }
 }
 let g_lanes = [
@@ -39,19 +35,19 @@ let g_lanes = [
     'sprint_approval',
     'sprint_approval',
 
-    'zhanglei',
-    'zhanglei',
-    'zhanglei',
+    'person_1',
+    'person_1',
+    'person_1',
 
-    'chengzhe',
-    'chengzhe',
-    'chengzhe',
+    'person_2',
+    'person_2',
+    'person_2',
 
-    'liuhd',
-    'liuhd',
-    'liuhd',   
+    'person_3',
+    'person_3',
+    'person_3',   
 
-    'sunxf',
-    'sunxf',
-    'sunxf',   
+    'person_4',
+    'person_4',
+    'person_4',   
 ]

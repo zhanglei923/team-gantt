@@ -19,7 +19,7 @@ let g_Tasks = {};
 let g_Schedules = {};
 let g_CanvasDateList = [];
 let g_CanvasDateInfo = {};
-let weekdayCN = ['', '一','二','三','四','五','六','日']
+let weekdayCN = ['', 'Mo','Tu','We','Th','Fr','Sa','Su']
 let todayMom = moment();
 let todayText = todayMom.format('YYYY-MM-DD');
 let extractHolidays=()=>{ 
@@ -154,7 +154,7 @@ let renderSection = (days, secidx)=>{
         }else if(dateinfo.dayOfWeek===1){
             show = true;
         }
-        headhtml += `${show?'<th class="title_of_week" style="" colspan="'+colspan+'">第'+dateinfo.weekOfYear+'周</th>':''}`
+        headhtml += `${show?'<th class="title_of_week" style="" colspan="'+colspan+'">'+dateinfo.weekOfYear+'</th>':''}`
     }
     headhtml += `</tr><tr class="isBeforeToday"><th>\\</th><th></th>`
     for(let i=0;i<days.length;i++){
@@ -180,7 +180,7 @@ let renderSection = (days, secidx)=>{
                         <div class="w">${dateinfo.textofWeekend}</div>
                         <div class="m ${isfirstmonthday?'misfirstmonthday':''}">${showmonthtxt?('<span class="mt '+(isfirstmonthday?'isfirstmonthday':'')+'">'+dateinfo.monthText+'</span>'):'--'}</div>
                         <div class="d">${dateinfo.dayText.replace(/^0/,'')}</div>
-                        ${false && dateinfo.dayOfWeek === 1?`<div class="dayofweek">第${dateinfo.weekOfYear}周</div>`:''}
+                        ${false && dateinfo.dayOfWeek === 1?`<div class="dayofweek">${dateinfo.weekOfYear}</div>`:''}
                     </th>`
     }
     headhtml += '</tr>'
