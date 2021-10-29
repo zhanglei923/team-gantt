@@ -44,14 +44,14 @@ let handler = {
         let count = 0;
         let counterPath = handler.getCountPath(repoName, prjName)
         if(!fs.existsSync(counterPath)){
-            fs.writeFileSync(counterPath, count);
+            fs.writeFileSync(counterPath, count+'');
         }
         count = fs.readFileSync(counterPath, 'utf8');
         return parseInt(count);
     },
     setCount: (repoName, prjName, count)=>{
         let counterPath = handler.getCountPath(repoName, prjName)
-        fs.writeFileSync(counterPath, count);
+        fs.writeFileSync(counterPath, count+'');
     },
     getHistoryList:(repoName, prjName)=>{
         //console.log('gg', prjName)

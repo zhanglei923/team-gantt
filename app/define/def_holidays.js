@@ -34,63 +34,20 @@ let test_holidays = [
     {startDate: '2019-09-13', duration: 3, alteredWorkingDays:[]},
     {startDate: '2019-10-01', duration: 7, alteredWorkingDays:['2019-09-29','2019-10-12']},
     {startDate: '2019-12-30', duration: 3, alteredWorkingDays:['2019-12-28','2019-12-29']},
+    {startDate: '2022-01-31', duration: 7, alteredWorkingDays:[]},
 ];
 test_holidays = test_holidays.concat(daysdata.holidays)
 let g_sprintSchedules = {
 }
 let test_ImportantWorkingDay = {
-    '2019-03-11': [{desc:'1904Sp3', level:'important'}],
-    '2019-03-22': [{desc:'1904Sp3结束', level:'important', is:'end'}],
-    '2019-03-25': [{desc:'1904sp4', level:'important'}],
-    '2019-04-04': [{desc:'1904Sp4结束', level:'important', is:'end'}],
-    '2019-04-08': [{desc:'1904Intg', level:'important'},{desc:'1904腾讯云压测', level:'notice'}],
-    '2019-04-19': [{desc:'1904Intg结束', level:'important', is:'end'}],
-    '2019-04-23': [{desc:'1904Staging', level:'notice'}],
-    '2019-04-27': [{desc:'1904Gray', level:'notice'}],
-    '2019-04-28': [{desc:'1904腾讯云UAT', level:'notice', offset_y:1}],
-    '2019-04-29': [{desc:'1907Sp0', level:'important'}],
-    '2019-04-30': [{desc:'1904ApiTest', level:'notice', offset_y:2}],
-    '2019-05-04': [{desc:'1904沙盒', level:'notice'}],
-    '2019-05-10': [{desc:'1907Sp0结束', level:'important', is:'end'}],
-    '2019-05-11': [{desc:'1904Prod', level:'notice'}],
-    '2019-05-13': [{desc:'1907Sp1', level:'important'}],
-    '2019-05-19': [{desc:'1904大企业pod', level:'notice'}],
-    '2019-05-22': [{desc:'1904腾讯云UAT', level:'notice', offset_y:1}],
-    '2019-05-24': [{desc:'1907Sp1结束', level:'important', is:'end'}],
-    '2019-05-25': [{desc:'1904腾讯云', level:'notice'}],
-    '2019-05-27': [{desc:'1907Sp2', level:'important'}],
-    '2019-06-06': [{desc:'1907Sp2结束', level:'important', is:'end'}],
-    '2019-06-10': [{desc:'1907Sp3', level:'important'}],
-    '2019-06-21': [{desc:'1907Sp3结束', level:'important', is:'end'}],
-    '2019-06-24': [{desc:'1907Sp4', level:'important'}],
-    '2019-07-05': [{desc:'1907Sp4结束', level:'important', is:'end'}],
-    '2019-07-08': [{desc:'1907Intg', level:'important'}],
-    '2019-07-19': [{desc:'1907Intg结束', level:'important', is:'end'}],
-    '2019-09-02': [{desc:'1910集成', level:'important'}],
-    '2019-09-20': [{desc:'1910集成', level:'important', is:'end'}],
-    '2019-09-23': [{desc:'预发布', level:'important'}],
-    '2019-10-11': [{desc:'预发布', level:'important', is:'end'}],
-
     '2019-10-08': [{desc:'SP0', level:'important'}],
     '2019-10-18': [{desc:'SP0', level:'important', is:'end'}],
     
     '2019-10-21': [{desc:'SP1', level:'important'}],
     '2019-11-01': [{desc:'SP1', level:'important', is:'end'}],
     
-    '2019-11-04': [{desc:'SP2', level:'important'}],
-    '2019-11-15': [{desc:'SP2', level:'important', is:'end'}],
-    
-    '2019-11-18': [{desc:'GA&PLAN', level:'important'}],
-    '2019-11-22': [{desc:'GA&PLAN', level:'important', is:'end'}],
-
-    '2019-11-25': [{desc:'SP1', level:'important'}],
-    '2019-12-06': [{desc:'SP1', level:'important', is:'end'}],
-    
-    '2019-12-09': [{desc:'SP2', level:'important'}],
-    '2019-12-20': [{desc:'SP2', level:'important', is:'end'}],
-
-    '2019-12-23': [{desc:'GA&PLAN', level:'important'}],
-    '2019-12-27': [{desc:'GA&PLAN', level:'important', is:'end'}]
+    '2021-11-01': [{desc:'Q4', level:'important'}],
+    '2022-01-31': [{desc:'Q4', level:'important', is:'end'}]
 };
 Object.assign(test_ImportantWorkingDay, daysdata.importantdays)
 let test_Schedules = {
